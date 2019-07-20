@@ -1,6 +1,8 @@
 {
   // Common plugins
-  "cSpell.words": [],
+  "cSpell.words": [
+    "Dont"
+  ],
   // Search settings
   "search.useIgnoreFiles": false,
   "search.exclude": {
