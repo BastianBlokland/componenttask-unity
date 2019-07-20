@@ -1,15 +1,9 @@
+.PHONY: example-edit
+default: example-edit
+
 # --------------------------------------------------------------------------------------------------
-# Files to ignore in git.
+# MakeFile used as a convient way for executing development utlitities.
 # --------------------------------------------------------------------------------------------------
 
-# Temp output
-.bin/
-.obj/
-
-# Example
-.example/Library/
-.example/Logs/
-.example/Temp/
-.example/obj/
-.example/*.csproj
-.example/*.sln
+example-edit:
+	./.ci/example-edit.sh

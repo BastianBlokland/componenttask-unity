@@ -16,6 +16,7 @@
     "**/.git": true,
     "**/bin": true,
     "**/obj": true,
+    ".example/Library": true
   },
   "files.insertFinalNewline": true,
   "files.encoding": "utf8",
