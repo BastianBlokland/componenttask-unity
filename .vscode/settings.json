@@ -1,0 +1,35 @@
+{
+  // Common plugins
+  "cSpell.words": [],
+  // Search settings
+  "search.useIgnoreFiles": false,
+  "search.exclude": {
+    "**/*.meta": true,
+    "**/.git": true,
+    "**/.git*": true,
+    "**/bin": true,
+    "**/obj": true,
+  },
+  // Ignore some directories to keep the directory viewer clean
+  "files.exclude": {
+    "**/*.meta": true,
+    "**/.git": true,
+    "**/bin": true,
+    "**/obj": true,
+  },
+  "files.insertFinalNewline": true,
+  "files.encoding": "utf8",
+  "files.autoGuessEncoding": false,
+  "files.trimTrailingWhitespace": true,
+  "editor.formatOnSave": true,
+  // Editor whitespace handling
+  "editor.renderWhitespace": "all",
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  "editor.rulers": [
+    100
+  ],
+  // Integrated terminal config
+  "terminal.integrated.cwd": ""
+}
