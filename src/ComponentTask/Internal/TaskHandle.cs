@@ -40,8 +40,8 @@ namespace ComponentTask.Internal
             else
             if (task.IsCompleted)
                 handle.completeSource.TrySetResult(default);
-
-            Debug.Fail("Invalid state");
+            else
+                Debug.Fail("Invalid state");
         };
 
         private readonly TaskCompletionSource<object> completeSource;
@@ -103,8 +103,8 @@ namespace ComponentTask.Internal
             else
             if (task.IsCompleted)
                 handle.completeSource.TrySetResult(task.Result);
-
-            Debug.Fail("Invalid state");
+            else
+                Debug.Fail("Invalid state");
         };
 
         private readonly TaskCompletionSource<T> completeSource;
