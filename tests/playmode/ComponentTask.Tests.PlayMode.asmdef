@@ -1,0 +1,16 @@
+{
+    "name": "ComponentTask.Tests.PlayMode",
+    "references": [
+        "ComponentTask"
+    ],
+    "optionalUnityReferences": [
+        "TestAssemblies"
+    ],
+    "includePlatforms": [],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": false,
+    "defineConstraints": []
+}
