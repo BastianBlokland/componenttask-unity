@@ -31,6 +31,21 @@ namespace ComponentTask
             this.exceptionHandler = exceptionHandler ?? throw new ArgumentNullException(nameof(exceptionHandler));
         }
 
+        /// <summary>
+        /// Valid in 'DEBUG' only, useful for tests.
+        /// </summary>
+        [Conditional("DEBUG")]
+        public void AssertRunningTaskCount(int expectedCount)
+        {
+            var realCount = -1;
+            lock (this.runningTasksLock)
+            {
+                realCount = this.runningTasks.Count;
+            }
+
+            Debug.Assert(expectedCount == realCount, $"Expected '{expectedCount}' running tasks but found '{realCount}' running tasks");
+        }
+
         /// <inheritdoc/>
         public Task StartTask(Func<Task> taskCreator)
         {

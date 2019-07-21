@@ -15,7 +15,7 @@ namespace ComponentTask.Tests.EditMode.ComponentTask
         [OneTimeSetUp]
         public void OneTimeSetup()
         {
-            TraceLogger.Register();
+            TraceAsserter.Register();
         }
 
         [SetUp]
