@@ -11,7 +11,7 @@ namespace ComponentTask.Tests.PlayMode.Integration
     {
         private sealed class Producer : MonoBehaviour
         {
-            public Task<int> GetValueAsync(string id) => this.StartTask(GetValueAsyncImpl, id);
+            public Task<int> GetValueAsync(string id) => this.StartTask(this.GetValueAsyncImpl, id);
 
             async Task<int> GetValueAsyncImpl(string id)
             {
@@ -35,12 +35,12 @@ namespace ComponentTask.Tests.PlayMode.Integration
             {
                 try
                 {
-                    CurrentValue = await ValueProducer.GetValueAsync(id: "1337");
+                    this.CurrentValue = await this.ValueProducer.GetValueAsync(id: "1337");
                 }
                 catch (TaskCanceledException)
                 {
                     // Producer got destroyed before it could produce the result.
-                    CurrentValue = -1;
+                    this.CurrentValue = -1;
                 }
             }
         }
