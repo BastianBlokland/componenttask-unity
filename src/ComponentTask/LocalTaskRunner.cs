@@ -199,7 +199,7 @@ namespace ComponentTask
             // Handle exceptions that are thrown in the synchronous part.
             if (task.IsFaulted)
             {
-                this.exceptionHandler.Handle(task.Exception);
+                this.exceptionHandler.HandleAll(task.Exception);
                 return task;
             }
 
@@ -230,7 +230,7 @@ namespace ComponentTask
             // Handle exceptions that are thrown in the synchronous part.
             if (task.IsFaulted)
             {
-                this.exceptionHandler.Handle(task.Exception);
+                this.exceptionHandler.HandleAll(task.Exception);
                 return task;
             }
 

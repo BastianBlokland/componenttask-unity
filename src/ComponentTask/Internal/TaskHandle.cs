@@ -17,7 +17,7 @@ namespace ComponentTask.Internal
             {
                 try
                 {
-                    handle.exceptionHandler.Handle(task.Exception);
+                    handle.exceptionHandler.HandleAll(task.Exception);
                 }
                 finally
                 {
@@ -80,7 +80,7 @@ namespace ComponentTask.Internal
             {
                 try
                 {
-                    handle.exceptionHandler.Handle(task.Exception);
+                    handle.exceptionHandler.HandleAll(task.Exception);
                 }
                 finally
                 {
