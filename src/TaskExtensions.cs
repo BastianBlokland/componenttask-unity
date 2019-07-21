@@ -13,7 +13,7 @@ namespace UnityEngine
         /// method.
         /// </summary>
         /// <remarks>
-        /// Should only be used when you are sure that not-waiting for the task what you want.
+        /// Should only be used when you are sure that not-waiting for the task is what you want.
         /// </remarks>
         /// <param name="task">Task to not wait for.</param>
         public static void DontWait(this Task task)
