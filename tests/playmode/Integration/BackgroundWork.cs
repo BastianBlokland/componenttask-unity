@@ -43,7 +43,7 @@ namespace ComponentTask.Tests.PlayMode.Integration
         }
 
         [UnityTest]
-        public IEnumerator ConsumerReceivesValueFromConsumer()
+        public IEnumerator ValueFromBackgroundWorkerIsReceived()
         {
             var result = 0;
             var go = new GameObject("BackgroundWork");
