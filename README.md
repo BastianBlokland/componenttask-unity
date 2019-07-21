@@ -101,7 +101,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class MyClass : MonoBehaviour
+class Producer : MonoBehaviour
 {
     public Task<int> GetValueAsync() => this.StartTask(ProduceValueAsync);
 
@@ -118,13 +118,12 @@ state when the component is destroyed. Which means that when you await that task
 
 On the receiving side:
 ```c#
-using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class AnotherClass : MonoBehaviour
+class Consumer : MonoBehaviour
 {
-    [SerializeField] private MyClass producer;
+    [SerializeField] private Producer producer;
 
     void Start()
     {
@@ -177,7 +176,7 @@ using System;
 using System.Threading.Tasks;
 using UnityEngine;
 
-class MyClass : MonoBehaviour
+class MyClassWithValueTuple : MonoBehaviour
 {
     void Start()
     {
@@ -192,7 +191,7 @@ class MyClass : MonoBehaviour
 }
 ```
 
-### Canceling external work
+### Cancelling external work
 To make it easier to cancel external work when your component is destroyed `this.StartTask(...)`
 optionally gives you a `CancellationToken` to give to external api's.
 ```c#
