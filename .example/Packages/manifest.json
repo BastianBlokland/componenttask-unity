@@ -1,4 +1,7 @@
 {
+  "testables": [
+    "com.bastianblokland.componenttask"
+  ],
   "dependencies": {
     "com.bastianblokland.componenttask": "file:../../",
     "com.unity.package-manager-ui": "2.0.7",
