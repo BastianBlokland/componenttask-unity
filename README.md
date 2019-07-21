@@ -58,8 +58,6 @@ class MyClass : MonoBehaviour
 This example will print `Running...` every frame when the component is enabled and will stop when
 the component gets destroyed.
 
-Keep reading to see more advanced examples.
-
 ### Awaiting other methods
 ```c#
 using System;
@@ -94,7 +92,7 @@ them. So in this example `GetValueAsync` also runs as part of the `MyClass` scop
 the component is destroyed.
 
 ### Exposing a method that produces a value
-But what if you want to expose a api that produces a value, what happens to the task your component
+But what if you want to expose a api that produces a value, what happens to the task once your component
 gets destroyed.
 ```c#
 using System;
