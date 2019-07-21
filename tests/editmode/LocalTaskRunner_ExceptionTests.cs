@@ -4,7 +4,7 @@ using ComponentTask.Tests.EditMode.Helpers;
 using ComponentTask.Tests.EditMode.Mocks;
 using NUnit.Framework;
 
-namespace ComponentTask.Tests.EditMode.ComponentTask
+namespace ComponentTask.Tests.EditMode
 {
     public sealed class LocalTaskRunner_ExceptionTests
     {
