@@ -110,6 +110,23 @@ namespace ComponentTask.Tests.EditMode
         }
 
         [Test]
+        public void ResetsPreviousSynchronizationContextWhenTaskCreatorThrows()
+        {
+            // Set custom sync-context.
+            var syncContext = new MockSynchronizationContext();
+            SynchronizationContext.SetSynchronizationContext(syncContext);
+
+            var exHandler = new MockExceptionHandler();
+            using (var runner = new LocalTaskRunner(exHandler))
+            {
+                Assert.Throws<TestException>(() => runner.StartTask(() => throw new TestException()));
+            }
+
+            // Verify that its again active.
+            Assert.True(SynchronizationContext.Current == syncContext);
+        }
+
+        [Test]
         public void StartingCompletedTaskIsReturnedDirectly()
         {
             var tcs = new TaskCompletionSource<int>();
