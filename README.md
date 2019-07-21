@@ -33,7 +33,7 @@ disabled and it gets stopped when your `MonoBehaviour` gets destroyed.
 ## Examples
 These examples can also be found in the [`.example`](https://github.com/BastianBlokland/componenttask-unity/tree/master/.example) directory.
 
-## Basic example
+### Basic example
 ```c#
 using System.Threading.Tasks;
 using UnityEngine;
