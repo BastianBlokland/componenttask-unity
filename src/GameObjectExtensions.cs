@@ -24,9 +24,8 @@ namespace UnityEngine
         /// Thrown when called from a non-unity thread.
         /// </exception>
         /// <param name="gameObject">GameObject to create the task-runner on.</param>
-        /// <param name="hide">Should the task-runner be visible in the inspector</param>
         /// <returns>Newly created <see cref="ITaskRunner"/>.</returns>
-        public static ITaskRunner CreateTaskRunner(this GameObject gameObject, bool hide = false)
+        public static ITaskRunner CreateTaskRunner(this GameObject gameObject)
         {
             // Validate params.
             UnityHelper.ThrowForInvalidObjectParam(gameObject, nameof(gameObject));
@@ -36,10 +35,7 @@ namespace UnityEngine
 
             // Create runner.
             var runner = gameObject.AddComponent<MonoBehaviourTaskRunner>();
-
-            // Hide if requested.
-            if (hide)
-                runner.hideFlags = HideFlags.HideInInspector;
+            runner.hideFlags = HideFlags.HideInInspector;
 
             return runner;
         }
