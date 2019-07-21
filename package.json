@@ -5,6 +5,10 @@
   "version": "1.0.0",
   "unity": "2018.4",
   "description": "Library for running dotnet 'Task' and 'Task<T>' scoped to Unity components. Repository: https://github.com/BastianBlokland/componenttask-unity",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/BastianBlokland/componenttask-unity.git"
+  },
   "keywords": [
     "task",
     "componenttask"
