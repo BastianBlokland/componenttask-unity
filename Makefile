@@ -12,4 +12,4 @@ test:
 	./.ci/test.sh
 
 edit-example:
-	./.ci/edit-example.sh
+	./.ci/open-unity.sh '.example'

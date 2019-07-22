@@ -1,0 +1,55 @@
+# --------------------------------------------------------------------------------------------------
+# Azure CI pipeline for running tests.
+# --------------------------------------------------------------------------------------------------
+
+trigger:
+  batch: false
+  branches:
+    include:
+      - '*'
+
+pr:
+  autoCancel: false
+  branches:
+    include:
+      - '*'
+
+pool:
+    vmImage: 'ubuntu-16.04'
+
+variables:
+  - name: LC_ALL
+    value: en_US.UTF-8
+  - name: LANG
+    value: en_US.UTF-8
+  - name: NO_COLORS
+    value: true
+  - group: ci-keys
+
+steps:
+  - script: |
+      ./.ci/install-dependencies.sh
+    displayName: "Installing dependencies."
+
+  - script: |
+      ./.ci/unity-activate-license.sh "$(unity-user)" "$(unity-password)"
+    displayName: "Activating Unity license."
+
+  - script: |
+      ./.ci/test.sh
+    displayName: "Run tests."
+
+  - task: PublishTestResults@2
+    displayName: "Publish test results."
+    inputs:
+      failTaskOnFailedTests: true
+      testResultsFormat: "NUnit"
+      testResultsFiles: "$(System.DefaultWorkingDirectory)/output/*.tests.xml"
+    condition: always()
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish output."
+    inputs:
+      pathtoPublish: "$(System.DefaultWorkingDirectory)/output"
+      artifactName: output
+    condition: always()
