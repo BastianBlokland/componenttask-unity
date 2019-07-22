@@ -7,3 +7,6 @@ default: example-edit
 
 example-edit:
 	./.ci/example-edit.sh
+
+test:
+	./.ci/test.sh

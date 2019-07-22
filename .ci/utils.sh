@@ -7,17 +7,17 @@ set -e
 
 info ()
 {
-    echo "INFO: $1"
+    echo -e "\033[0;32mINFO: $1\033[0m"
 }
 
 warn ()
 {
-    echo "WARN: $1"
+    echo -e "\033[0;33mWARN: $1\033[0m"
 }
 
 fail ()
 {
-    echo $1 >&2
+    echo -e "\033[0;31mERROR: $1\033[0m" >&2
     exit 1
 }
 
@@ -60,9 +60,11 @@ withRetry ()
     local n=1
     local max=3
     local delay=5
-    while true; do "$@" && break ||
+    while true
+    do "$@" && break ||
     {
-        if [[ $n -lt $max ]]; then
+        if [[ $n -lt $max ]]
+        then
             ((n++))
             warn "Command '$@' failed. Attempt $n/$max:"
             sleep $delay;
@@ -71,4 +73,18 @@ withRetry ()
         fi
     }
     done
+}
+
+logDuration ()
+{
+    # Save start-time, execute command and log elapsed time.
+    local startTime=$SECONDS
+    "$@" ||
+    {
+        warn "Command '$@' failed in '$((SECONDS - startTime))' seconds"
+        return 1
+    }
+
+    info "Command '$@' succeeded in '$((SECONDS - startTime))' seconds"
+    return 0
 }

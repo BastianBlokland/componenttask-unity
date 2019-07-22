@@ -5,6 +5,7 @@
 # Temp output
 .bin/
 .obj/
+.output/
 
 # Example
 .example/Library/
