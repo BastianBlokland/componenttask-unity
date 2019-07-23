@@ -127,6 +127,22 @@ namespace ComponentTask.Tests.EditMode
         }
 
         [Test]
+        public void ThrowWhenTaskChangesSyncronizationContextInSyncronousPart()
+        {
+            var exHandler = new MockExceptionHandler();
+            using (var runner = new LocalTaskRunner(exHandler))
+            {
+                Assert.Throws<ContextChangedException>(() => runner.StartTask(TaskThatChangesSyncContext));
+            }
+
+            Task TaskThatChangesSyncContext()
+            {
+                SynchronizationContext.SetSynchronizationContext(new MockSynchronizationContext());
+                return Task.CompletedTask;
+            }
+        }
+
+        [Test]
         public void StartingCompletedTaskIsReturnedDirectly()
         {
             var tcs = new TaskCompletionSource<int>();

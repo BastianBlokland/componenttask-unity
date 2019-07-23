@@ -107,5 +107,22 @@ namespace ComponentTask.Tests.PlayMode
             yield return null;
             Object.Destroy(go);
         }
+
+        [UnityTest]
+        public IEnumerator NullGameObjectThrowsArgumentNullException()
+        {
+            Assert.Throws<System.ArgumentNullException>(() => GameObjectExtensions.CreateTaskRunner(null));
+            yield break;
+        }
+
+        [UnityTest]
+        public IEnumerator DestroyedGameObjectThrowsMissingReferenceException()
+        {
+            var go = new GameObject("TestGameObject");
+            Object.DestroyImmediate(go);
+
+            Assert.Throws<MissingReferenceException>(() => GameObjectExtensions.CreateTaskRunner(go));
+            yield break;
+        }
     }
 }

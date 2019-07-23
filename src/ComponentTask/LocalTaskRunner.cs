@@ -174,19 +174,24 @@ namespace ComponentTask
             if (this.isDisposed)
                 throw new ObjectDisposedException(nameof(LocalTaskRunner));
 
-            // Execute all the work that was scheduled on this runner.
-            using (var contextScope = ContextScope.WithContext(this.context))
+            try
             {
-                this.context.Execute();
-            }
-
-            // Remove any tasks that are now finished.
-            lock (this.runningTasksLock)
-            {
-                for (int i = this.runningTasks.Count - 1; i >= 0; i--)
+                // Execute all the work that was scheduled on this runner.
+                using (var contextScope = ContextScope.WithContext(this.context))
                 {
-                    if (this.runningTasks[i].IsFinished)
-                        this.runningTasks.RemoveAt(i);
+                    this.context.Execute();
+                }
+            }
+            finally
+            {
+                // Remove any tasks that are now finished.
+                lock (this.runningTasksLock)
+                {
+                    for (int i = this.runningTasks.Count - 1; i >= 0; i--)
+                    {
+                        if (this.runningTasks[i].IsFinished)
+                            this.runningTasks.RemoveAt(i);
+                    }
                 }
             }
         }
