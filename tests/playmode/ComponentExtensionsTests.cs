@@ -83,5 +83,27 @@ namespace ComponentTask.Tests.PlayMode
             yield return null;
             Object.Destroy(go);
         }
+
+        [UnityTest]
+        public IEnumerator NullComponentThrowsArgumentNullException()
+        {
+            Assert.Throws<System.ArgumentNullException>(() => ComponentExtensions.GetTaskRunner(null));
+            Assert.Throws<System.ArgumentNullException>(() => ComponentExtensions.StartTask(null, () => Task.CompletedTask));
+            yield break;
+        }
+
+        [UnityTest]
+        public IEnumerator DestroyedComponentThrowsMissingReferenceException()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+            Object.DestroyImmediate(comp);
+
+            Assert.Throws<MissingReferenceException>(() => ComponentExtensions.GetTaskRunner(comp));
+            Assert.Throws<MissingReferenceException>(() => ComponentExtensions.StartTask(comp, () => Task.CompletedTask));
+
+            yield return null;
+            Object.Destroy(go);
+        }
     }
 }
