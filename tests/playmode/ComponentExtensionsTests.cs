@@ -165,6 +165,50 @@ namespace ComponentTask.Tests.PlayMode
         }
 
         [UnityTest]
+        public IEnumerator TaskPausesWhenComponentIsDisabled()
+        {
+            var count = 0;
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+            comp.StartTask(IncrementCountAsync);
+
+            // Assert task is running.
+            yield return null;
+            Assert.AreEqual(1, count);
+
+            // Disable component.
+            comp.enabled = false;
+
+            // Assert task is paused.
+            yield return null;
+            Assert.AreEqual(1, count);
+            yield return null;
+            Assert.AreEqual(1, count);
+
+            // Enable component.
+            comp.enabled = true;
+
+            // Assert task is running.
+            yield return null;
+            Assert.AreEqual(2, count);
+            yield return null;
+            Assert.AreEqual(3, count);
+
+            // Cleanup.
+            Object.Destroy(go);
+
+            async Task IncrementCountAsync()
+            {
+                await Task.Yield();
+                count++;
+                await Task.Yield();
+                count++;
+                await Task.Yield();
+                count++;
+            }
+        }
+
+        [UnityTest]
         public IEnumerator SameRunnerIsReusedForTheSameComponent()
         {
             var go = new GameObject("TestGameObject");
@@ -176,6 +220,89 @@ namespace ComponentTask.Tests.PlayMode
 
             yield return null;
             Object.Destroy(go);
+        }
+
+        [UnityTest]
+        public IEnumerator RunnerDestroysItselfWhenComponentIsDestroyed()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+            comp.StartTask(TestAsync);
+
+            // Assert that runner was created.
+            Assert.AreEqual(2, go.GetComponents<MonoBehaviour>().Length);
+
+            // Destroy component.
+            Object.DestroyImmediate(comp);
+            yield return null;
+
+            // Assert that runner has destroyed itself.
+            Assert.AreEqual(0, go.GetComponents<MonoBehaviour>().Length);
+
+            // Cleanup.
+            Object.Destroy(go);
+
+            async Task TestAsync()
+            {
+                await Task.Yield();
+                await Task.Yield();
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator RunnerDestroysItselfWhenDisabledComponentIsDestroyed()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+            comp.StartTask(TestAsync);
+
+            // Disable component.
+            comp.enabled = false;
+
+            // Assert that runner was created.
+            Assert.AreEqual(2, go.GetComponents<MonoBehaviour>().Length);
+
+            // Destroy component.
+            Object.DestroyImmediate(comp);
+            yield return null;
+
+            // Assert that runner has destroyed itself.
+            Assert.AreEqual(0, go.GetComponents<MonoBehaviour>().Length);
+
+            // Cleanup.
+            Object.Destroy(go);
+
+            async Task TestAsync()
+            {
+                await Task.Yield();
+                await Task.Yield();
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator RunnerDestroysItselfWhenWorkIsDone()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+            comp.StartTask(TestAsync);
+
+            // Assert that runner was created.
+            Assert.AreEqual(2, go.GetComponents<MonoBehaviour>().Length);
+
+            // Wait for work to finish.
+            yield return null;
+
+            // Assert that runner has destroyed itself.
+            Assert.AreEqual(1, go.GetComponents<MonoBehaviour>().Length);
+
+            // Cleanup.
+            yield return null;
+            Object.Destroy(go);
+
+            async Task TestAsync()
+            {
+                await Task.Yield();
+            }
         }
 
         [UnityTest]
