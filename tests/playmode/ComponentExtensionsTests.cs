@@ -179,6 +179,34 @@ namespace ComponentTask.Tests.PlayMode
         }
 
         [UnityTest]
+        public IEnumerator RunnerDestroysItselfWhenComponentIsDestroyed()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+            comp.StartTask(TestAsync);
+
+            // Assert that runner was created.
+            Assert.AreEqual(2, go.GetComponents<MonoBehaviour>().Length);
+
+            // Destroy component.
+            Object.DestroyImmediate(comp);
+            yield return null;
+
+            // Assert that runner has destroyed itself.
+            Assert.AreEqual(0, go.GetComponents<MonoBehaviour>().Length);
+
+            // Cleanup.
+            yield return null;
+            Object.Destroy(go);
+
+            async Task TestAsync()
+            {
+                await Task.Yield();
+                await Task.Yield();
+            }
+        }
+
+        [UnityTest]
         public IEnumerator ThrowsWhenCalledFromNonUnityThread()
         {
             var go = new GameObject("TestGameObject");
