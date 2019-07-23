@@ -1,0 +1,41 @@
+# --------------------------------------------------------------------------------------------------
+# Azure CI pipeline for creating a 'Manual Activation File' for Unity.
+#
+# Currently the only way to activate a 'free' license of Unity while running headless is to
+# create a 'Manual Activation File' and the manually activate that through a website.
+# More info:
+#  * https://license.unity3d.com/manual
+#  * https://docs.unity3d.com/Manual/ManualActivationGuide.html
+#  * https://docs.unity3d.com/Manual/CommandLineArguments.html
+# --------------------------------------------------------------------------------------------------
+
+trigger: none
+pr: none
+
+pool:
+    vmImage: 'ubuntu-16.04'
+
+variables:
+  - name: LC_ALL
+    value: en_US.UTF-8
+  - name: LANG
+    value: en_US.UTF-8
+  - name: NO_COLORS
+    value: true
+  - group: ci-keys
+
+steps:
+  - script: |
+      ./.ci/install-dependencies.sh
+    displayName: "Installing dependencies."
+
+  - script: |
+      ./.ci/unity-request-license.sh
+    displayName: "Requesting Unity license."
+
+  - task: PublishBuildArtifacts@1
+    displayName: "Publish output."
+    inputs:
+      pathtoPublish: "$(System.DefaultWorkingDirectory)/output"
+      artifactName: output
+    condition: always()
