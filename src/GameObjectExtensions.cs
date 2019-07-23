@@ -35,6 +35,7 @@ namespace UnityEngine
 
             // Create runner.
             var runner = gameObject.AddComponent<MonoBehaviourTaskRunner>();
+            runner.RunOptions = TaskRunOptions.Default;
             runner.hideFlags = HideFlags.HideInInspector;
 
             return runner;

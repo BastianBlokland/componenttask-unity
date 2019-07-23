@@ -1,10 +1,11 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using UnityEngine;
 
 namespace ComponentTask.Internal
 {
-    internal sealed class MonoBehaviourTaskRunner : UnityEngine.MonoBehaviour, ITaskRunner, IExceptionHandler
+    internal sealed class MonoBehaviourTaskRunner : MonoBehaviour, ITaskRunner, IExceptionHandler
     {
         private readonly LocalTaskRunner taskRunner;
 
@@ -13,7 +14,9 @@ namespace ComponentTask.Internal
             this.taskRunner = new LocalTaskRunner(exceptionHandler: this);
         }
 
-        public UnityEngine.Component ComponentToFollow { get; set; }
+        public TaskRunOptions RunOptions { get; set; }
+
+        public Component ComponentToFollow { get; set; }
 
         public bool IsFinished { get; private set; }
 
@@ -86,7 +89,9 @@ namespace ComponentTask.Internal
                     // If the component is a 'Behaviour' then we update when its enabled.
                     if (ComponentToFollow is UnityEngine.Behaviour behaviour)
                     {
-                        if (behaviour.isActiveAndEnabled)
+                        var updateWhileDisabled =
+                            (this.RunOptions & TaskRunOptions.UpdateWhileComponentDisabled) == TaskRunOptions.UpdateWhileComponentDisabled;
+                        if (updateWhileDisabled || behaviour.isActiveAndEnabled)
                             this.Execute();
                     }
                     else
