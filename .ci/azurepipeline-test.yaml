@@ -24,15 +24,20 @@ variables:
     value: en_US.UTF-8
   - name: NO_COLORS
     value: true
-  - group: ci-keys
 
 steps:
+  - task: DownloadSecureFile@1
+    name: unity_license
+    displayName: "Download Unity license file."
+    inputs:
+      secureFile: "Unity_v2019.x.ulf"
+
   - script: |
       ./.ci/install-dependencies.sh
     displayName: "Installing dependencies."
 
   - script: |
-      ./.ci/unity-activate-license.sh "$(unity-user)" "$(unity-password)"
+      ./.ci/unity-activate-license.sh "$(unity_license.secureFilePath)"
     displayName: "Activating Unity license."
 
   - script: |

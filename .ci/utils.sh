@@ -2,7 +2,7 @@
 set -e
 
 # --------------------------------------------------------------------------------------------------
-# Miscellaneous reusable utilities that can be used by other bash scripts.
+# Miscellaneous utilities that can be used by other bash scripts.
 # --------------------------------------------------------------------------------------------------
 
 info()
@@ -87,10 +87,10 @@ withRetry()
         if [[ $n -lt $max ]]
         then
             ((n++))
-            warn "Command '$*' failed. Attempt $n/$max:"
+            warn "Command '$*' failed. Attempt '$n/$max':"
             sleep $delay;
         else
-            fail "Command '$*' has failed after $n attempts."
+            fail "Command '$*' has failed after '$n' attempts."
         fi
     }
     done

@@ -3,23 +3,8 @@ set -e
 source ./.ci/utils.sh
 
 # --------------------------------------------------------------------------------------------------
-# Run the editmode and playmode unity tests.
+# Run the editmode and playmode Unity tests.
 # --------------------------------------------------------------------------------------------------
-
-# Use the example dir for running tests as we need to have a unity-project.
-EXAMPLE_DIR=".example"
-
-# Verify that commands we depend on are present.
-if doesntHaveCommand u3d
-then
-    fail "'u3d' required (more info: https://github.com/DragonBox/u3d)."
-fi
-
-# Verify that the example directory exists.
-if [ ! -d "$EXAMPLE_DIR" ]
-then
-    fail "No example directory found at: '$EXAMPLE_DIR'."
-fi
 
 test()
 {
@@ -54,7 +39,22 @@ test()
     return 0
 }
 
-# Retry is here because Unity sometimes randomly fails during startup, we do NOT retry failed tests.
+# Verify dependencies.
+if doesntHaveCommand u3d
+then
+    fail "'u3d' required (more info: https://github.com/DragonBox/u3d)."
+fi
+
+# Use the example dir for running tests as we need to have a unity-project.
+EXAMPLE_DIR=".example"
+
+# Verify that the example directory exists.
+if [ ! -d "$EXAMPLE_DIR" ]
+then
+    fail "No example directory found at: '$EXAMPLE_DIR'."
+fi
+
+# Run tests.
 withRetry logDuration test "editmode" "$(pwd)/output/editmode.tests.xml" "$(pwd)/output/editmode.log"
 withRetry logDuration test "playmode" "$(pwd)/output/playmode.tests.xml" "$(pwd)/output/playmode.log"
 

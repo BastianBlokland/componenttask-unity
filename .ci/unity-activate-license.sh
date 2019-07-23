@@ -17,13 +17,12 @@ hasLicense()
 
 activateUnity()
 {
-    local userName="$1"
-    local userPassword="$2"
-    local exampleDir=".example"
-    local logPath="$(pwd)/output/activation.log"
+    local projDir="$1"
+    local licenseFilePath="$2"
+    local logPath="$3"
 
-    info "Attempting to activate Unity."
-    (cd "$exampleDir" &&
+    info "Attempting to activate using '$licenseFilePath' in project '$projDir' (logging to: '$logPath')."
+    (cd "$projDir" &&
     {
         u3d -- \
             -batchmode \
@@ -31,8 +30,7 @@ activateUnity()
             -quit \
             -nographics \
             -force-free \
-            -username "$userName" \
-            -password "$userPassword"
+            -manualLicenseFile "$licenseFilePath" || true
         info "Unity exited."
     })
 
@@ -45,30 +43,31 @@ activateUnity()
     fi
 }
 
-if doesntHaveCommand u3d
-then
-    fail "'u3d' required (more info: https://github.com/DragonBox/u3d)."
-fi
+# Verify dependencies.
+verifyCommand u3d
 
+# Early out if already activated.
 if hasLicense
 then
     info "Unity already activated, skipping activation."
     exit 0
 fi
 
-UNITY_USER="$1"
-if  [ -z "$UNITY_USER" ]
+# Setup variables.
+UNITY_PROJ_DIR=".example"
+if [ ! -d "$UNITY_PROJ_DIR" ]
 then
-    fail "No unity username provided, please provide as arg1."
+    fail "No directory found at: '$UNITY_PROJ_DIR'."
 fi
-
-UNITY_PASS="$2"
-if  [ -z "$UNITY_PASS" ]
+UNITY_LICENSE_FILE_PATH="$1"
+if  [ -z "$UNITY_LICENSE_FILE_PATH" ]
 then
-    fail "No unity password provided, please provide as arg2."
+    fail "No license file path provided, please provide as arg1."
 fi
+LOG_PATH="$(pwd)/output/activation.log"
 
-withRetry logDuration activateUnity "$UNITY_USER" "$UNITY_PASS"
+# Activate unity with given license file.
+withRetry logDuration activateUnity "$UNITY_PROJ_DIR" "$UNITY_LICENSE_FILE_PATH" "$LOG_PATH"
 
 info "Sucesfully activated unity."
 exit 0

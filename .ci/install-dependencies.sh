@@ -22,7 +22,7 @@ installRuby()
             fail "Failed to install 'ruby' with 'apt-get'."
         fi
     fi
-    fail "Failed to install ruby as no supported package manager is installed."
+    fail "Failed to install 'ruby' as no supported package manager is installed."
 }
 
 getUnityVersion()
@@ -31,7 +31,7 @@ getUnityVersion()
     local projectVersionFile="$projectDir/ProjectSettings/ProjectVersion.txt"
     if [ ! -f "$projectVersionFile" ]
     then
-        echo "Unknown"
+        echo "unknown"
         return 1
     fi
     echo "$(awk '$1 == "m_EditorVersion:" {print $2}' $projectVersionFile)"
