@@ -209,7 +209,42 @@ namespace ComponentTask.Tests.PlayMode
         }
 
         [UnityTest]
-        public IEnumerator SameRunnerIsReusedForTheSameComponent()
+        public IEnumerator TaskRunsWhileComponentIsDisabledWhenConfigured()
+        {
+            var count = 0;
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+            comp.StartTask(IncrementCountAsync, TaskRunOptions.UpdateWhileComponentDisabled);
+
+            // Assert task is running.
+            yield return null;
+            Assert.AreEqual(1, count);
+
+            // Disable component.
+            comp.enabled = false;
+
+            // Assert task is still running.
+            yield return null;
+            Assert.AreEqual(2, count);
+            yield return null;
+            Assert.AreEqual(3, count);
+
+            // Cleanup.
+            Object.Destroy(go);
+
+            async Task IncrementCountAsync()
+            {
+                await Task.Yield();
+                count++;
+                await Task.Yield();
+                count++;
+                await Task.Yield();
+                count++;
+            }
+        }
+
+        [UnityTest]
+        public IEnumerator SameRunnerIsReusedForTheSameComponentAndSameOptions()
         {
             var go = new GameObject("TestGameObject");
             var comp = go.AddComponent<MockComponent>();
@@ -217,6 +252,20 @@ namespace ComponentTask.Tests.PlayMode
             var runner1 = comp.GetTaskRunner();
             var runner2 = comp.GetTaskRunner();
             Assert.True(object.ReferenceEquals(runner1, runner2));
+
+            yield return null;
+            Object.Destroy(go);
+        }
+
+        [UnityTest]
+        public IEnumerator DifferentRunnerIsUsedForSameComponentAndDifferentOptions()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+
+            var runner1 = comp.GetTaskRunner(TaskRunOptions.Default);
+            var runner2 = comp.GetTaskRunner(TaskRunOptions.UpdateWhileComponentDisabled);
+            Assert.False(object.ReferenceEquals(runner1, runner2));
 
             yield return null;
             Object.Destroy(go);
