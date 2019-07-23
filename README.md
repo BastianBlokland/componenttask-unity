@@ -1,5 +1,8 @@
 # ComponentTask-Unity
 
+[![Tests](https://img.shields.io/azure-devops/tests/bastian-blokland/ComponentTask/6/master.svg)](https://dev.azure.com/bastian-blokland/ComponentTask/_build/latest?definitionId=6&branchName=master)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
 Unity package for running dotnet `Task` and `Task<T>` scoped to Unity components.
 
 ## Description
