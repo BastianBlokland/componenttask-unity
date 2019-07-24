@@ -72,5 +72,31 @@ namespace ComponentTask.Tests.EditMode
                     await Task.Yield();
             }
         }
+
+        [Test]
+        public void StartTaskThreadingStressTest()
+        {
+            var exHandler = new MockExceptionHandler();
+            using (var runner = new LocalTaskRunner(exHandler))
+            {
+                // Start many tasks tasks in parallel.
+                for (int i = 0; i < 100; i++)
+                    ThreadPool.QueueUserWorkItem(r => ((LocalTaskRunner)r).StartTask(TestAsync), runner);
+
+                // Wait for tasks to start.
+                Thread.Sleep(millisecondsTimeout: 1000);
+
+                // Execute a single tick to finish all tasks.
+                runner.Execute();
+
+                // Assert that all tasks have finished.
+                runner.AssertRunningTaskCount(0);
+            }
+
+            async Task TestAsync()
+            {
+                await Task.Yield();
+            }
+        }
     }
 }
