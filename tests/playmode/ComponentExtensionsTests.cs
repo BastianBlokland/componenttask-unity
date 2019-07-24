@@ -165,6 +165,50 @@ namespace ComponentTask.Tests.PlayMode
         }
 
         [UnityTest]
+        public IEnumerator TaskPausesWhenGameObjectIsInactive()
+        {
+            var count = 0;
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+            comp.StartTask(IncrementCountAsync);
+
+            // Assert task is running.
+            yield return null;
+            Assert.AreEqual(1, count);
+
+            // Disable gameobject.
+            go.SetActive(false);
+
+            // Assert task is paused.
+            yield return null;
+            Assert.AreEqual(1, count);
+            yield return null;
+            Assert.AreEqual(1, count);
+
+            // Enable gameobject.
+            go.SetActive(true);
+
+            // Assert task is running.
+            yield return null;
+            Assert.AreEqual(2, count);
+            yield return null;
+            Assert.AreEqual(3, count);
+
+            // Cleanup.
+            Object.Destroy(go);
+
+            async Task IncrementCountAsync()
+            {
+                await Task.Yield();
+                count++;
+                await Task.Yield();
+                count++;
+                await Task.Yield();
+                count++;
+            }
+        }
+
+        [UnityTest]
         public IEnumerator TaskPausesWhenComponentIsDisabled()
         {
             var count = 0;
