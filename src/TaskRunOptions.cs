@@ -19,6 +19,9 @@ namespace UnityEngine
         /// <summary>
         /// Tasks are updated even if the component is disabled.
         /// </summary>
+        /// <remarks>
+        /// Tasks are still NOT updated when the gameobject is disabled.
+        /// </remarks>
         UpdateWhileComponentDisabled = 1 << 0,
     }
 }
