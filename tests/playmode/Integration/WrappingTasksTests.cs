@@ -8,7 +8,7 @@ using UnityEngine.TestTools;
 
 namespace ComponentTask.Tests.PlayMode.Integration
 {
-    public sealed class WrappingTasks
+    public sealed class WrappingTasksTests
     {
         private sealed class ClassA : MonoBehaviour
         {

@@ -7,7 +7,7 @@ using UnityEngine.TestTools;
 
 namespace ComponentTask.Tests.PlayMode.Integration
 {
-    public sealed class DisableGameObjectAtEnd
+    public sealed class DisableGameObjectAtEndTests
     {
         private sealed class ClassA : MonoBehaviour
         {
