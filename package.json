@@ -2,7 +2,7 @@
   "name": "com.bastianblokland.componenttask",
   "displayName": "ComponentTask",
   "author": "Bastian Blokland",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "unity": "2019.1",
   "description": "Library for running dotnet 'Task' and 'Task<T>' scoped to Unity components. Repository: https://github.com/BastianBlokland/componenttask-unity",
   "repository": {
