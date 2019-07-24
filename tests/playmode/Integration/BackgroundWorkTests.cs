@@ -8,7 +8,7 @@ using UnityEngine.TestTools;
 
 namespace ComponentTask.Tests.PlayMode.Integration
 {
-    public sealed class BackgroundWork
+    public sealed class BackgroundWorkTests
     {
         private sealed class BackgroundWorker : MonoBehaviour
         {

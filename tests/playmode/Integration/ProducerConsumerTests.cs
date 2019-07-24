@@ -7,7 +7,7 @@ using UnityEngine.TestTools;
 
 namespace ComponentTask.Tests.PlayMode.Integration
 {
-    public sealed class ProducerConsumer
+    public sealed class ProducerConsumerTests
     {
         private sealed class Producer : MonoBehaviour
         {
