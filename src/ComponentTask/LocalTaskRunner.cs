@@ -169,13 +169,11 @@ namespace ComponentTask
         /// <summary>
         /// Execute all the work that was 'scheduled' by the tasks running on this runner.
         /// </summary>
-        /// <returns>True if still running work, False if all work has finished.</returns>
-        public bool Execute()
+        public void Execute()
         {
             if (this.isDisposed)
                 throw new ObjectDisposedException(nameof(LocalTaskRunner));
 
-            bool tasksRemaining;
             try
             {
                 // Execute all the work that was scheduled on this runner.
@@ -194,12 +192,8 @@ namespace ComponentTask
                         if (this.runningTasks[i].IsFinished)
                             this.runningTasks.RemoveAt(i);
                     }
-
-                    tasksRemaining = this.runningTasks.Count > 0;
                 }
             }
-
-            return tasksRemaining;
         }
 
         /// <inheritdoc/>
