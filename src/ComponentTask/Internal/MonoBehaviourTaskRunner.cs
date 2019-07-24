@@ -18,61 +18,33 @@ namespace ComponentTask.Internal
 
         public Component ComponentToFollow { get; set; }
 
-        public bool IsFinished { get; private set; }
+        public Task StartTask(Func<Task> taskCreator) =>
+            this.taskRunner.StartTask(taskCreator);
 
-        public Task StartTask(Func<Task> taskCreator)
-        {
-            System.Diagnostics.Debug.Assert(!this.IsFinished, "Task was started on already finished runner");
-            return this.taskRunner.StartTask(taskCreator);
-        }
+        public Task StartTask(Func<CancellationToken, Task> taskCreator) =>
+            this.taskRunner.StartTask(taskCreator);
 
-        public Task StartTask(Func<CancellationToken, Task> taskCreator)
-        {
-            System.Diagnostics.Debug.Assert(!this.IsFinished, "Task was started on already finished runner");
-            return this.taskRunner.StartTask(taskCreator);
-        }
+        public Task StartTask<TIn>(Func<TIn, Task> taskCreator, TIn data) =>
+            this.taskRunner.StartTask(taskCreator, data);
 
-        public Task StartTask<TIn>(Func<TIn, Task> taskCreator, TIn data)
-        {
-            System.Diagnostics.Debug.Assert(!this.IsFinished, "Task was started on already finished runner");
-            return this.taskRunner.StartTask(taskCreator, data);
-        }
+        public Task StartTask<TIn>(Func<TIn, CancellationToken, Task> taskCreator, TIn data) =>
+            this.taskRunner.StartTask(taskCreator, data);
 
-        public Task StartTask<TIn>(Func<TIn, CancellationToken, Task> taskCreator, TIn data)
-        {
-            System.Diagnostics.Debug.Assert(!this.IsFinished, "Task was started on already finished runner");
-            return this.taskRunner.StartTask(taskCreator, data);
-        }
+        public Task<TOut> StartTask<TOut>(Func<Task<TOut>> taskCreator) =>
+            this.taskRunner.StartTask(taskCreator);
 
-        public Task<TOut> StartTask<TOut>(Func<Task<TOut>> taskCreator)
-        {
-            System.Diagnostics.Debug.Assert(!this.IsFinished, "Task was started on already finished runner");
-            return this.taskRunner.StartTask(taskCreator);
-        }
+        public Task<TOut> StartTask<TOut>(Func<CancellationToken, Task<TOut>> taskCreator) =>
+            this.taskRunner.StartTask(taskCreator);
 
-        public Task<TOut> StartTask<TOut>(Func<CancellationToken, Task<TOut>> taskCreator)
-        {
-            System.Diagnostics.Debug.Assert(!this.IsFinished, "Task was started on already finished runner");
-            return this.taskRunner.StartTask(taskCreator);
-        }
+        public Task<TOut> StartTask<TIn, TOut>(Func<TIn, Task<TOut>> taskCreator, TIn data) =>
+            this.taskRunner.StartTask(taskCreator, data);
 
-        public Task<TOut> StartTask<TIn, TOut>(Func<TIn, Task<TOut>> taskCreator, TIn data)
-        {
-            System.Diagnostics.Debug.Assert(!this.IsFinished, "Task was started on already finished runner");
-            return this.taskRunner.StartTask(taskCreator, data);
-        }
-
-        public Task<TOut> StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data)
-        {
-            System.Diagnostics.Debug.Assert(!this.IsFinished, "Task was started on already finished runner");
-            return this.taskRunner.StartTask(taskCreator, data);
-        }
+        public Task<TOut> StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data) =>
+            this.taskRunner.StartTask(taskCreator, data);
 
         // Dynamically called from the Unity runtime.
         private void LateUpdate()
         {
-            System.Diagnostics.Debug.Assert(!this.IsFinished, "Already finished runner was updated");
-
             // Check if we have a 'ComponentToFollow' assigned.
             if (this.ComponentToFollow is null)
             {
@@ -106,20 +78,9 @@ namespace ComponentTask.Internal
         // Dynamically called from the Unity runtime.
         private void OnDestroy() => this.taskRunner.Dispose();
 
-        private void Execute()
-        {
-            var workRemaining = this.taskRunner.Execute();
+        private void Execute() => this.taskRunner.Execute();
 
-            // If we've finished all the work then destroy ourselves.
-            if (!workRemaining)
-                this.Destroy();
-        }
-
-        private void Destroy()
-        {
-            this.IsFinished = true;
-            UnityEngine.Object.Destroy(this);
-        }
+        private void Destroy() => UnityEngine.Object.Destroy(this);
 
         void IExceptionHandler.Handle(Exception exception)
         {
