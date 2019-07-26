@@ -73,16 +73,6 @@ namespace ComponentTask.Internal
         }
 
         // Dynamically called from the Unity runtime.
-        private void OnEnable()
-        {
-            if (this.isPaused)
-            {
-                this.isPaused = false;
-                this.LogResume();
-            }
-        }
-
-        // Dynamically called from the Unity runtime.
         private void OnDisable()
         {
             /* Unfortunately this is also called when the gameobject is destroyed, so far i have not
@@ -117,7 +107,17 @@ namespace ComponentTask.Internal
                         var updateWhileDisabled =
                             (this.RunOptions & TaskRunOptions.UpdateWhileComponentDisabled) == TaskRunOptions.UpdateWhileComponentDisabled;
                         if (updateWhileDisabled || behaviour.isActiveAndEnabled)
+                        {
                             this.Execute();
+                        }
+                        else
+                        {
+                            if (!this.isPaused)
+                            {
+                                this.LogPause();
+                                this.isPaused = true;
+                            }
+                        }
                     }
                     else
                     {
@@ -131,7 +131,16 @@ namespace ComponentTask.Internal
         // Dynamically called from the Unity runtime.
         private void OnDestroy() => this.taskRunner.Dispose();
 
-        private void Execute() => this.taskRunner.Execute();
+        private void Execute()
+        {
+            if (this.isPaused)
+            {
+                this.LogResume();
+                this.isPaused = false;
+            }
+
+            this.taskRunner.Execute();
+        }
 
         private void Destroy() => UnityEngine.Object.Destroy(this);
 
