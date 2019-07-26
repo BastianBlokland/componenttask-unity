@@ -4,6 +4,8 @@ namespace ComponentTask.Internal
     {
         bool IsCompleted { get; }
 
+        DiagTaskTracer DiagTracer { get; }
+
         bool TryCancel();
     }
 }

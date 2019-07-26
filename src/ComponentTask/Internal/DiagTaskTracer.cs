@@ -20,6 +20,12 @@ namespace ComponentTask.Internal
         public void LogInvoked(object argument = null) =>
             this.logger.Log($"{identifier} -> Invoking (argument: '{argument?.ToString() ?? "none"}').");
 
+        public void LogPaused() =>
+            this.logger.Log($"{identifier} -> Paused.");
+
+        public void LogResumed() =>
+            this.logger.Log($"{identifier} -> Resumed.");
+
         public void LogCompletedSynchronouslyAsSuccess(object result) =>
             this.logger.Log($"{identifier} -> Completed synchronously: Success (result: '{result?.ToString() ?? "none"}').");
 

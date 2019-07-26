@@ -287,6 +287,16 @@ namespace ComponentTask
             }
         }
 
+        /// <summary>
+        /// Invoke given action on each running task.
+        /// </summary>
+        /// <summary>
+        /// Note: Internal as it exposes allot of implementation details.
+        /// </summary>
+        /// <param name="action">Action to invoke on each running task.</param>
+        internal void ForAllRunningTasks(Action<ITaskHandle> action) =>
+            this.runningTasks.LockedInvoke(this.runningTasksLock, action);
+
         private Task WrapTask(Task task, DiagTaskTracer diagTracer)
         {
             if (task is null)

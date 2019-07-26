@@ -59,6 +59,8 @@ namespace ComponentTask.Internal
 
         public bool IsCompleted => this.completeSource.Task.IsCompleted;
 
+        public DiagTaskTracer DiagTracer => this.diagTracer;
+
         public bool TryCancel()
         {
             if (this.completeSource.TrySetCanceled())
@@ -122,6 +124,8 @@ namespace ComponentTask.Internal
         }
 
         public Task<T> Task => this.completeSource.Task;
+
+        public DiagTaskTracer DiagTracer => this.diagTracer;
 
         public bool IsCompleted => this.completeSource.Task.IsCompleted;
 

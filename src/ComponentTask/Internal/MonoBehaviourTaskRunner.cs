@@ -10,6 +10,8 @@ namespace ComponentTask.Internal
     {
         private readonly LocalTaskRunner taskRunner;
 
+        private bool isPaused;
+
         public MonoBehaviourTaskRunner()
         {
             this.taskRunner = new LocalTaskRunner(exceptionHandler: this);
@@ -71,6 +73,29 @@ namespace ComponentTask.Internal
         }
 
         // Dynamically called from the Unity runtime.
+        private void OnEnable()
+        {
+            if (this.isPaused)
+            {
+                this.isPaused = false;
+                this.LogResume();
+            }
+        }
+
+        // Dynamically called from the Unity runtime.
+        private void OnDisable()
+        {
+            /* Unfortunately this is also called when the gameobject is destroyed, so far i have not
+            found any way to (reliably) know if we are disabled or destroy. In practice this means
+            that you will see a 'Paused' log before every 'Canceled'. */
+            if (!this.isPaused)
+            {
+                this.isPaused = true;
+                this.LogPause();
+            }
+        }
+
+        // Dynamically called from the Unity runtime.
         private void LateUpdate()
         {
             // Check if we have a 'ComponentToFollow' assigned.
@@ -109,6 +134,18 @@ namespace ComponentTask.Internal
         private void Execute() => this.taskRunner.Execute();
 
         private void Destroy() => UnityEngine.Object.Destroy(this);
+
+        private void LogPause()
+        {
+            if (this.DiagnosticLogging)
+                this.taskRunner.ForAllRunningTasks(t => t.DiagTracer.LogPaused());
+        }
+
+        private void LogResume()
+        {
+            if (this.DiagnosticLogging)
+                this.taskRunner.ForAllRunningTasks(t => t.DiagTracer.LogResumed());
+        }
 
         void IExceptionHandler.Handle(Exception exception)
         {
