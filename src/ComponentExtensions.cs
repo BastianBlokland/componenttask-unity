@@ -422,6 +422,9 @@ namespace UnityEngine
         {
             var owner = component.gameObject;
 
+            // Apply the global configuration to the options.
+            options = Config.Apply(options);
+
             // Check if there is a existing runner for the same scope.
             owner.GetComponents<MonoBehaviourTaskRunner>(monoBehaviourRunners);
             foreach (var runner in monoBehaviourRunners)
