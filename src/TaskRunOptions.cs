@@ -23,5 +23,10 @@ namespace UnityEngine
         /// Tasks are still NOT updated when the gameobject is disabled.
         /// </remarks>
         UpdateWhileComponentDisabled = 1 << 0,
+
+        /// <summary>
+        /// Enable diagnostic logging.
+        /// </summary>
+        DiagnosticLogging = 1 << 1,
     }
 }

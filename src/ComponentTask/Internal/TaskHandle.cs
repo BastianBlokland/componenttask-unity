@@ -12,59 +12,64 @@ namespace ComponentTask.Internal
             Debug.Assert(state is TaskHandle, "State does not contain TaskHandle");
             var handle = (TaskHandle)state;
 
-            handle.isFinished = true;
             if (task.IsFaulted)
             {
-                try
+                if (handle.completeSource.TrySetException(task.Exception))
                 {
                     handle.exceptionHandler.HandleAll(task.Exception);
-                }
-                finally
-                {
-                    handle.completeSource.TrySetException(task.Exception);
+                    handle.diagTracer?.LogCompletedAsFaulted(task.Exception);
                 }
             }
             else
             if (task.IsCanceled)
             {
-                try
+                if (handle.completeSource.TrySetCanceled())
                 {
                     // Log a exception to avoid silent failures.
                     handle.exceptionHandler.Handle(new ComponentTaskCanceledException());
-                }
-                finally
-                {
-                    handle.completeSource.TrySetCanceled();
+                    handle.diagTracer?.LogCompletedAsCanceled();
                 }
             }
             else
             if (task.IsCompleted)
-                handle.completeSource.TrySetResult(default);
+            {
+                if (handle.completeSource.TrySetResult(default))
+                {
+                    handle.diagTracer?.LogCompletedAsSuccess(default);
+                }
+            }
             else
                 Debug.Fail("Invalid state");
         };
 
         private readonly TaskCompletionSource<object> completeSource;
         private readonly IExceptionHandler exceptionHandler;
+        private readonly DiagTaskTracer diagTracer;
 
-        private volatile bool isFinished;
-
-        public TaskHandle(IExceptionHandler exceptionHandler)
+        public TaskHandle(IExceptionHandler exceptionHandler, DiagTaskTracer diagTracer)
         {
             Debug.Assert(exceptionHandler != null, "No exception handler provided");
 
             this.completeSource = new TaskCompletionSource<object>(TaskCreationOptions.RunContinuationsAsynchronously);
             this.exceptionHandler = exceptionHandler;
+            this.diagTracer = diagTracer;
         }
 
         public Task Task => this.completeSource.Task;
 
-        public bool IsFinished => this.isFinished;
+        public bool IsCompleted => this.completeSource.Task.IsCompleted;
+
+        public DiagTaskTracer DiagTracer => this.diagTracer;
 
         public bool TryCancel()
         {
-            this.isFinished = true;
-            return this.completeSource.TrySetCanceled();
+            if (this.completeSource.TrySetCanceled())
+            {
+                this.diagTracer?.LogCanceled();
+                return true;
+            }
+
+            return false;
         }
     }
 
@@ -75,59 +80,64 @@ namespace ComponentTask.Internal
             Debug.Assert(state is TaskHandle<T>, "State does not contain TaskHandle<T>");
             var handle = (TaskHandle<T>)state;
 
-            handle.isFinished = true;
             if (task.IsFaulted)
             {
-                try
+                if (handle.completeSource.TrySetException(task.Exception))
                 {
                     handle.exceptionHandler.HandleAll(task.Exception);
-                }
-                finally
-                {
-                    handle.completeSource.TrySetException(task.Exception);
+                    handle.diagTracer?.LogCompletedAsFaulted(task.Exception);
                 }
             }
             else
             if (task.IsCanceled)
             {
-                try
+                if (handle.completeSource.TrySetCanceled())
                 {
                     // Log a exception to avoid silent failures.
                     handle.exceptionHandler.Handle(new ComponentTaskCanceledException());
-                }
-                finally
-                {
-                    handle.completeSource.TrySetCanceled();
+                    handle.diagTracer?.LogCompletedAsCanceled();
                 }
             }
             else
             if (task.IsCompleted)
-                handle.completeSource.TrySetResult(task.Result);
+            {
+                if (handle.completeSource.TrySetResult(task.Result))
+                {
+                    handle.diagTracer.LogCompletedAsSuccess(task.Result);
+                }
+            }
             else
                 Debug.Fail("Invalid state");
         };
 
         private readonly TaskCompletionSource<T> completeSource;
         private readonly IExceptionHandler exceptionHandler;
+        private readonly DiagTaskTracer diagTracer;
 
-        private volatile bool isFinished;
-
-        public TaskHandle(IExceptionHandler exceptionHandler)
+        public TaskHandle(IExceptionHandler exceptionHandler, DiagTaskTracer diagTracer)
         {
             Debug.Assert(exceptionHandler != null, "No exception handler provided");
 
             this.completeSource = new TaskCompletionSource<T>(TaskCreationOptions.RunContinuationsAsynchronously);
             this.exceptionHandler = exceptionHandler;
+            this.diagTracer = diagTracer;
         }
 
         public Task<T> Task => this.completeSource.Task;
 
-        public bool IsFinished => this.isFinished;
+        public DiagTaskTracer DiagTracer => this.diagTracer;
+
+        public bool IsCompleted => this.completeSource.Task.IsCompleted;
 
         public bool TryCancel()
         {
-            this.isFinished = true;
-            return this.completeSource.TrySetCanceled();
+            if (this.completeSource.TrySetCanceled())
+            {
+                this.diagTracer?.LogCanceled();
+                return true;
+            }
+
+            return false;
         }
     }
 }

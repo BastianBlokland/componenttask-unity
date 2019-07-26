@@ -2,7 +2,9 @@ namespace ComponentTask.Internal
 {
     internal interface ITaskHandle
     {
-        bool IsFinished { get; }
+        bool IsCompleted { get; }
+
+        DiagTaskTracer DiagTracer { get; }
 
         bool TryCancel();
     }

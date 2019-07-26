@@ -47,7 +47,14 @@ namespace ComponentTask
         }
 
         /// <inheritdoc/>
-        public Task StartTask(Func<Task> taskCreator)
+        public Task StartTask(Func<Task> taskCreator) =>
+            this.StartTask(taskCreator, logger: null);
+
+        /// <inheritdoc cref="ITaskRunner.StartTask(Func{Task})"/>
+        /// <param name="logger">Optional logger to output diagnostic messages to.</param>
+        public Task StartTask(
+            Func<Task> taskCreator,
+            IDiagnosticLogger logger)
         {
             if (taskCreator is null)
                 throw new ArgumentNullException(nameof(taskCreator));
@@ -57,12 +64,21 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                return this.WrapTask(taskCreator.Invoke());
+                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                diagTracer?.LogInvoked();
+                return this.WrapTask(taskCreator.Invoke(), diagTracer);
             }
         }
 
         /// <inheritdoc/>
-        public Task StartTask(Func<CancellationToken, Task> taskCreator)
+        public Task StartTask(Func<CancellationToken, Task> taskCreator) =>
+            this.StartTask(taskCreator, logger: null);
+
+        /// <inheritdoc cref="ITaskRunner.StartTask(Func{CancellationToken, Task})"/>
+        /// <param name="logger">Optional logger to output diagnostic messages to.</param>
+        public Task StartTask(
+            Func<CancellationToken, Task> taskCreator,
+            IDiagnosticLogger logger)
         {
             if (taskCreator is null)
                 throw new ArgumentNullException(nameof(taskCreator));
@@ -72,12 +88,22 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                return this.WrapTask(taskCreator.Invoke(this.cancelSource.Token));
+                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                diagTracer?.LogInvoked();
+                return this.WrapTask(taskCreator.Invoke(this.cancelSource.Token), diagTracer);
             }
         }
 
         /// <inheritdoc/>
-        public Task StartTask<TIn>(Func<TIn, Task> taskCreator, TIn data)
+        public Task StartTask<TIn>(Func<TIn, Task> taskCreator, TIn data) =>
+            this.StartTask(taskCreator, data, logger: null);
+
+        /// <inheritdoc cref="ITaskRunner.StartTask{TIn}(Func{TIn, Task}, TIn)"/>
+        /// <param name="logger">Optional logger to output diagnostic messages to.</param>
+        public Task StartTask<TIn>(
+            Func<TIn, Task> taskCreator,
+            TIn data,
+            IDiagnosticLogger logger)
         {
             if (taskCreator is null)
                 throw new ArgumentNullException(nameof(taskCreator));
@@ -87,12 +113,22 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                return this.WrapTask(taskCreator.Invoke(data));
+                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                diagTracer?.LogInvoked(data);
+                return this.WrapTask(taskCreator.Invoke(data), diagTracer);
             }
         }
 
         /// <inheritdoc/>
-        public Task StartTask<TIn>(Func<TIn, CancellationToken, Task> taskCreator, TIn data)
+        public Task StartTask<TIn>(Func<TIn, CancellationToken, Task> taskCreator, TIn data) =>
+            this.StartTask(taskCreator, data, logger: null);
+
+        /// <inheritdoc cref="ITaskRunner.StartTask{TIn}(Func{TIn, CancellationToken, Task}, TIn)"/>
+        /// <param name="logger">Optional logger to output diagnostic messages to.</param>
+        public Task StartTask<TIn>(
+            Func<TIn, CancellationToken, Task> taskCreator,
+            TIn data,
+            IDiagnosticLogger logger)
         {
             if (taskCreator is null)
                 throw new ArgumentNullException(nameof(taskCreator));
@@ -102,12 +138,21 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                return this.WrapTask(taskCreator.Invoke(data, this.cancelSource.Token));
+                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                diagTracer?.LogInvoked(data);
+                return this.WrapTask(taskCreator.Invoke(data, this.cancelSource.Token), diagTracer);
             }
         }
 
         /// <inheritdoc/>
-        public Task<TOut> StartTask<TOut>(Func<Task<TOut>> taskCreator)
+        public Task<TOut> StartTask<TOut>(Func<Task<TOut>> taskCreator) =>
+            this.StartTask(taskCreator, logger: null);
+
+        /// <inheritdoc cref="ITaskRunner.StartTask{TOut}(Func{Task{TOut}})"/>
+        /// <param name="logger">Optional logger to output diagnostic messages to.</param>
+        public Task<TOut> StartTask<TOut>(
+            Func<Task<TOut>> taskCreator,
+            IDiagnosticLogger logger)
         {
             if (taskCreator is null)
                 throw new ArgumentNullException(nameof(taskCreator));
@@ -117,12 +162,21 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                return this.WrapTask<TOut>(taskCreator.Invoke());
+                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                diagTracer?.LogInvoked();
+                return this.WrapTask<TOut>(taskCreator.Invoke(), diagTracer);
             }
         }
 
         /// <inheritdoc/>
-        public Task<TOut> StartTask<TOut>(Func<CancellationToken, Task<TOut>> taskCreator)
+        public Task<TOut> StartTask<TOut>(Func<CancellationToken, Task<TOut>> taskCreator) =>
+            this.StartTask(taskCreator, logger: null);
+
+        /// <inheritdoc cref="ITaskRunner.StartTask{TOut}(Func{CancellationToken, Task{TOut}})"/>
+        /// <param name="logger">Optional logger to output diagnostic messages to.</param>
+        public Task<TOut> StartTask<TOut>(
+            Func<CancellationToken, Task<TOut>> taskCreator,
+            IDiagnosticLogger logger)
         {
             if (taskCreator is null)
                 throw new ArgumentNullException(nameof(taskCreator));
@@ -132,12 +186,22 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                return this.WrapTask<TOut>(taskCreator.Invoke(this.cancelSource.Token));
+                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                diagTracer?.LogInvoked();
+                return this.WrapTask<TOut>(taskCreator.Invoke(this.cancelSource.Token), diagTracer);
             }
         }
 
         /// <inheritdoc/>
-        public Task<TOut> StartTask<TIn, TOut>(Func<TIn, Task<TOut>> taskCreator, TIn data)
+        public Task<TOut> StartTask<TIn, TOut>(Func<TIn, Task<TOut>> taskCreator, TIn data) =>
+            this.StartTask(taskCreator, data, logger: null);
+
+        /// <inheritdoc cref="ITaskRunner.StartTask{TIn, TOut}(Func{TIn, Task{TOut}}, TIn)"/>
+        /// <param name="logger">Optional logger to output diagnostic messages to.</param>
+        public Task<TOut> StartTask<TIn, TOut>(
+            Func<TIn, Task<TOut>> taskCreator,
+            TIn data,
+            IDiagnosticLogger logger)
         {
             if (taskCreator is null)
                 throw new ArgumentNullException(nameof(taskCreator));
@@ -147,12 +211,22 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                return this.WrapTask<TOut>(taskCreator.Invoke(data));
+                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                diagTracer?.LogInvoked(data);
+                return this.WrapTask<TOut>(taskCreator.Invoke(data), diagTracer);
             }
         }
 
         /// <inheritdoc/>
-        public Task<TOut> StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data)
+        public Task<TOut> StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data) =>
+            this.StartTask(taskCreator, data, logger: null);
+
+        /// <inheritdoc cref="ITaskRunner.StartTask{TIn, TOut}(Func{TIn, CancellationToken, Task{TOut}}, TIn)"/>
+        /// <param name="logger">Optional logger to output diagnostic messages to.</param>
+        public Task<TOut> StartTask<TIn, TOut>(
+            Func<TIn, CancellationToken, Task<TOut>> taskCreator,
+            TIn data,
+            IDiagnosticLogger logger)
         {
             if (taskCreator is null)
                 throw new ArgumentNullException(nameof(taskCreator));
@@ -162,7 +236,9 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                return this.WrapTask<TOut>(taskCreator.Invoke(data, this.cancelSource.Token));
+                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                diagTracer?.LogInvoked(data);
+                return this.WrapTask<TOut>(taskCreator.Invoke(data, this.cancelSource.Token), diagTracer);
             }
         }
 
@@ -189,7 +265,7 @@ namespace ComponentTask
                 {
                     for (int i = this.runningTasks.Count - 1; i >= 0; i--)
                     {
-                        if (this.runningTasks[i].IsFinished)
+                        if (this.runningTasks[i].IsCompleted)
                             this.runningTasks.RemoveAt(i);
                     }
                 }
@@ -211,7 +287,17 @@ namespace ComponentTask
             }
         }
 
-        private Task WrapTask(Task task)
+        /// <summary>
+        /// Invoke given action on each running task.
+        /// </summary>
+        /// <summary>
+        /// Note: Internal as it exposes allot of implementation details.
+        /// </summary>
+        /// <param name="action">Action to invoke on each running task.</param>
+        internal void ForAllRunningTasks(Action<ITaskHandle> action) =>
+            this.runningTasks.LockedInvoke(this.runningTasksLock, action);
+
+        private Task WrapTask(Task task, DiagTaskTracer diagTracer)
         {
             if (task is null)
                 throw new TaskCreatorReturnedNullException();
@@ -219,12 +305,15 @@ namespace ComponentTask
             // Handle exceptions that are thrown in the synchronous part.
             if (task.IsFaulted)
             {
+                diagTracer?.LogCompletedSynchronouslyAsFaulted(task.Exception);
                 this.exceptionHandler.HandleAll(task.Exception);
                 return task;
             }
 
             if (task.IsCanceled)
             {
+                diagTracer?.LogCompletedSynchronouslyAsCanceled();
+
                 // Log a exception to avoid silent failures.
                 this.exceptionHandler.Handle(new ComponentTaskCanceledException());
                 return task;
@@ -232,17 +321,23 @@ namespace ComponentTask
 
             // Fast path if the task completes synchronously.
             if (task.IsCompleted)
+            {
+                diagTracer?.LogCompletedSynchronouslyAsSuccess(default);
+
                 return task;
+            }
+
+            diagTracer?.LogStartRunning();
 
             // Create handle and complete it when the given task completes.
-            var handle = new TaskHandle(this.exceptionHandler);
+            var handle = new TaskHandle(this.exceptionHandler, diagTracer);
             task.ContinueWith(TaskHandle.UpdateFromTask, handle, TaskContinuationOptions.ExecuteSynchronously);
 
             this.RegisterTaskHandle(handle);
             return handle.Task;
         }
 
-        private Task<T> WrapTask<T>(Task<T> task)
+        private Task<T> WrapTask<T>(Task<T> task, DiagTaskTracer diagTracer)
         {
             if (task is null)
                 throw new TaskCreatorReturnedNullException();
@@ -250,6 +345,7 @@ namespace ComponentTask
             // Handle exceptions that are thrown in the synchronous part.
             if (task.IsFaulted)
             {
+                diagTracer?.LogCompletedSynchronouslyAsFaulted(task.Exception);
                 this.exceptionHandler.HandleAll(task.Exception);
                 return task;
             }
@@ -257,6 +353,8 @@ namespace ComponentTask
             // Log a 'OperationCanceledException' to avoid silent failures.
             if (task.IsCanceled)
             {
+                diagTracer?.LogCompletedSynchronouslyAsCanceled();
+
                 // Log a exception to avoid silent failures.
                 this.exceptionHandler.Handle(new ComponentTaskCanceledException());
                 return task;
@@ -264,10 +362,15 @@ namespace ComponentTask
 
             // Fast path if the task completes synchronously.
             if (task.IsCompleted)
+            {
+                diagTracer?.LogCompletedSynchronouslyAsSuccess(task.Result);
                 return task;
+            }
+
+            diagTracer?.LogStartRunning();
 
             // Create handle and complete it when the given task completes.
-            var handle = new TaskHandle<T>(this.exceptionHandler);
+            var handle = new TaskHandle<T>(this.exceptionHandler, diagTracer);
             task.ContinueWith(TaskHandle<T>.UpdateFromTask, handle, TaskContinuationOptions.ExecuteSynchronously);
 
             this.RegisterTaskHandle(handle);

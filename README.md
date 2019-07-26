@@ -256,6 +256,13 @@ class MyClass : MonoBehaviour
 Even though `VeryExpensiveBlockingCode` blocks for 5 seconds because we run it on a background-thread
 (with [Task.Run](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.run)) the unity-thread stays responsive.
 
+## Debugging
+To help in debugging you can give the `TaskRunOptions.DiagnosticLogging` flag when starting a task
+to enable log output for that task.
+
+Alternatively if you want to enable logging for all tasks you can set it globally:
+`ComponentTask.Config.GlobalDiagnosticsActive`.
+
 ## Apis
 So far we've been starting tasks using extension methods on `UnityEngine.Component`:
 ```c#
