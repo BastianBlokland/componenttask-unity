@@ -397,7 +397,7 @@ namespace ComponentTask.Tests.PlayMode
         }
 
         [UnityTest]
-        public IEnumerator DestroyedComponentThrowsMissingReferenceException()
+        public IEnumerator CreatingRunnerOnDestroyedComponentThrows()
         {
             var go = new GameObject("TestGameObject");
             var comp = go.AddComponent<MockComponent>();
@@ -406,8 +406,86 @@ namespace ComponentTask.Tests.PlayMode
             Assert.Throws<MissingReferenceException>(() => ComponentExtensions.GetTaskRunner(comp));
             Assert.Throws<MissingReferenceException>(() => ComponentExtensions.StartTask(comp, () => Task.CompletedTask));
 
+            // Cleanup.
             yield return null;
             Object.Destroy(go);
+        }
+
+        [UnityTest]
+        public IEnumerator StartingTaskOnDestroyedRunnerThrows()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+            var runner = comp.GetTaskRunner();
+
+            // Destroy the component.
+            Object.DestroyImmediate(comp);
+
+            // Give the runner one frame to respond.
+            yield return null;
+
+            Assert.Throws<MissingReferenceException>(() => runner.StartTask(() => Task.CompletedTask));
+
+            // Cleanup.
+            Object.Destroy(go);
+        }
+
+        [UnityTest]
+        public IEnumerator StartingTaskOnDisabledGameObjectThrows()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+
+            // Disable the gameobject.
+            go.SetActive(false);
+
+            Assert.Throws<InactiveGameObjectException>(() => ComponentExtensions.StartTask(comp, () => Task.CompletedTask));
+
+            // Cleanup.
+            yield return null;
+            Object.Destroy(go);
+        }
+
+        [UnityTest]
+        public IEnumerator StartingTaskOnDisabledComponentThrows()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+
+            // Disable the component.
+            comp.enabled = false;
+
+            Assert.Throws<InactiveComponentException>(() => ComponentExtensions.StartTask(comp, () => Task.CompletedTask));
+
+            // Cleanup.
+            yield return null;
+            Object.Destroy(go);
+        }
+
+        [UnityTest]
+        public IEnumerator TaskCanBeStartedOnDisabledComponentWithUpdateWhileDisabled()
+        {
+            var count = 0;
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+
+            // Disable the component.
+            comp.enabled = false;
+
+            // Start task.
+            comp.StartTask(RunAsync, TaskRunOptions.UpdateWhileComponentDisabled);
+
+            yield return null;
+            Assert.AreEqual(1, count);
+
+            // Cleanup.
+            Object.Destroy(go);
+
+            async Task RunAsync()
+            {
+                await Task.Yield();
+                count++;
+            }
         }
     }
 }

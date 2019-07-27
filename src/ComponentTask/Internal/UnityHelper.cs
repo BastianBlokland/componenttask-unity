@@ -1,4 +1,5 @@
 using System;
+using System.Diagnostics;
 using System.Threading;
 using ComponentTask.Exceptions;
 
@@ -32,17 +33,23 @@ namespace ComponentTask.Internal
 
         public static void ThrowForInvalidObjectParam(UnityEngine.Object reference, string paramName)
         {
-            /* This follows the unity standard where 'null' throws a null-ref and the unity-side 
-            being destroyed throws a 'UnityEngine.MissingReferenceException'. 
-            
-            Unity has another behaviour when you define an inspector param but don't assign 
+            /* This follows the unity standard where 'null' throws a null-ref and the unity-side
+            being destroyed throws a 'UnityEngine.MissingReferenceException'.
+
+            Unity has another behaviour when you define an inspector param but don't assign
             it and then access it: that throws a 'UnityEngine.UnassignedReferenceException', but
             i don't know how to implement that without access to the serialization internals. */
 
             if (reference is null)
                 throw new ArgumentNullException(paramName);
             if (!reference)
-                throw new UnityEngine.MissingReferenceException($"The object of type '{reference.GetType().Name}' has been destroyed but you are still trying to access it.");
+                ThrowMissingReference(reference);
+        }
+
+        public static void ThrowMissingReference(UnityEngine.Object reference)
+        {
+            Debug.Assert(!object.ReferenceEquals(reference, null), "Reference is null");
+            throw new UnityEngine.MissingReferenceException($"The object of type '{reference.GetType().Name}' has been destroyed but you are still trying to access it.");
         }
 
         public static void LogException(Exception exception, UnityEngine.Object context)
