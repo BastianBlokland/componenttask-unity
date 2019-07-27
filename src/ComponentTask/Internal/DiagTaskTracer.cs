@@ -76,7 +76,7 @@ namespace ComponentTask.Internal
                 for (int i = 0; i < exceptions.Count; i++)
                 {
                     if (i != 0)
-                        msgBuilder.Append("\n");
+                        msgBuilder.Append(", ");
                     msgBuilder.Append(exceptions[i].Message);
                 }
 
