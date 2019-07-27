@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Diagnostics;
+using System.Text;
 
 namespace ComponentTask.Internal
 {
@@ -30,7 +31,7 @@ namespace ComponentTask.Internal
             this.logger.Log($"{identifier} -> Completed synchronously: Success (result: '{result?.ToString() ?? "none"}').");
 
         public void LogCompletedSynchronouslyAsFaulted(Exception exception) =>
-            this.logger.Log($"{identifier} -> Completed synchronously: Faulted (exception: '{exception?.Message ?? "none"}').");
+            this.logger.Log($"{identifier} -> Completed synchronously: Faulted (exception: '{GetExceptionMessage(exception) ?? "none"}').");
 
         public void LogCompletedSynchronouslyAsCanceled() =>
             this.logger.Log($"{identifier} -> Completed synchronously: Canceled.");
@@ -42,7 +43,7 @@ namespace ComponentTask.Internal
             this.logger.Log($"{identifier} -> Completed: Success (result: '{result?.ToString() ?? "none"}').");
 
         public void LogCompletedAsFaulted(Exception exception) =>
-            this.logger.Log($"{identifier} -> Completed: Faulted (exception: '{exception?.Message ?? "none"}').");
+            this.logger.Log($"{identifier} -> Completed: Faulted (exception: '{GetExceptionMessage(exception) ?? "none"}').");
 
         public void LogCompletedAsCanceled() =>
             this.logger.Log($"{identifier} -> Completed: Canceled.");
@@ -58,6 +59,31 @@ namespace ComponentTask.Internal
                 throw new ArgumentNullException(nameof(taskCreator));
 
             return new DiagTaskTracer(logger, taskCreator.GetDiagIdentifier());
+        }
+
+        private static string GetExceptionMessage(Exception exception)
+        {
+            if (exception is null)
+                return null;
+
+            if (exception is AggregateException aggregateException)
+            {
+                var exceptions = aggregateException.Flatten().InnerExceptions;
+                if (exceptions.Count == 1)
+                    return exceptions[0].Message;
+
+                var msgBuilder = new StringBuilder();
+                for (int i = 0; i < exceptions.Count; i++)
+                {
+                    if (i != 0)
+                        msgBuilder.Append("\n");
+                    msgBuilder.Append(exceptions[i].Message);
+                }
+
+                return msgBuilder.ToString();
+            }
+            else
+                return exception.Message;
         }
     }
 }
