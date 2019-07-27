@@ -1,6 +1,7 @@
 using System;
 using System.Threading;
 using System.Threading.Tasks;
+using ComponentTask.Exceptions;
 using UnityEngine;
 
 namespace ComponentTask.Internal
@@ -93,6 +94,10 @@ namespace ComponentTask.Internal
             // Verify that this runner has not been destroyed.
             if (!this)
                 throw new UnityEngine.MissingReferenceException("Task runner has been destroyed but you are still trying to access it.");
+
+            // Verify that our gameobject is active.
+            if (!this.gameObject.activeInHierarchy)
+                throw new InactiveGameObjectException("Unable to start a task: GameObject is inactive.");
         }
 
         // Dynamically called from the Unity runtime.

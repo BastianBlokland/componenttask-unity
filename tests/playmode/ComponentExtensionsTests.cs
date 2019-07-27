@@ -429,5 +429,21 @@ namespace ComponentTask.Tests.PlayMode
             // Cleanup.
             Object.Destroy(go);
         }
+
+        [UnityTest]
+        public IEnumerator StartingTaskOnDisabledGameObjectThrows()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+
+            // Disable the gameobject.
+            go.SetActive(false);
+
+            Assert.Throws<InactiveGameObjectException>(() => ComponentExtensions.StartTask(comp, () => Task.CompletedTask));
+
+            // Cleanup.
+            yield return null;
+            Object.Destroy(go);
+        }
     }
 }
