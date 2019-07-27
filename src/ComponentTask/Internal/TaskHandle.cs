@@ -123,7 +123,9 @@ namespace ComponentTask.Internal
             this.diagTracer = diagTracer;
         }
 
-        public Task<T> Task => this.completeSource.Task;
+        public Task Task => this.completeSource.Task;
+
+        public Task<T> TaskWithReturn => this.completeSource.Task;
 
         public DiagTaskTracer DiagTracer => this.diagTracer;
 

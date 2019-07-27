@@ -374,7 +374,7 @@ namespace ComponentTask
             task.ContinueWith(TaskHandle<T>.UpdateFromTask, handle, TaskContinuationOptions.ExecuteSynchronously);
 
             this.RegisterTaskHandle(handle);
-            return handle.Task;
+            return handle.TaskWithReturn;
         }
 
         private void RegisterTaskHandle(ITaskHandle handle)
