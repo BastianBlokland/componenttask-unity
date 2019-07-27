@@ -64,7 +64,7 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                var diagTracer = logger is null ? null : DiagTaskTracer.Create(logger, taskCreator);
                 diagTracer?.LogInvoked();
                 return this.WrapTask(taskCreator.Invoke(), diagTracer);
             }
@@ -88,7 +88,7 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                var diagTracer = logger is null ? null : DiagTaskTracer.Create(logger, taskCreator);
                 diagTracer?.LogInvoked();
                 return this.WrapTask(taskCreator.Invoke(this.cancelSource.Token), diagTracer);
             }
@@ -113,7 +113,7 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                var diagTracer = logger is null ? null : DiagTaskTracer.Create(logger, taskCreator);
                 diagTracer?.LogInvoked(data);
                 return this.WrapTask(taskCreator.Invoke(data), diagTracer);
             }
@@ -138,7 +138,7 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                var diagTracer = logger is null ? null : DiagTaskTracer.Create(logger, taskCreator);
                 diagTracer?.LogInvoked(data);
                 return this.WrapTask(taskCreator.Invoke(data, this.cancelSource.Token), diagTracer);
             }
@@ -162,7 +162,7 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                var diagTracer = logger is null ? null : DiagTaskTracer.Create(logger, taskCreator);
                 diagTracer?.LogInvoked();
                 return this.WrapTask<TOut>(taskCreator.Invoke(), diagTracer);
             }
@@ -186,7 +186,7 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                var diagTracer = logger is null ? null : DiagTaskTracer.Create(logger, taskCreator);
                 diagTracer?.LogInvoked();
                 return this.WrapTask<TOut>(taskCreator.Invoke(this.cancelSource.Token), diagTracer);
             }
@@ -211,7 +211,7 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                var diagTracer = logger is null ? null : DiagTaskTracer.Create(logger, taskCreator);
                 diagTracer?.LogInvoked(data);
                 return this.WrapTask<TOut>(taskCreator.Invoke(data), diagTracer);
             }
@@ -236,7 +236,7 @@ namespace ComponentTask
             // Activate our context and wrap the task.
             using (var contextScope = ContextScope.WithContext(this.context))
             {
-                var diagTracer = logger == null ? null : DiagTaskTracer.Create(logger, taskCreator);
+                var diagTracer = logger is null ? null : DiagTaskTracer.Create(logger, taskCreator);
                 diagTracer?.LogInvoked(data);
                 return this.WrapTask<TOut>(taskCreator.Invoke(data, this.cancelSource.Token), diagTracer);
             }
@@ -379,7 +379,7 @@ namespace ComponentTask
 
         private void RegisterTaskHandle(ITaskHandle handle)
         {
-            Debug.Assert(handle != null, "Null task-handle provided");
+            Debug.Assert(!(handle is null), "Null task-handle provided");
             lock (this.runningTasksLock)
             {
                 this.runningTasks.Add(handle);

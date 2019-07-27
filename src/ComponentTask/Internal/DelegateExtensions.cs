@@ -25,7 +25,7 @@ namespace ComponentTask.Internal
             }
             catch (MemberAccessException)
             {
-                if (@delegate.Target != null)
+                if (!(@delegate.Target is null))
                     return $"{@delegate.Target.GetType().Name}.<private>";
                 return "<private>";
             }

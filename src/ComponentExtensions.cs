@@ -486,7 +486,7 @@ namespace UnityEngine
             foreach (var runner in monoBehaviourRunners)
             {
                 // If there is a runner for that component then return that.
-                if (runner.RunOptions == options && runner.ComponentToFollow == component)
+                if (runner.RunOptions == options && object.ReferenceEquals(runner.ComponentToFollow, component))
                     return runner;
             }
 

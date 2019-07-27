@@ -18,7 +18,7 @@ namespace ComponentTask.Internal
         public void Dispose()
         {
             // Sanity check that the static build method was used instead of the default constructor.
-            if (this.currentContext == null)
+            if (this.currentContext is null)
                 return;
 
             /* Verify that the scope is still (or again) the context we are expecting. This could

@@ -48,7 +48,7 @@ namespace ComponentTask.Internal
 
         public TaskHandle(IExceptionHandler exceptionHandler, DiagTaskTracer diagTracer)
         {
-            Debug.Assert(exceptionHandler != null, "No exception handler provided");
+            Debug.Assert(!(exceptionHandler is null), "No exception handler provided");
 
             this.completeSource = new TaskCompletionSource<object>(TaskCreationOptions.RunContinuationsAsynchronously);
             this.exceptionHandler = exceptionHandler;
@@ -116,7 +116,7 @@ namespace ComponentTask.Internal
 
         public TaskHandle(IExceptionHandler exceptionHandler, DiagTaskTracer diagTracer)
         {
-            Debug.Assert(exceptionHandler != null, "No exception handler provided");
+            Debug.Assert(!(exceptionHandler is null), "No exception handler provided");
 
             this.completeSource = new TaskCompletionSource<T>(TaskCreationOptions.RunContinuationsAsynchronously);
             this.exceptionHandler = exceptionHandler;
