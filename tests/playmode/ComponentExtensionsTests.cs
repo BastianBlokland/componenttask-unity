@@ -445,5 +445,47 @@ namespace ComponentTask.Tests.PlayMode
             yield return null;
             Object.Destroy(go);
         }
+
+        [UnityTest]
+        public IEnumerator StartingTaskOnDisabledComponentThrows()
+        {
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+
+            // Disable the component.
+            comp.enabled = false;
+
+            Assert.Throws<InactiveComponentException>(() => ComponentExtensions.StartTask(comp, () => Task.CompletedTask));
+
+            // Cleanup.
+            yield return null;
+            Object.Destroy(go);
+        }
+
+        [UnityTest]
+        public IEnumerator TaskCanBeStartedOnDisabledComponentWithUpdateWhileDisabled()
+        {
+            var count = 0;
+            var go = new GameObject("TestGameObject");
+            var comp = go.AddComponent<MockComponent>();
+
+            // Disable the component.
+            comp.enabled = false;
+
+            // Start task.
+            comp.StartTask(RunAsync, TaskRunOptions.UpdateWhileComponentDisabled);
+
+            yield return null;
+            Assert.AreEqual(1, count);
+
+            // Cleanup.
+            Object.Destroy(go);
+
+            async Task RunAsync()
+            {
+                await Task.Yield();
+                count++;
+            }
+        }
     }
 }

@@ -25,6 +25,9 @@ namespace ComponentTask.Internal
         private bool DiagnosticLogging =>
             (this.RunOptions & TaskRunOptions.DiagnosticLogging) == TaskRunOptions.DiagnosticLogging;
 
+        private bool UpdateWhileComponentDisabled =>
+            (this.RunOptions & TaskRunOptions.UpdateWhileComponentDisabled) == TaskRunOptions.UpdateWhileComponentDisabled;
+
         public Task StartTask(Func<Task> taskCreator)
         {
             this.ThrowForInvalidState();
@@ -97,7 +100,14 @@ namespace ComponentTask.Internal
 
             // Verify that our gameobject is active.
             if (!this.gameObject.activeInHierarchy)
-                throw new InactiveGameObjectException("Unable to start a task: GameObject is inactive.");
+                throw new InactiveGameObjectException($"Unable to start task: GameObject '{this.gameObject.name}' is inactive.");
+
+            // If we are following a component then verify that the component is not inactive.
+            if (ComponentToFollow is UnityEngine.Behaviour behaviour)
+            {
+                if (!this.UpdateWhileComponentDisabled && !behaviour.isActiveAndEnabled)
+                    throw new InactiveComponentException($"Unable to start task: Component '{behaviour.name}' is inactive.");
+            }
         }
 
         // Dynamically called from the Unity runtime.
@@ -132,9 +142,7 @@ namespace ComponentTask.Internal
                     // If the component is a 'Behaviour' then we update when its enabled.
                     if (ComponentToFollow is UnityEngine.Behaviour behaviour)
                     {
-                        var updateWhileDisabled =
-                            (this.RunOptions & TaskRunOptions.UpdateWhileComponentDisabled) == TaskRunOptions.UpdateWhileComponentDisabled;
-                        if (updateWhileDisabled || behaviour.isActiveAndEnabled)
+                        if (this.UpdateWhileComponentDisabled || behaviour.isActiveAndEnabled)
                         {
                             this.Execute();
                         }
