@@ -36,6 +36,13 @@ namespace UnityEngine
         /// Thrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting
         /// a component that gets destroyed.
         /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveGameObjectException">
+        /// Thrown when attempting to start a task on a disabled gameobject.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveComponentException">
+        /// Thrown when attempting to start a task on a disabled component.
+        /// Does not happen when giving <see cref="TaskRunOptions.UpdateWhileComponentDisabled"/> flag.
+        /// </exception>
         /// <param name="component">Component to run the task 'on'.</param>
         /// <param name="taskCreator">Function for creating the task.</param>
         /// <param name="options">Options for configuring how the task is run.</param>
@@ -83,6 +90,13 @@ namespace UnityEngine
         /// Thrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting
         /// a component that gets destroyed.
         /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveGameObjectException">
+        /// Thrown when attempting to start a task on a disabled gameobject.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveComponentException">
+        /// Thrown when attempting to start a task on a disabled component.
+        /// Does not happen when giving <see cref="TaskRunOptions.UpdateWhileComponentDisabled"/> flag.
+        /// </exception>
         /// <param name="component">Component to run the task 'on'.</param>
         /// <param name="taskCreator">Function for creating the task.</param>
         /// <param name="options">Options for configuring how the task is run.</param>
@@ -127,6 +141,13 @@ namespace UnityEngine
         /// <exception cref="ComponentTask.Exceptions.ComponentTaskCanceledException">
         /// Thrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting
         /// a component that gets destroyed.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveGameObjectException">
+        /// Thrown when attempting to start a task on a disabled gameobject.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveComponentException">
+        /// Thrown when attempting to start a task on a disabled component.
+        /// Does not happen when giving <see cref="TaskRunOptions.UpdateWhileComponentDisabled"/> flag.
         /// </exception>
         /// <param name="component">Component to run the task 'on'.</param>
         /// <param name="taskCreator">Function for creating the task.</param>
@@ -176,6 +197,13 @@ namespace UnityEngine
         /// Thrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting
         /// a component that gets destroyed.
         /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveGameObjectException">
+        /// Thrown when attempting to start a task on a disabled gameobject.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveComponentException">
+        /// Thrown when attempting to start a task on a disabled component.
+        /// Does not happen when giving <see cref="TaskRunOptions.UpdateWhileComponentDisabled"/> flag.
+        /// </exception>
         /// <param name="component">Component to run the task 'on'.</param>
         /// <param name="taskCreator">Function for creating the task.</param>
         /// <param name="options">Options for configuring how the task is run.</param>
@@ -221,6 +249,13 @@ namespace UnityEngine
         /// <exception cref="ComponentTask.Exceptions.ComponentTaskCanceledException">
         /// Thrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting
         /// a component that gets destroyed.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveGameObjectException">
+        /// Thrown when attempting to start a task on a disabled gameobject.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveComponentException">
+        /// Thrown when attempting to start a task on a disabled component.
+        /// Does not happen when giving <see cref="TaskRunOptions.UpdateWhileComponentDisabled"/> flag.
         /// </exception>
         /// <param name="component">Component to run the task 'on'.</param>
         /// <param name="taskCreator">Function for creating the task.</param>
@@ -269,6 +304,13 @@ namespace UnityEngine
         /// Thrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting
         /// a component that gets destroyed.
         /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveGameObjectException">
+        /// Thrown when attempting to start a task on a disabled gameobject.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveComponentException">
+        /// Thrown when attempting to start a task on a disabled component.
+        /// Does not happen when giving <see cref="TaskRunOptions.UpdateWhileComponentDisabled"/> flag.
+        /// </exception>
         /// <param name="component">Component to run the task 'on'.</param>
         /// <param name="taskCreator">Function for creating the task.</param>
         /// <param name="options">Options for configuring how the task is run.</param>
@@ -313,6 +355,13 @@ namespace UnityEngine
         /// <exception cref="ComponentTask.Exceptions.ComponentTaskCanceledException">
         /// Thrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting
         /// a component that gets destroyed.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveGameObjectException">
+        /// Thrown when attempting to start a task on a disabled gameobject.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveComponentException">
+        /// Thrown when attempting to start a task on a disabled component.
+        /// Does not happen when giving <see cref="TaskRunOptions.UpdateWhileComponentDisabled"/> flag.
         /// </exception>
         /// <param name="component">Component to run the task 'on'.</param>
         /// <param name="taskCreator">Function for creating the task.</param>
@@ -361,6 +410,13 @@ namespace UnityEngine
         /// <exception cref="ComponentTask.Exceptions.ComponentTaskCanceledException">
         /// Thrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting
         /// a component that gets destroyed.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveGameObjectException">
+        /// Thrown when attempting to start a task on a disabled gameobject.
+        /// </exception>
+        /// <exception cref="ComponentTask.Exceptions.InactiveComponentException">
+        /// Thrown when attempting to start a task on a disabled component.
+        /// Does not happen when giving <see cref="TaskRunOptions.UpdateWhileComponentDisabled"/> flag.
         /// </exception>
         /// <param name="component">Component to run the task 'on'.</param>
         /// <param name="taskCreator">Function for creating the task.</param>
