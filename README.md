@@ -21,7 +21,7 @@ similar behaviour as Unity's `Coroutines`.
 Add a reference to this repository to your package dependencies (`Packages/manifest.json`)
 ```
 "dependencies": {
-    "com.bastianblokland.componenttask": "https://github.com/BastianBlokland/componenttask-unity.git#v1.5",
+    "com.bastianblokland.componenttask": "https://github.com/BastianBlokland/componenttask-unity.git#v1.6",
     ...
 }
 ```
