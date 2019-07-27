@@ -105,7 +105,7 @@ namespace ComponentTask.Internal
             // If we are following a component then verify that the component is not inactive.
             if (ComponentToFollow is UnityEngine.Behaviour behaviour)
             {
-                if (!this.UpdateWhileComponentDisabled && !behaviour.isActiveAndEnabled)
+                if (!this.UpdateWhileComponentDisabled && !behaviour.enabled)
                     throw new InactiveComponentException($"Unable to start task: Component '{behaviour.GetType().Name}' is inactive.");
             }
         }
@@ -142,7 +142,7 @@ namespace ComponentTask.Internal
                     // If the component is a 'Behaviour' then we update when its enabled.
                     if (ComponentToFollow is UnityEngine.Behaviour behaviour)
                     {
-                        if (this.UpdateWhileComponentDisabled || behaviour.isActiveAndEnabled)
+                        if (this.UpdateWhileComponentDisabled || behaviour.enabled)
                         {
                             this.Execute();
                         }
