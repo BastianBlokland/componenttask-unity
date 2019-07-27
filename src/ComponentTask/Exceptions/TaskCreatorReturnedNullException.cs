@@ -8,7 +8,7 @@ namespace ComponentTask.Exceptions
     public sealed class TaskCreatorReturnedNullException : InvalidOperationException
     {
         internal TaskCreatorReturnedNullException()
-            : base($"Invalid operation: Null was returned from a task-creator function")
+            : base($"Invalid operation: Null was returned from a task-creator function.")
         {
         }
     }

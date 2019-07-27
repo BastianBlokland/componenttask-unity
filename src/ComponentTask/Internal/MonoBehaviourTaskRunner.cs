@@ -26,50 +26,73 @@ namespace ComponentTask.Internal
 
         public Task StartTask(Func<Task> taskCreator)
         {
+            this.ThrowForInvalidState();
+
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
             return this.taskRunner.StartTask(taskCreator, logger);
         }
 
         public Task StartTask(Func<CancellationToken, Task> taskCreator)
         {
+            this.ThrowForInvalidState();
+
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
             return this.taskRunner.StartTask(taskCreator, logger);
         }
 
         public Task StartTask<TIn>(Func<TIn, Task> taskCreator, TIn data)
         {
+            this.ThrowForInvalidState();
+
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
             return this.taskRunner.StartTask(taskCreator, data, logger);
         }
 
         public Task StartTask<TIn>(Func<TIn, CancellationToken, Task> taskCreator, TIn data)
         {
+            this.ThrowForInvalidState();
+
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
             return this.taskRunner.StartTask(taskCreator, data, logger);
         }
 
         public Task<TOut> StartTask<TOut>(Func<Task<TOut>> taskCreator)
         {
+            this.ThrowForInvalidState();
+
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
             return this.taskRunner.StartTask(taskCreator, logger);
         }
 
         public Task<TOut> StartTask<TOut>(Func<CancellationToken, Task<TOut>> taskCreator)
         {
+            this.ThrowForInvalidState();
+
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
             return this.taskRunner.StartTask(taskCreator, logger);
         }
 
         public Task<TOut> StartTask<TIn, TOut>(Func<TIn, Task<TOut>> taskCreator, TIn data)
         {
+            this.ThrowForInvalidState();
+
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
             return this.taskRunner.StartTask(taskCreator, data, logger);
         }
 
         public Task<TOut> StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data)
         {
+            this.ThrowForInvalidState();
+
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
             return this.taskRunner.StartTask(taskCreator, data, logger);
+        }
+
+        private void ThrowForInvalidState()
+        {
+            // Verify that this runner has not been destroyed.
+            if (!this)
+                throw new UnityEngine.MissingReferenceException("Task runner has been destroyed but you are still trying to access it.");
         }
 
         // Dynamically called from the Unity runtime.
