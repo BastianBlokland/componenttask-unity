@@ -33,7 +33,10 @@ namespace ComponentTask.Internal
             this.ThrowForInvalidState();
 
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
-            return this.taskRunner.StartTask(taskCreator, logger);
+            var result = this.taskRunner.StartTask(taskCreator, logger);
+            if (this.isPaused)
+                this.LogPause(result);
+            return result;
         }
 
         public Task StartTask(Func<CancellationToken, Task> taskCreator)
@@ -41,7 +44,10 @@ namespace ComponentTask.Internal
             this.ThrowForInvalidState();
 
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
-            return this.taskRunner.StartTask(taskCreator, logger);
+            var result = this.taskRunner.StartTask(taskCreator, logger);
+            if (this.isPaused)
+                this.LogPause(result);
+            return result;
         }
 
         public Task StartTask<TIn>(Func<TIn, Task> taskCreator, TIn data)
@@ -49,7 +55,10 @@ namespace ComponentTask.Internal
             this.ThrowForInvalidState();
 
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
-            return this.taskRunner.StartTask(taskCreator, data, logger);
+            var result = this.taskRunner.StartTask(taskCreator, data, logger);
+            if (this.isPaused)
+                this.LogPause(result);
+            return result;
         }
 
         public Task StartTask<TIn>(Func<TIn, CancellationToken, Task> taskCreator, TIn data)
@@ -57,7 +66,10 @@ namespace ComponentTask.Internal
             this.ThrowForInvalidState();
 
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
-            return this.taskRunner.StartTask(taskCreator, data, logger);
+            var result = this.taskRunner.StartTask(taskCreator, data, logger);
+            if (this.isPaused)
+                this.LogPause(result);
+            return result;
         }
 
         public Task<TOut> StartTask<TOut>(Func<Task<TOut>> taskCreator)
@@ -65,7 +77,10 @@ namespace ComponentTask.Internal
             this.ThrowForInvalidState();
 
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
-            return this.taskRunner.StartTask(taskCreator, logger);
+            var result = this.taskRunner.StartTask(taskCreator, logger);
+            if (this.isPaused)
+                this.LogPause(result);
+            return result;
         }
 
         public Task<TOut> StartTask<TOut>(Func<CancellationToken, Task<TOut>> taskCreator)
@@ -73,7 +88,10 @@ namespace ComponentTask.Internal
             this.ThrowForInvalidState();
 
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
-            return this.taskRunner.StartTask(taskCreator, logger);
+            var result = this.taskRunner.StartTask(taskCreator, logger);
+            if (this.isPaused)
+                this.LogPause(result);
+            return result;
         }
 
         public Task<TOut> StartTask<TIn, TOut>(Func<TIn, Task<TOut>> taskCreator, TIn data)
@@ -81,7 +99,10 @@ namespace ComponentTask.Internal
             this.ThrowForInvalidState();
 
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
-            return this.taskRunner.StartTask(taskCreator, data, logger);
+            var result = this.taskRunner.StartTask(taskCreator, data, logger);
+            if (this.isPaused)
+                this.LogPause(result);
+            return result;
         }
 
         public Task<TOut> StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data)
@@ -89,7 +110,10 @@ namespace ComponentTask.Internal
             this.ThrowForInvalidState();
 
             var logger = this.DiagnosticLogging ? this as IDiagnosticLogger : null;
-            return this.taskRunner.StartTask(taskCreator, data, logger);
+            var result = this.taskRunner.StartTask(taskCreator, data, logger);
+            if (this.isPaused)
+                this.LogPause(result);
+            return result;
         }
 
         private void ThrowForInvalidState()
@@ -184,6 +208,18 @@ namespace ComponentTask.Internal
         {
             if (this.DiagnosticLogging)
                 this.taskRunner.ForAllRunningTasks(t => t.DiagTracer.LogPaused());
+        }
+
+        private void LogPause(Task task)
+        {
+            if (this.DiagnosticLogging)
+                this.taskRunner.ForAllRunningTasks(PauseSpecificTask);
+
+            void PauseSpecificTask(ITaskHandle th)
+            {
+                if (object.ReferenceEquals(th.Task, task))
+                    th.DiagTracer.LogPaused();
+            }
         }
 
         private void LogResume()

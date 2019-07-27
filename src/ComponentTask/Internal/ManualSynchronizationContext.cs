@@ -40,7 +40,7 @@ namespace ComponentTask.Internal
             never end. */
 
             // Get a temporary list to gather items in (ThreadStatic so safe).
-            if (executeList == null)
+            if (executeList is null)
                 executeList = new List<(SendOrPostCallback, object)>();
             else
                 executeList.Clear();

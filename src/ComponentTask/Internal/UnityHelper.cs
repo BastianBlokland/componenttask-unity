@@ -48,7 +48,7 @@ namespace ComponentTask.Internal
 
         public static void ThrowMissingReference(UnityEngine.Object reference)
         {
-            Debug.Assert(!object.ReferenceEquals(reference, null), "Reference is null");
+            Debug.Assert(!(reference is null), "Reference is null");
             throw new UnityEngine.MissingReferenceException($"The object of type '{reference.GetType().Name}' has been destroyed but you are still trying to access it.");
         }
 

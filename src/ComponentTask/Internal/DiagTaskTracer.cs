@@ -11,7 +11,7 @@ namespace ComponentTask.Internal
         private DiagTaskTracer(IDiagnosticLogger logger, string identifier)
         {
             Debug.Assert(!string.IsNullOrEmpty(identifier), "Invalid identifier");
-            Debug.Assert(logger != null, "Logger is null");
+            Debug.Assert(!(logger is null), "Logger is null");
 
             this.identifier = identifier;
             this.logger = logger;

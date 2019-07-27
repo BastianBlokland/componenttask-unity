@@ -10,7 +10,7 @@ namespace ComponentTask.Internal
             if (context is null)
                 throw new ArgumentNullException(nameof(context));
 
-            return SynchronizationContext.Current == context;
+            return object.ReferenceEquals(SynchronizationContext.Current, context);
         }
     }
 }
