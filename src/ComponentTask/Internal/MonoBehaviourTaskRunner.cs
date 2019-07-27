@@ -106,7 +106,7 @@ namespace ComponentTask.Internal
             if (ComponentToFollow is UnityEngine.Behaviour behaviour)
             {
                 if (!this.UpdateWhileComponentDisabled && !behaviour.isActiveAndEnabled)
-                    throw new InactiveComponentException($"Unable to start task: Component '{behaviour.name}' is inactive.");
+                    throw new InactiveComponentException($"Unable to start task: Component '{behaviour.GetType().Name}' is inactive.");
             }
         }
 
