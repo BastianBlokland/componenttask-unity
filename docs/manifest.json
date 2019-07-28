@@ -4,15 +4,24 @@
   "xrefmap": "xrefmap.yml",
   "files": [
     {
+      "type": "Resource",
+      "output": {
+        "resource": {
+          "relative_path": "index.json"
+        }
+      },
+      "is_incremental": false
+    },
+    {
       "type": "ManagedReference",
       "source_relative_path": "api/ComponentTask.Config.yml",
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Config.html",
-          "hash": "wzZvNlaHKndx1RVocStonQ=="
+          "hash": "WgR6RuI3c1ilG5wi1Ut39Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -21,10 +30,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.ComponentTaskCanceledException.html",
-          "hash": "VUwXn4qowcCpytUG8BwgGA=="
+          "hash": "psbv/gn1coXTybMZMDE2Tw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -33,10 +42,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.ContextChangedException.html",
-          "hash": "zmjzX734unXwDxZB2ifg7Q=="
+          "hash": "Bt4vQy771Vi5aFw6dyTmhQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -45,10 +54,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.InactiveComponentException.html",
-          "hash": "WSKq8NOnTvjYy4xuIyJUOw=="
+          "hash": "OiFh0Rk5D8cZrzLGfCWXbg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -57,10 +66,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.InactiveGameObjectException.html",
-          "hash": "CUKiCnzdsomIkLC2dmxEIw=="
+          "hash": "7zPvJa2TLeU0r/oXS/r4vw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -69,10 +78,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.NonUnityThreadException.html",
-          "hash": "W8qijfYSYUooguMbzQkSvg=="
+          "hash": "BRJMb9DbEY9v5CVzDau0yg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -81,10 +90,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.NotPlayingException.html",
-          "hash": "8yuw165kTPQBBDOoJiRcdw=="
+          "hash": "K27UeAAFtmM++QTVseK1Tw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -93,10 +102,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.TaskCreatorReturnedNullException.html",
-          "hash": "b/QW5hw6MY2jLYEXcaOvHw=="
+          "hash": "szu6fSiVlfxFhddEUN0IFA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -105,10 +114,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.html",
-          "hash": "y+fHRCZvAvp7WhWHOw+qSw=="
+          "hash": "e6R7iwPi9KWibgLr/WiMxg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -117,10 +126,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.IDiagnosticLogger.html",
-          "hash": "MvWM3HOnF4JqVtgsK8vGEA=="
+          "hash": "YpXijhYm4li4OSgN1DnDYQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -129,10 +138,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.IExceptionHandler.html",
-          "hash": "1rrybfQvLutTfUvu9Owbkw=="
+          "hash": "KmOd4droqAoSPrydUPU8Sg=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -141,10 +150,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.ITaskRunner.html",
-          "hash": "DmkcDtQBI9OwSXdCVvTzEA=="
+          "hash": "ILDUS7Tz4rOaDaQK43HY/A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -153,10 +162,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.LocalTaskRunner.html",
-          "hash": "clob/NLSLOpMSqqvYATifw=="
+          "hash": "zBVzR+TJPKmoEPTpY1mC7Q=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -165,10 +174,10 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.html",
-          "hash": "+oB1OF9YUp4aYZKqwjhafQ=="
+          "hash": "pOCRBzpgyaVaMVMAycoMhQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -177,10 +186,10 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.ComponentExtensions.html",
-          "hash": "yWzkaVYz0fagVoKjdkZYnQ=="
+          "hash": "F5ywm7khJoS/RpClZ93pNQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -189,10 +198,10 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.GameObjectExtensions.html",
-          "hash": "5ic/poAIfSWJiqPTqknMog=="
+          "hash": "756BNTaoI9YV0YBzpHwOTQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -201,10 +210,10 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.TaskExtensions.html",
-          "hash": "P+VMicWujyuaQFt7MyMFtQ=="
+          "hash": "A1+QQGa32C5mkhzet9m6XA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -213,10 +222,10 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.TaskRunOptions.html",
-          "hash": "quvowZFPw+iAckf16iCglQ=="
+          "hash": "hKmFnXzZ2PJTduPy16X4aw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -225,10 +234,10 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.html",
-          "hash": "hiKSLwjT2sBDmc/X89SeQQ=="
+          "hash": "izLnl8ZnuSSXxrrQDlODtw=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -240,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "7Bh+ytewxwKF7feYmbdolA=="
+          "hash": "r3ENm/juunYnPr0ySM63/A=="
         }
       },
       "is_incremental": false,
@@ -264,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "examples.html",
-          "hash": "wmHNag/ECv25dFkGGekmWQ=="
+          "hash": "+Yeoo/BzA4cegOcOSc+sZQ=="
         }
       },
       "is_incremental": false,
@@ -276,10 +285,10 @@
       "output": {
         ".html": {
           "relative_path": "how-to.html",
-          "hash": "+YDa++zXDMY1tfnTRcTKdQ=="
+          "hash": "kk94L/GhBMDBb2sJhDGW9A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -288,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "kW6+8bHPw8aGiDd/Kp/c4A=="
+          "hash": "qU/RYpmesg4W08ebr7K+IA=="
         }
       },
       "is_incremental": false,
@@ -300,10 +309,10 @@
       "output": {
         ".html": {
           "relative_path": "install.html",
-          "hash": "3G7uC7thKAJs2ogae3Jlow=="
+          "hash": "5ap+GKV6JMf5Pbxh7T2LVQ=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -322,10 +331,12 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because config changed.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "ConfigChanged"
       },
       "processors": {
         "TocDocumentProcessor": {
@@ -335,24 +346,24 @@
           "total_file_count": 0,
           "skipped_file_count": 0
         },
-        "ConceptualDocumentProcessor": {
-          "can_incremental": true,
-          "incrementalPhase": "build",
-          "total_file_count": 5,
-          "skipped_file_count": 3
-        },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 19,
-          "skipped_file_count": 19
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": false,
+          "incrementalPhase": "build",
+          "total_file_count": 5,
+          "skipped_file_count": 0
         }
       }
     },
     {
       "status": {
-        "can_incremental": true,
-        "details": "Can support incremental post processing.",
+        "can_incremental": false,
+        "details": "Cannot support incremental post processing, the reason is: should not trace intermediate info.",
         "incrementalPhase": "postProcessing",
         "total_file_count": 0,
         "skipped_file_count": 0
