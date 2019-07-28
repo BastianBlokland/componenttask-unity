@@ -49,4 +49,7 @@ the component gets destroyed.
 
 
 ### Documentation
-Documentation can be found at: https://bastianblokland.github.io/componenttask-unity/
+* [Install](https://bastianblokland.github.io/componenttask-unity/install.html)
+* [How To](https://bastianblokland.github.io/componenttask-unity/how-to.html)
+* [Examples](https://bastianblokland.github.io/componenttask-unity/examples.html)
+* [Api Reference](https://bastianblokland.github.io/componenttask-unity/api/index.html)
