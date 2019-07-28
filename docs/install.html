@@ -5,9 +5,9 @@
   <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-    <title>ComponentTask-Unity | ComponentTask </title>
+    <title>Installation | ComponentTask </title>
     <meta name="viewport" content="width=device-width">
-    <meta name="title" content="ComponentTask-Unity | ComponentTask ">
+    <meta name="title" content="Installation | ComponentTask ">
     <meta name="generator" content="docfx 2.43.3.0">
     
     <link rel="shortcut icon" href="favicon.ico">
@@ -60,34 +60,24 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h1 id="componenttask-unity">ComponentTask-Unity</h1>
+<h1 id="installation">Installation</h1>
 
-<p><a href="https://dev.azure.com/bastian-blokland/ComponentTask/_build/latest?definitionId=6&amp;branchName=master"><img src="https://img.shields.io/azure-devops/tests/bastian-blokland/ComponentTask/6/master.svg" alt="Tests"></a>
-<a href="https://github.com/BastianBlokland/componenttask-unity/releases/"><img src="https://img.shields.io/github/release/BastianBlokland/componenttask-unity.svg" alt="GitHub release"></a>
-<img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></p>
-<p>Unity package for running dotnet <code>Task</code> and <code>Task&lt;T&gt;</code> scoped to Unity components.</p>
-<h3 id="description">Description</h3>
-<p>Common problem with using c# <code>async</code> methods in Unity is that they have no concept of a component
-life-time.
-So unlike <a href="https://docs.unity3d.com/ScriptReference/Coroutine.html">Coroutines</a> when you 'start' a
-task and then destroy the component (by loading a new scene for example) the task does not stop.
-Most of the time leading to <code>UnityEngine.MissingReferenceException</code> when you try to access members
-of the component after it has been destroyed on the Unity side. And as a workaround you have to
-write ugly '<code>if (!this) return;</code>' guards after every await.</p>
-<p>This library aims to fix that problem by allowing you to run tasks 'on' your <code>MonoBehaviour</code> with very
-similar behaviour as Unity's <code>Coroutines</code>.</p>
-<h3 id="documentation">Documentation</h3>
-<ul>
-<li><a href="install.html">Install</a></li>
-<li><a href="how-to.html">How To</a></li>
-<li><a href="examples.html">Examples</a></li>
-<li><a href="/api/">Api Reference</a></li>
-</ul>
-<h3 id="repository">Repository</h3>
-<p><a href="https://GitHub.com/BastianBlokland/componenttask-unity/issues/"><img src="https://img.shields.io/github/issues/BastianBlokland/componenttask-unity.svg" alt="GitHub issues"></a>
-<a href="https://github.com/BastianBlokland/componenttask-unity/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a></p>
-<h3 id="ci">CI</h3>
-<p>Basic Azure pipeline for running tests: <a href="https://dev.azure.com/bastian-blokland/ComponentTask/_build?definitionId=6">Pipeline</a>.</p>
+<h3 id="add-package">Add package</h3>
+<p>Add a reference to this repository to your package dependencies (<code>Packages/manifest.json</code>)</p>
+<pre><code>&quot;dependencies&quot;: {
+    &quot;com.bastianblokland.componenttask&quot;: &quot;https://github.com/BastianBlokland/componenttask-unity.git#v1.6&quot;,
+    ...
+}
+</code></pre>
+<p>Use the tag at the end to specify the version to use.</p>
+<p>Latest version:</p>
+<p><a href="https://github.com/BastianBlokland/componenttask-unity/releases/"><img src="https://img.shields.io/github/release/BastianBlokland/componenttask-unity.svg" alt="GitHub release"></a></p>
+<p>Avoid adding a git path without a tag as latest <code>master</code> is not guaranteed to be stable, also it will
+make package resolving non-deterministic as every time you resolve <code>master</code> it might be a different
+commit.</p>
+<h3 id="upgrading">Upgrading</h3>
+<p>To update to a newer version simply open your package manifest (<code>Packages/manifest.json</code>) and set
+the tag at the end of the git url (for example <code>v1.6</code>) to a later version.</p>
 </article>
           </div>
           
@@ -96,7 +86,7 @@ similar behaviour as Unity's <code>Coroutines</code>.</p>
               <div class="contribution">
                 <ul class="nav">
                   <li>
-                    <a href="https://github.com/BastianBlokland/componenttask-unity/blob/master/.docs/index.md/#L1" class="contribution-link">Improve this Doc</a>
+                    <a href="https://github.com/BastianBlokland/componenttask-unity/blob/master/.docfx/install.md/#L1" class="contribution-link">Improve this Doc</a>
                   </li>
                 </ul>
               </div>

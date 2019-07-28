@@ -12,7 +12,7 @@ then
     fail "'docfx' required (more info: https://dotnet.github.io/docfx/)."
 fi
 
-DOCS_DIR=".docs"
+DOCS_DIR=".docfx"
 if [ ! -d "$DOCS_DIR" ]
 then
     fail "Docs directory '$DOCS_DIR' is missing"
