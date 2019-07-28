@@ -8,9 +8,11 @@ Reason for having those extension methods live in the UnityEngine namespace is t
 having to add `using` directives and also makes the api more discoverable as it will show up in
 intellisense. To avoid cluttering the UnityEngine namespace as few as possibles types live there.
 
+
 ### Namespaces
 * [ComponentTask](ComponentTask.html)
 * [UnityEngine](UnityEngine.html)
+
 
 ### Source
 All source is available on [Github](https://github.com/BastianBlokland/componenttask-unity/).

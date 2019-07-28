@@ -260,6 +260,7 @@ class MyClass : MonoBehaviour
 }
 ```
 
+
 ### Custom LocalTaskRunner.
 If you dont to scope you tasks to Unity Components but control the update ticks yourself you can
 manually create a 'LocalTaskRunner' and control its ticks yourself.
@@ -307,6 +308,7 @@ class MyClass : MonoBehaviour, IExceptionHandler
     }
 }
 ```
+
 
 ### OnGUI tasks using custom LocalTaskRunner.
 Because with a custom LocalTaskRunner you control when tasks are updated you could implement tasks
