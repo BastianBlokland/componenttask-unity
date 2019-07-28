@@ -52,6 +52,8 @@ namespace ComponentTask
         /// Thrown when awaiting a component-task that gets cancelled.
         /// </exception>
         /// <param name="taskCreator">Function for creating the task.</param>
+        /// <param name="data">Data to pass into the <paramref name="taskCreator"/>.</param>
+        /// <typeparam name="TIn">Type of the data to pass into the <paramref name="taskCreator"/>.</typeparam>
         /// <returns>
         /// Task that completes when the original task completes or when the runner gets disposed.
         /// </returns>
@@ -70,6 +72,8 @@ namespace ComponentTask
         /// a component that gets destroyed.
         /// </exception>
         /// <param name="taskCreator">Function for creating the task.</param>
+        /// <param name="data">Data to pass into the <paramref name="taskCreator"/>.</param>
+        /// <typeparam name="TIn">Type of the data to pass into the <paramref name="taskCreator"/>.</typeparam>
         /// <returns>
         /// Task that completes when the original task completes or when the runner gets disposed.
         /// </returns>
@@ -118,6 +122,8 @@ namespace ComponentTask
         /// Thrown when awaiting a component-task that gets cancelled.
         /// </exception>
         /// <param name="taskCreator">Function for creating the task.</param>
+        /// <param name="data">Data to pass into the <paramref name="taskCreator"/>.</param>
+        /// <typeparam name="TIn">Type of the data to pass into the <paramref name="taskCreator"/>.</typeparam>
         /// <returns>
         /// Task that completes when the original task completes or when the runner gets disposed.
         /// </returns>

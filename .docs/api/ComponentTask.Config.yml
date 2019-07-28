@@ -61,7 +61,7 @@ items:
   - cs.temp.dll
   namespace: ComponentTask
   summary: "\nShould diagnostics be enabled.\n"
-  remarks: "\nRuns all tasks with the &apos;<see cref=\"!:TaskRunOptions.DiagnosticLogging\"></see>&apos; flag.\n"
+  remarks: "\nRuns all tasks with the &apos;<xref href=\"UnityEngine.TaskRunOptions.DiagnosticLogging\" data-throw-if-not-resolved=\"false\"></xref>&apos; flag.\n"
   example: []
   syntax:
     content: public static bool GlobalDiagnosticsActive { get; set; }
@@ -377,6 +377,9 @@ references:
   name: System
   nameWithType: System
   fullName: System
+- uid: UnityEngine.TaskRunOptions.DiagnosticLogging
+  commentId: F:UnityEngine.TaskRunOptions.DiagnosticLogging
+  isExternal: true
 - uid: ComponentTask.Config.GlobalDiagnosticsActive*
   commentId: Overload:ComponentTask.Config.GlobalDiagnosticsActive
   name: GlobalDiagnosticsActive

@@ -24,9 +24,12 @@ similar behaviour as Unity's `Coroutines`.
 * [Install](install.md)
 * [How To](how-to.md)
 * [Examples](examples.md)
-* [Api Reference](api/)
+* [Api Reference](/api/)
 
 
 ## Repository
 [![GitHub issues](https://img.shields.io/github/issues/BastianBlokland/componenttask-unity.svg)](https://GitHub.com/BastianBlokland/componenttask-unity/issues/)
 [![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square)](https://github.com/BastianBlokland/componenttask-unity/pulls)
+
+## Ci
+Basic Azure pipeline for running tests: [Pipeline](https://dev.azure.com/bastian-blokland/ComponentTask/_build?definitionId=6).

@@ -16,11 +16,12 @@ items:
   source:
     id: IExceptionHandler
     path: ''
-    startLine: 664
+    startLine: 670
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
   summary: "\nInterface for a exception handler.\n"
+  remarks: "\nCan be used to log exceptions when using a custom <xref href=\"ComponentTask.LocalTaskRunner\" data-throw-if-not-resolved=\"false\"></xref>.\n"
   example: []
   syntax:
     content: public interface IExceptionHandler
@@ -45,7 +46,7 @@ items:
   source:
     id: Handle
     path: ''
-    startLine: 670
+    startLine: 676
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -60,6 +61,11 @@ items:
     content.vb: Sub Handle(exception As Exception)
   overload: ComponentTask.IExceptionHandler.Handle*
 references:
+- uid: ComponentTask.LocalTaskRunner
+  commentId: T:ComponentTask.LocalTaskRunner
+  name: LocalTaskRunner
+  nameWithType: LocalTaskRunner
+  fullName: ComponentTask.LocalTaskRunner
 - uid: ComponentTask
   commentId: N:ComponentTask
   name: ComponentTask

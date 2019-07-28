@@ -20,7 +20,7 @@ items:
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
-  summary: "\nExtensions for <see cref=\"!:System.Task\"></see>.\n"
+  summary: "\nExtensions for &apos;System.Task&apos;.\n"
   example: []
   syntax:
     content: public static class TaskExtensions

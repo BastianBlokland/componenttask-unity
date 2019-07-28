@@ -15,7 +15,7 @@ items:
   source:
     id: TaskCreatorReturnedNullException
     path: ''
-    startLine: 1317
+    startLine: 1329
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask.Exceptions
@@ -25,9 +25,7 @@ items:
     content: 'public sealed class TaskCreatorReturnedNullException : InvalidOperationException, ISerializable, _Exception'
     content.vb: >-
       Public NotInheritable Class TaskCreatorReturnedNullException
-
           Inherits InvalidOperationException
-
           Implements ISerializable, _Exception
   inheritance:
   - System.Object

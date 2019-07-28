@@ -1,3 +1,10 @@
 {
-  "_appTitle": "ComponentTask"
+  "_appTitle": "ComponentTask",
+  "_appFooter": "ComponentTask documentation",
+  "_disableContribution": false,
+  "_gitContribute": {
+    "repo": "https://github.com/BastianBlokland/componenttask-unity/",
+    "branch": "master"
+  },
+  "_gitUrlPattern": "github"
 }

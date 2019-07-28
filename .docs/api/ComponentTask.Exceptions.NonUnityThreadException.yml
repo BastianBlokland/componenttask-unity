@@ -15,7 +15,7 @@ items:
   source:
     id: NonUnityThreadException
     path: ''
-    startLine: 1284
+    startLine: 1296
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask.Exceptions
@@ -25,9 +25,7 @@ items:
     content: 'public sealed class NonUnityThreadException : InvalidOperationException, ISerializable, _Exception'
     content.vb: >-
       Public NotInheritable Class NonUnityThreadException
-
           Inherits InvalidOperationException
-
           Implements ISerializable, _Exception
   inheritance:
   - System.Object

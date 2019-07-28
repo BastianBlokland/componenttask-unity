@@ -23,7 +23,7 @@ items:
   source:
     id: ITaskRunner
     path: ''
-    startLine: 683
+    startLine: 689
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -52,7 +52,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 698
+    startLine: 704
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -93,7 +93,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 716
+    startLine: 722
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -134,7 +134,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 731
+    startLine: 739
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -148,8 +148,10 @@ items:
       description: Function for creating the task.
     - id: data
       type: '{TIn}'
+      description: Data to pass into the <code data-dev-comment-type="paramref" class="paramref">taskCreator</code>.
     typeParameters:
     - id: TIn
+      description: Type of the data to pass into the <code data-dev-comment-type="paramref" class="paramref">taskCreator</code>.
     return:
       type: System.Threading.Tasks.Task
       description: "\nTask that completes when the original task completes or when the runner gets disposed.\n"
@@ -179,7 +181,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 749
+    startLine: 759
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -193,8 +195,10 @@ items:
       description: Function for creating the task.
     - id: data
       type: '{TIn}'
+      description: Data to pass into the <code data-dev-comment-type="paramref" class="paramref">taskCreator</code>.
     typeParameters:
     - id: TIn
+      description: Type of the data to pass into the <code data-dev-comment-type="paramref" class="paramref">taskCreator</code>.
     return:
       type: System.Threading.Tasks.Task
       description: "\nTask that completes when the original task completes or when the runner gets disposed.\n"
@@ -224,7 +228,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 764
+    startLine: 774
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -267,7 +271,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 782
+    startLine: 792
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -310,7 +314,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 797
+    startLine: 809
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -324,8 +328,10 @@ items:
       description: Function for creating the task.
     - id: data
       type: '{TIn}'
+      description: Data to pass into the <code data-dev-comment-type="paramref" class="paramref">taskCreator</code>.
     typeParameters:
     - id: TIn
+      description: Type of the data to pass into the <code data-dev-comment-type="paramref" class="paramref">taskCreator</code>.
     - id: TOut
     return:
       type: System.Threading.Tasks.Task{{TOut}}
@@ -356,7 +362,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 815
+    startLine: 827
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask

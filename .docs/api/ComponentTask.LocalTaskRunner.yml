@@ -35,7 +35,7 @@ items:
   source:
     id: LocalTaskRunner
     path: ''
-    startLine: 832
+    startLine: 844
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -45,7 +45,6 @@ items:
     content: 'public sealed class LocalTaskRunner : ITaskRunner, IDisposable'
     content.vb: >-
       Public NotInheritable Class LocalTaskRunner
-
           Implements ITaskRunner, IDisposable
   inheritance:
   - System.Object
@@ -82,7 +81,7 @@ items:
   source:
     id: .ctor
     path: ''
-    startLine: 847
+    startLine: 859
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -114,7 +113,7 @@ items:
   source:
     id: AssertRunningTaskCount
     path: ''
-    startLine: 855
+    startLine: 867
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -145,20 +144,30 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 868
+    startLine: 880
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
+  summary: "\nStart a task on this runner.\n"
   example: []
   syntax:
     content: public Task StartTask(Func<Task> taskCreator)
     parameters:
     - id: taskCreator
       type: System.Func{System.Threading.Tasks.Task}
+      description: Function for creating the task.
     return:
       type: System.Threading.Tasks.Task
+      description: "\nTask that completes when the original task completes or when the runner gets disposed.\n"
     content.vb: Public Function StartTask(taskCreator As Func(Of Task)) As Task
   overload: ComponentTask.LocalTaskRunner.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled.\n"
   implements:
   - ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
   nameWithType.vb: LocalTaskRunner.StartTask(Func(Of Task))
@@ -182,7 +191,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 873
+    startLine: 885
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -220,20 +229,30 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 892
+    startLine: 904
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
+  summary: "\nStart a task on this runner.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\nrunner is disposed, this can be usefull for cancelling external processes.\n"
   example: []
   syntax:
     content: public Task StartTask(Func<CancellationToken, Task> taskCreator)
     parameters:
     - id: taskCreator
       type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      description: Function for creating the task.
     return:
       type: System.Threading.Tasks.Task
+      description: "\nTask that completes when the original task completes or when the runner gets disposed.\n"
     content.vb: Public Function StartTask(taskCreator As Func(Of CancellationToken, Task)) As Task
   overload: ComponentTask.LocalTaskRunner.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
   implements:
   - ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
   nameWithType.vb: LocalTaskRunner.StartTask(Func(Of CancellationToken, Task))
@@ -257,7 +276,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 897
+    startLine: 909
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -295,7 +314,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 916
+    startLine: 928
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -336,7 +355,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 921
+    startLine: 933
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -378,7 +397,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 941
+    startLine: 953
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -419,7 +438,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 946
+    startLine: 958
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -461,7 +480,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 966
+    startLine: 978
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -500,7 +519,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 971
+    startLine: 983
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -540,7 +559,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 990
+    startLine: 1002
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -579,7 +598,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 995
+    startLine: 1007
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -619,7 +638,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 1014
+    startLine: 1026
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -661,7 +680,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 1019
+    startLine: 1031
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -704,7 +723,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 1039
+    startLine: 1051
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -746,7 +765,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 1044
+    startLine: 1056
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -789,7 +808,7 @@ items:
   source:
     id: Execute
     path: ''
-    startLine: 1066
+    startLine: 1078
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -817,7 +836,7 @@ items:
   source:
     id: Dispose
     path: ''
-    startLine: 1094
+    startLine: 1106
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -1240,6 +1259,16 @@ references:
   - name: )
     nameWithType: )
     fullName: )
+- uid: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  name: TaskCreatorReturnedNullException
+  nameWithType: TaskCreatorReturnedNullException
+  fullName: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+- uid: ComponentTask.Exceptions.ComponentTaskCanceledException
+  commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+  name: ComponentTaskCanceledException
+  nameWithType: ComponentTaskCanceledException
+  fullName: ComponentTask.Exceptions.ComponentTaskCanceledException
 - uid: System.Func{System.Threading.Tasks.Task}
   commentId: T:System.Func{System.Threading.Tasks.Task}
   parent: System

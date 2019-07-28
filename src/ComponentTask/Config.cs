@@ -11,7 +11,7 @@ namespace ComponentTask
         /// Should diagnostics be enabled.
         /// </summary>
         /// <remarks>
-        /// Runs all tasks with the '<see cref="TaskRunOptions.DiagnosticLogging"/>' flag.
+        /// Runs all tasks with the '<see cref="UnityEngine.TaskRunOptions.DiagnosticLogging"/>' flag.
         /// </remarks>
         /// <value>True if diagnostics are active, otherwise false.</value>
         public static bool GlobalDiagnosticsActive { get; set; }

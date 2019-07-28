@@ -8,7 +8,7 @@ using ComponentTask.Internal;
 namespace UnityEngine
 {
     /// <summary>
-    /// Extensions for <see cref="UnityEngine.Component"/>.
+    /// Extensions for 'UnityEngine.Component'.
     /// </summary>
     public static class ComponentExtensions
     {

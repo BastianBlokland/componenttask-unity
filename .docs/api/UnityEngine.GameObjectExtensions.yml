@@ -20,7 +20,7 @@ items:
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
-  summary: "\nExtensions for <see cref=\"!:UnityEngine.GameObject\"></see>.\n"
+  summary: "\nExtensions for &apos;UnityEngine.GameObject&apos;.\n"
   example: []
   syntax:
     content: public static class GameObjectExtensions

@@ -4,7 +4,7 @@ using ComponentTask.Internal;
 namespace UnityEngine
 {
     /// <summary>
-    /// Extensions for <see cref="UnityEngine.GameObject"/>.
+    /// Extensions for 'UnityEngine.GameObject'.
     /// </summary>
     public static class GameObjectExtensions
     {

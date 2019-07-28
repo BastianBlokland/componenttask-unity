@@ -15,7 +15,7 @@ items:
   source:
     id: ComponentTaskCanceledException
     path: ''
-    startLine: 1217
+    startLine: 1229
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask.Exceptions
@@ -25,9 +25,7 @@ items:
     content: 'public sealed class ComponentTaskCanceledException : TaskCanceledException, ISerializable, _Exception'
     content.vb: >-
       Public NotInheritable Class ComponentTaskCanceledException
-
           Inherits TaskCanceledException
-
           Implements ISerializable, _Exception
   inheritance:
   - System.Object

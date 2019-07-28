@@ -15,7 +15,7 @@ items:
   source:
     id: ContextChangedException
     path: ''
-    startLine: 1235
+    startLine: 1247
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask.Exceptions
@@ -25,9 +25,7 @@ items:
     content: 'public sealed class ContextChangedException : InvalidOperationException, ISerializable, _Exception'
     content.vb: >-
       Public NotInheritable Class ContextChangedException
-
           Inherits InvalidOperationException
-
           Implements ISerializable, _Exception
   inheritance:
   - System.Object
