@@ -5,7 +5,7 @@
 Add a reference to this repository to your package dependencies (`Packages/manifest.json`)
 ```
 "dependencies": {
-    "com.bastianblokland.componenttask": "https://github.com/BastianBlokland/componenttask-unity.git#v1.7",
+"com.bastianblokland.componenttask": "https://github.com/BastianBlokland/componenttask-unity.git#v1.8",
     ...
 }
 ```
@@ -23,4 +23,4 @@ commit.
 
 ### Upgrading
 To update to a newer version simply open your package manifest (`Packages/manifest.json`) and set
-the tag at the end of the git url (for example `v1.7`) to a later version.
+the tag at the end of the git url (for example `v1.8`) to a later version.
