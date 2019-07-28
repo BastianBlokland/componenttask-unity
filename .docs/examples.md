@@ -1,5 +1,8 @@
-## Examples
+# Examples
+
+
 These examples can also be found in the [`.example`](https://github.com/BastianBlokland/componenttask-unity/tree/master/.example) directory.
+
 
 ### Basic example
 ```c#
@@ -25,6 +28,7 @@ class MyClass : MonoBehaviour
 ```
 This example will print `Running...` every frame when the component is enabled and will stop when
 the component gets destroyed.
+
 
 ### Awaiting other methods
 ```c#
@@ -58,6 +62,7 @@ class MyClass : MonoBehaviour
 When you `await` other methods they automatically belong to the same scope as the task that starts
 them. So in this example `GetValueAsync` also runs as part of the `MyClass` scope and stop when
 the component is destroyed.
+
 
 ### Exposing a method that produces a value
 But what if you want to expose a api that produces a value, what happens to the task once your component
@@ -114,6 +119,7 @@ If you don't catch the exception then the exception is logged to the unity log a
 go to a faulted state. But the nice thing is that if both components have the same lifetime
 (destroyed at the same time) then there is no problem (and you won't get any exceptions).
 
+
 ### Avoiding closures
 To avoid having to capture closures you can pass an argument into you task using `this.StartTask(...)`.
 ```c#
@@ -157,6 +163,7 @@ class MyClassWithValueTuple : MonoBehaviour
 }
 ```
 
+
 ### Cancelling external work
 To make it easier to cancel external work when your component is destroyed `this.StartTask(...)`
 optionally gives you a `CancellationToken` to give to external api's.
@@ -187,6 +194,7 @@ class MyClass : MonoBehaviour
 ```
 Giving the `CancellationToken` here will make sure that the web-request is actually aborted when
 this component is destroyed.
+
 
 ### Running expensive blocking work on a background thread
 Something that the `Task` based model make very easy is interacting with code that runs on a
@@ -220,3 +228,82 @@ class MyClass : MonoBehaviour
 ```
 Even though `VeryExpensiveBlockingCode` blocks for 5 seconds because we run it on a background-thread
 (with [Task.Run](https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.run)) the unity-thread stays responsive.
+
+
+### Caching a task-runner.
+If you are going to start many tasks you can also create a ITaskRunner on a gameobject and cache
+a reference to it. That runner will remain valid as long as that gameobject is still alive.
+```c#
+using System.Threading.Tasks;
+using UnityEngine;
+using ComponentTask;
+
+class MyClass : MonoBehaviour
+{
+    private ITaskRunner runner;
+
+    void Start()
+    {
+        this.runner = this.gameObject.CreateTaskRunner();
+    }
+
+    void Update()
+    {
+        this.runner.StartTask(this.WaitAndLogAsync);
+    }
+
+    async Task WaitAndLogAsync()
+    {
+        await Task.Yield();
+        Debug.Log("Running");
+    }
+}
+```
+
+### Custom LocalTaskRunner.
+If you dont to scope you tasks to Unity Components but control the update ticks yourself you can
+manually create a 'LocalTaskRunner' and control its ticks yourself.
+```c#
+using System;
+using System.Threading.Tasks;
+using UnityEngine;
+using ComponentTask;
+
+class MyClass : MonoBehaviour, IExceptionHandler
+{
+    [SerializeField] private bool isPaused;
+
+    private LocalTaskRunner runner;
+
+    void Start()
+    {
+        this.runner = new LocalTaskRunner(exceptionHandler: this);
+        this.runner.StartTask(this.RunAsync);
+    }
+
+    void Update()
+    {
+        if (!this.isPaused)
+            this.runner.Execute();
+    }
+
+    void OnDestroy()
+    {
+        this.runner.Dispose();
+    }
+
+    async Task RunAsync()
+    {
+        while (true)
+        {
+            Debug.Log("Running");
+            await Task.Yield();
+        }
+    }
+
+    void IExceptionHandler.Handle(Exception exception)
+    {
+        Debug.Log($"Exception occurred: '{exception.Message}'");
+    }
+}
+```
