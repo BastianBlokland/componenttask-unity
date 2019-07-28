@@ -32,7 +32,7 @@
         ]
       }
     ],
-    "dest": "site",
+    "dest": "../docs",
     "globalMetadataFiles": [
       "metadata.json"
     ],
