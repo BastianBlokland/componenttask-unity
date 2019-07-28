@@ -36,6 +36,6 @@ steps:
   - task: PublishBuildArtifacts@1
     displayName: "Publish output."
     inputs:
-      pathtoPublish: "$(System.DefaultWorkingDirectory)/output"
+      pathtoPublish: "$(System.DefaultWorkingDirectory)/.output"
       artifactName: output
     condition: always()
