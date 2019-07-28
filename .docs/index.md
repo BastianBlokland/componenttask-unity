@@ -21,7 +21,7 @@ This library aims to fix that problem by allowing you to run tasks 'on' your `Mo
 similar behaviour as Unity's `Coroutines`.
 
 
-### Documentation:
+### Documentation
 * [Install](install.md)
 * [How To](how-to.md)
 * [Examples](examples.md)
