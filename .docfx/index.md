@@ -25,7 +25,7 @@ similar behaviour as Unity's `Coroutines`.
 * [Install](install.md)
 * [How To](how-to.md)
 * [Examples](examples.md)
-* [Api Reference](/api/)
+* [Api Reference](api/)
 
 
 ### Repository
