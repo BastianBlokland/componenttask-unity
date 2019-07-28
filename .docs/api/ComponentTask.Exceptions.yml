@@ -1,0 +1,58 @@
+### YamlMime:ManagedReference
+items:
+- uid: ComponentTask.Exceptions
+  commentId: N:ComponentTask.Exceptions
+  id: ComponentTask.Exceptions
+  children:
+  - ComponentTask.Exceptions.ComponentTaskCanceledException
+  - ComponentTask.Exceptions.ContextChangedException
+  - ComponentTask.Exceptions.InactiveComponentException
+  - ComponentTask.Exceptions.InactiveGameObjectException
+  - ComponentTask.Exceptions.NonUnityThreadException
+  - ComponentTask.Exceptions.NotPlayingException
+  - ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  langs:
+  - csharp
+  - vb
+  name: ComponentTask.Exceptions
+  nameWithType: ComponentTask.Exceptions
+  fullName: ComponentTask.Exceptions
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: ComponentTask.Exceptions.ComponentTaskCanceledException
+  commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+  name: ComponentTaskCanceledException
+  nameWithType: ComponentTaskCanceledException
+  fullName: ComponentTask.Exceptions.ComponentTaskCanceledException
+- uid: ComponentTask.Exceptions.ContextChangedException
+  commentId: T:ComponentTask.Exceptions.ContextChangedException
+  name: ContextChangedException
+  nameWithType: ContextChangedException
+  fullName: ComponentTask.Exceptions.ContextChangedException
+- uid: ComponentTask.Exceptions.InactiveComponentException
+  commentId: T:ComponentTask.Exceptions.InactiveComponentException
+  name: InactiveComponentException
+  nameWithType: InactiveComponentException
+  fullName: ComponentTask.Exceptions.InactiveComponentException
+- uid: ComponentTask.Exceptions.InactiveGameObjectException
+  commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+  name: InactiveGameObjectException
+  nameWithType: InactiveGameObjectException
+  fullName: ComponentTask.Exceptions.InactiveGameObjectException
+- uid: ComponentTask.Exceptions.NonUnityThreadException
+  commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+  name: NonUnityThreadException
+  nameWithType: NonUnityThreadException
+  fullName: ComponentTask.Exceptions.NonUnityThreadException
+- uid: ComponentTask.Exceptions.NotPlayingException
+  commentId: T:ComponentTask.Exceptions.NotPlayingException
+  name: NotPlayingException
+  nameWithType: NotPlayingException
+  fullName: ComponentTask.Exceptions.NotPlayingException
+- uid: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  name: TaskCreatorReturnedNullException
+  nameWithType: TaskCreatorReturnedNullException
+  fullName: ComponentTask.Exceptions.TaskCreatorReturnedNullException

@@ -55,8 +55,8 @@ then
 fi
 
 # Run tests.
-withRetry logDuration test "editmode" "$(pwd)/output/editmode.tests.xml" "$(pwd)/output/editmode.log"
-withRetry logDuration test "playmode" "$(pwd)/output/playmode.tests.xml" "$(pwd)/output/playmode.log"
+withRetry logDuration test "editmode" "$(pwd)/.output/editmode.tests.xml" "$(pwd)/.output/editmode.log"
+withRetry logDuration test "playmode" "$(pwd)/.output/playmode.tests.xml" "$(pwd)/.output/playmode.log"
 
 info "Succesfully ran tests."
 exit 0

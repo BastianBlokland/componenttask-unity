@@ -1,0 +1,85 @@
+### YamlMime:ManagedReference
+items:
+- uid: ComponentTask.IDiagnosticLogger
+  commentId: T:ComponentTask.IDiagnosticLogger
+  id: IDiagnosticLogger
+  parent: ComponentTask
+  children:
+  - ComponentTask.IDiagnosticLogger.Log(System.String)
+  langs:
+  - csharp
+  - vb
+  name: IDiagnosticLogger
+  nameWithType: IDiagnosticLogger
+  fullName: ComponentTask.IDiagnosticLogger
+  type: Interface
+  source:
+    id: IDiagnosticLogger
+    path: ''
+    startLine: 647
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  summary: "\nInterface for logging diagnostic output.\n"
+  example: []
+  syntax:
+    content: public interface IDiagnosticLogger
+    content.vb: Public Interface IDiagnosticLogger
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: ComponentTask.IDiagnosticLogger.Log(System.String)
+  commentId: M:ComponentTask.IDiagnosticLogger.Log(System.String)
+  id: Log(System.String)
+  parent: ComponentTask.IDiagnosticLogger
+  langs:
+  - csharp
+  - vb
+  name: Log(String)
+  nameWithType: IDiagnosticLogger.Log(String)
+  fullName: ComponentTask.IDiagnosticLogger.Log(System.String)
+  type: Method
+  source:
+    id: Log
+    path: ''
+    startLine: 653
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  summary: "\nLog a diagnostic message.\n"
+  example: []
+  syntax:
+    content: void Log(string message)
+    parameters:
+    - id: message
+      type: System.String
+      description: Message to log.
+    content.vb: Sub Log(message As String)
+  overload: ComponentTask.IDiagnosticLogger.Log*
+references:
+- uid: ComponentTask
+  commentId: N:ComponentTask
+  name: ComponentTask
+  nameWithType: ComponentTask
+  fullName: ComponentTask
+- uid: ComponentTask.IDiagnosticLogger.Log*
+  commentId: Overload:ComponentTask.IDiagnosticLogger.Log
+  name: Log
+  nameWithType: IDiagnosticLogger.Log
+  fullName: ComponentTask.IDiagnosticLogger.Log
+- uid: System.String
+  commentId: T:System.String
+  parent: System
+  isExternal: true
+  name: String
+  nameWithType: String
+  fullName: System.String
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

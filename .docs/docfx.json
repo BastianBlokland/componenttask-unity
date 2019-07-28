@@ -1,0 +1,50 @@
+{
+  "metadata": [
+    {
+      "src": [
+        {
+          "src": "../src",
+          "files": [
+            "**/*.cs"
+          ]
+        }
+      ],
+      "dest": "api",
+      "disableGitFeatures": false,
+      "disableDefaultFilter": false
+    }
+  ],
+  "build": {
+    "content": [
+      {
+        "files": [
+          "**.yml",
+          "**.md"
+        ]
+      }
+    ],
+    "resource": [],
+    "overwrite": [
+      {
+        "files": [],
+        "exclude": [
+          "site/**"
+        ]
+      }
+    ],
+    "dest": "site",
+    "globalMetadataFiles": [
+      "metadata.json"
+    ],
+    "fileMetadataFiles": [],
+    "template": [
+      "default"
+    ],
+    "postProcessors": [],
+    "markdownEngineName": "markdig",
+    "noLangKeyword": false,
+    "keepFileLink": false,
+    "cleanupCacheHistory": false,
+    "disableGitFeatures": false
+  }
+}

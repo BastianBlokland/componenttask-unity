@@ -1,0 +1,432 @@
+### YamlMime:ManagedReference
+items:
+- uid: UnityEngine.GameObjectExtensions
+  commentId: T:UnityEngine.GameObjectExtensions
+  id: GameObjectExtensions
+  parent: UnityEngine
+  children:
+  - UnityEngine.GameObjectExtensions.CreateTaskRunner(GameObject,UnityEngine.TaskRunOptions)
+  langs:
+  - csharp
+  - vb
+  name: GameObjectExtensions
+  nameWithType: GameObjectExtensions
+  fullName: UnityEngine.GameObjectExtensions
+  type: Class
+  source:
+    id: GameObjectExtensions
+    path: ''
+    startLine: 510
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nExtensions for <see cref=\"!:UnityEngine.GameObject\"></see>.\n"
+  example: []
+  syntax:
+    content: public static class GameObjectExtensions
+    content.vb: Public Module GameObjectExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: UnityEngine.GameObjectExtensions.CreateTaskRunner(GameObject,UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.GameObjectExtensions.CreateTaskRunner(GameObject,UnityEngine.TaskRunOptions)
+  id: CreateTaskRunner(GameObject,UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.GameObjectExtensions
+  langs:
+  - csharp
+  - vb
+  name: CreateTaskRunner(GameObject, TaskRunOptions)
+  nameWithType: GameObjectExtensions.CreateTaskRunner(GameObject, TaskRunOptions)
+  fullName: UnityEngine.GameObjectExtensions.CreateTaskRunner(GameObject, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: CreateTaskRunner
+    path: ''
+    startLine: 530
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nCreate a <xref href=\"ComponentTask.ITaskRunner\" data-throw-if-not-resolved=\"false\"></xref> on the given gameobject.\n"
+  remarks: "\nIf you run tasks on the returned runner then they are cancelled automatically when the\ngameobject is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static ITaskRunner CreateTaskRunner(this GameObject gameObject, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: gameObject
+      type: GameObject
+      description: GameObject to create the task-runner on.
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how tasks are run on this runner.
+    return:
+      type: ComponentTask.ITaskRunner
+      description: Newly created <xref href="ComponentTask.ITaskRunner" data-throw-if-not-resolved="false"></xref>.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function CreateTaskRunner(gameObject As GameObject, options As TaskRunOptions = TaskRunOptions.Default) As ITaskRunner
+  overload: UnityEngine.GameObjectExtensions.CreateTaskRunner*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ComponentTask.ITaskRunner
+  commentId: T:ComponentTask.ITaskRunner
+  parent: ComponentTask
+  name: ITaskRunner
+  nameWithType: ITaskRunner
+  fullName: ComponentTask.ITaskRunner
+- uid: ComponentTask.Exceptions.NotPlayingException
+  commentId: T:ComponentTask.Exceptions.NotPlayingException
+  name: NotPlayingException
+  nameWithType: NotPlayingException
+  fullName: ComponentTask.Exceptions.NotPlayingException
+- uid: ComponentTask.Exceptions.NonUnityThreadException
+  commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+  name: NonUnityThreadException
+  nameWithType: NonUnityThreadException
+  fullName: ComponentTask.Exceptions.NonUnityThreadException
+- uid: UnityEngine.GameObjectExtensions.CreateTaskRunner*
+  commentId: Overload:UnityEngine.GameObjectExtensions.CreateTaskRunner
+  name: CreateTaskRunner
+  nameWithType: GameObjectExtensions.CreateTaskRunner
+  fullName: UnityEngine.GameObjectExtensions.CreateTaskRunner
+- uid: GameObject
+  commentId: '!:GameObject'
+  isExternal: true
+  name: GameObject
+  nameWithType: GameObject
+  fullName: GameObject
+- uid: UnityEngine.TaskRunOptions
+  commentId: T:UnityEngine.TaskRunOptions
+  parent: UnityEngine
+  name: TaskRunOptions
+  nameWithType: TaskRunOptions
+  fullName: UnityEngine.TaskRunOptions
+- uid: ComponentTask
+  commentId: N:ComponentTask
+  name: ComponentTask
+  nameWithType: ComponentTask
+  fullName: ComponentTask

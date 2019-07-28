@@ -1,0 +1,309 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Examples | ComponentTask </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Examples | ComponentTask ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="favicon.ico">
+    <link rel="stylesheet" href="styles/docfx.vendor.css">
+    <link rel="stylesheet" href="styles/docfx.css">
+    <link rel="stylesheet" href="styles/main.css">
+    <meta property="docfx:navrel" content="toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="index.html">
+                <img id="logo" class="svg" src="logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        <div class="article row grid">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="">
+<h2 id="examples">Examples</h2>
+
+<p>These examples can also be found in the <a href="https://github.com/BastianBlokland/componenttask-unity/tree/master/.example"><code>.example</code></a> directory.</p>
+<h3 id="basic-example">Basic example</h3>
+<pre><code class="lang-c#">using System.Threading.Tasks;
+using UnityEngine;
+
+class MyClass : MonoBehaviour
+{
+    void Start()
+    {
+        this.StartTask(RunAsync);
+    }
+
+    async Task RunAsync()
+    {
+        while (true)
+        {
+            Debug.Log(&quot;Running...&quot;);
+            await Task.Yield();
+        }
+    }
+}
+</code></pre>
+<p>This example will print <code>Running...</code> every frame when the component is enabled and will stop when
+the component gets destroyed.</p>
+<h3 id="awaiting-other-methods">Awaiting other methods</h3>
+<pre><code class="lang-c#">using System;
+using System.Threading.Tasks;
+using UnityEngine;
+
+class MyClass : MonoBehaviour
+{
+    void Start()
+    {
+        this.StartTask(RunAsync);
+    }
+
+    async Task RunAsync()
+    {
+        while (true)
+        {
+            var val = await GetValueAsync();
+            Debug.Log($&quot;Got value: '{val}'&quot;);
+        }
+    }
+
+    async Task&lt;int&gt; GetValueAsync()
+    {
+        await Task.Delay(TimeSpan.FromSeconds(1));
+        return Time.frameCount;
+    }
+}
+</code></pre>
+<p>When you <code>await</code> other methods they automatically belong to the same scope as the task that starts
+them. So in this example <code>GetValueAsync</code> also runs as part of the <code>MyClass</code> scope and stop when
+the component is destroyed.</p>
+<h3 id="exposing-a-method-that-produces-a-value">Exposing a method that produces a value</h3>
+<p>But what if you want to expose a api that produces a value, what happens to the task once your component
+gets destroyed.</p>
+<pre><code class="lang-c#">using System;
+using System.Threading.Tasks;
+using UnityEngine;
+
+class Producer : MonoBehaviour
+{
+    public Task&lt;int&gt; GetValueAsync() =&gt; this.StartTask(ProduceValueAsync);
+
+    async Task&lt;int&gt; ProduceValueAsync()
+    {
+        await Task.Delay(TimeSpan.FromSeconds(1));
+        return Time.frameCount;
+    }
+}
+</code></pre>
+<p>The <code>Task</code> (or <code>Task&lt;T&gt;</code>) returned out of  <code>This.StartTask(...)</code> properly goes into a 'cancelled'
+state when the component is destroyed. Which means that when you await that task you will get a
+<code>TaskCanceledException</code> that you can handle.</p>
+<p>On the receiving side:</p>
+<pre><code class="lang-c#">using System.Threading.Tasks;
+using UnityEngine;
+
+class Consumer : MonoBehaviour
+{
+    [SerializeField] private Producer producer;
+
+    void Start()
+    {
+        this.StartTask(RunAsync);
+    }
+
+    async Task RunAsync()
+    {
+        try
+        {
+            var val = await producer.GetValueAsync();
+            Debug.Log($&quot;Got value: '{val}'&quot;);
+        }
+        catch (TaskCanceledException)
+        {
+            Debug.Log(&quot;The producer was destroyed before producing the result&quot;);
+        }
+    }
+}
+</code></pre>
+<p>If you don't catch the exception then the exception is logged to the unity log and your task will
+go to a faulted state. But the nice thing is that if both components have the same lifetime
+(destroyed at the same time) then there is no problem (and you won't get any exceptions).</p>
+<h3 id="avoiding-closures">Avoiding closures</h3>
+<p>To avoid having to capture closures you can pass an argument into you task using <code>this.StartTask(...)</code>.</p>
+<pre><code class="lang-c#">using System;
+using System.Threading.Tasks;
+using UnityEngine;
+
+class MyClass : MonoBehaviour
+{
+    void Start()
+    {
+        var delay = 1;
+        this.StartTask(WaitAndDoSomethingAsync, delay);
+    }
+
+    async Task WaitAndDoSomethingAsync(int secondsDelay)
+    {
+        await Task.Delay(TimeSpan.FromSeconds(secondsDelay));
+        Debug.Log(&quot;Doing something&quot;);
+    }
+}
+</code></pre>
+<p>Only one argument is supported but with the 'new' tuples in c# 7 there is a nice (and efficient) workaround:</p>
+<pre><code class="lang-c#">using System;
+using System.Threading.Tasks;
+using UnityEngine;
+
+class MyClassWithValueTuple : MonoBehaviour
+{
+    void Start()
+    {
+        this.StartTask(WaitAndLog, (secondsDelay: 1, message: &quot;Hello World&quot;));
+    }
+
+    async Task WaitAndLog((int secondsDelay, string message) input)
+    {
+        await Task.Delay(TimeSpan.FromSeconds(input.secondsDelay));
+        Debug.Log(input.message);
+    }
+}
+</code></pre>
+<h3 id="cancelling-external-work">Cancelling external work</h3>
+<p>To make it easier to cancel external work when your component is destroyed <code>this.StartTask(...)</code>
+optionally gives you a <code>CancellationToken</code> to give to external api's.</p>
+<pre><code class="lang-c#">using System.Net.Http;
+using System.Threading;
+using System.Threading.Tasks;
+using UnityEngine;
+
+class MyClass : MonoBehaviour
+{
+    void Start()
+    {
+        var url = &quot;https://github.com/BastianBlokland/componenttask-unity&quot;;
+        this.StartTask(DownloadTextAsync, url);
+    }
+
+    async Task DownloadTextAsync(string url, CancellationToken cancelToken)
+    {
+        using (var client = new HttpClient())
+        {
+            var response = await client.GetAsync(url, cancelToken);
+            var responseText = await response.Content.ReadAsStringAsync();
+            Debug.Log($&quot;Text: '{responseText}'&quot;);
+        }
+    }
+}
+</code></pre>
+<p>Giving the <code>CancellationToken</code> here will make sure that the web-request is actually aborted when
+this component is destroyed.</p>
+<h3 id="running-expensive-blocking-work-on-a-background-thread">Running expensive blocking work on a background thread</h3>
+<p>Something that the <code>Task</code> based model make very easy is interacting with code that runs on a
+different thread. You can for example run your expensive blocking code in a background thread and
+await a <code>Task</code> handle to it.</p>
+<pre><code class="lang-c#">using System;
+using System.Threading;
+using System.Threading.Tasks;
+using UnityEngine;
+
+class MyClass : MonoBehaviour
+{
+    void Start()
+    {
+        this.StartTask(RunAsync);
+    }
+
+    async Task RunAsync()
+    {
+        var result = await Task.Run(VeryExpensiveBlockingCode);
+        Debug.Log($&quot;Got value: '{result}'&quot;);
+    }
+
+    int VeryExpensiveBlockingCode()
+    {
+        Thread.Sleep(TimeSpan.FromSeconds(5));
+        return 42;
+    }
+}
+</code></pre>
+<p>Even though <code>VeryExpensiveBlockingCode</code> blocks for 5 seconds because we run it on a background-thread
+(with <a href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.run">Task.Run</a>) the unity-thread stays responsive.</p>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                  <li>
+                    <a href="https://github.com/BastianBlokland/componenttask-unity/blob/master/.docs/examples.md/#L1" class="contribution-link">Improve this Doc</a>
+                  </li>
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            
+            <span>Generated by <strong>DocFX</strong></span>
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="styles/docfx.js"></script>
+    <script type="text/javascript" src="styles/main.js"></script>
+  </body>
+</html>

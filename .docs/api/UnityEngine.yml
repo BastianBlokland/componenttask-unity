@@ -1,0 +1,46 @@
+### YamlMime:ManagedReference
+items:
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  id: UnityEngine
+  children:
+  - UnityEngine.ComponentExtensions
+  - UnityEngine.GameObjectExtensions
+  - UnityEngine.TaskExtensions
+  - UnityEngine.TaskRunOptions
+  langs:
+  - csharp
+  - vb
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: UnityEngine.ComponentExtensions
+  commentId: T:UnityEngine.ComponentExtensions
+  name: ComponentExtensions
+  nameWithType: ComponentExtensions
+  fullName: UnityEngine.ComponentExtensions
+- uid: UnityEngine.GameObjectExtensions
+  commentId: T:UnityEngine.GameObjectExtensions
+  name: GameObjectExtensions
+  nameWithType: GameObjectExtensions
+  fullName: UnityEngine.GameObjectExtensions
+- uid: UnityEngine.TaskExtensions
+  commentId: T:UnityEngine.TaskExtensions
+  name: TaskExtensions
+  nameWithType: TaskExtensions
+  fullName: UnityEngine.TaskExtensions
+- uid: UnityEngine.TaskRunOptions
+  commentId: T:UnityEngine.TaskRunOptions
+  parent: UnityEngine
+  name: TaskRunOptions
+  nameWithType: TaskRunOptions
+  fullName: UnityEngine.TaskRunOptions
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine

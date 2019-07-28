@@ -1,0 +1,149 @@
+### YamlMime:ManagedReference
+items:
+- uid: UnityEngine.TaskRunOptions
+  commentId: T:UnityEngine.TaskRunOptions
+  id: TaskRunOptions
+  parent: UnityEngine
+  children:
+  - UnityEngine.TaskRunOptions.Default
+  - UnityEngine.TaskRunOptions.DiagnosticLogging
+  - UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled
+  langs:
+  - csharp
+  - vb
+  name: TaskRunOptions
+  nameWithType: TaskRunOptions
+  fullName: UnityEngine.TaskRunOptions
+  type: Enum
+  source:
+    id: TaskRunOptions
+    path: ''
+    startLine: 583
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nFlags for configuring how tasks are being run.\n"
+  example: []
+  syntax:
+    content: >-
+      [Flags]
+
+      public enum TaskRunOptions
+    content.vb: >-
+      <Flags>
+
+      Public Enum TaskRunOptions
+  attributes:
+  - type: System.FlagsAttribute
+    ctor: System.FlagsAttribute.#ctor
+    arguments: []
+  modifiers.csharp:
+  - public
+  - enum
+  modifiers.vb:
+  - Public
+  - Enum
+- uid: UnityEngine.TaskRunOptions.Default
+  commentId: F:UnityEngine.TaskRunOptions.Default
+  id: Default
+  parent: UnityEngine.TaskRunOptions
+  langs:
+  - csharp
+  - vb
+  name: Default
+  nameWithType: TaskRunOptions.Default
+  fullName: UnityEngine.TaskRunOptions.Default
+  type: Field
+  source:
+    id: Default
+    path: ''
+    startLine: 592
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nDefault run options.\n"
+  remarks: "\nTasks are updated in &apos;LateUpdate&apos; when the component is enabled.\n"
+  example: []
+  syntax:
+    content: Default = 0
+    return:
+      type: UnityEngine.TaskRunOptions
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled
+  commentId: F:UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled
+  id: UpdateWhileComponentDisabled
+  parent: UnityEngine.TaskRunOptions
+  langs:
+  - csharp
+  - vb
+  name: UpdateWhileComponentDisabled
+  nameWithType: TaskRunOptions.UpdateWhileComponentDisabled
+  fullName: UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled
+  type: Field
+  source:
+    id: UpdateWhileComponentDisabled
+    path: ''
+    startLine: 600
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nTasks are updated even if the component is disabled.\n"
+  remarks: "\nTasks are still NOT updated when the gameobject is disabled.\n"
+  example: []
+  syntax:
+    content: UpdateWhileComponentDisabled = 1
+    return:
+      type: UnityEngine.TaskRunOptions
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+- uid: UnityEngine.TaskRunOptions.DiagnosticLogging
+  commentId: F:UnityEngine.TaskRunOptions.DiagnosticLogging
+  id: DiagnosticLogging
+  parent: UnityEngine.TaskRunOptions
+  langs:
+  - csharp
+  - vb
+  name: DiagnosticLogging
+  nameWithType: TaskRunOptions.DiagnosticLogging
+  fullName: UnityEngine.TaskRunOptions.DiagnosticLogging
+  type: Field
+  source:
+    id: DiagnosticLogging
+    path: ''
+    startLine: 605
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nEnable diagnostic logging.\n"
+  example: []
+  syntax:
+    content: DiagnosticLogging = 2
+    return:
+      type: UnityEngine.TaskRunOptions
+  modifiers.csharp:
+  - public
+  - const
+  modifiers.vb:
+  - Public
+  - Const
+references:
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: UnityEngine.TaskRunOptions
+  commentId: T:UnityEngine.TaskRunOptions
+  parent: UnityEngine
+  name: TaskRunOptions
+  nameWithType: TaskRunOptions
+  fullName: UnityEngine.TaskRunOptions

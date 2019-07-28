@@ -1,0 +1,369 @@
+{
+  "homepages": [],
+  "source_base_path": "/Users/bastian/dev/projects/componentask-unity/.docs",
+  "xrefmap": "xrefmap.yml",
+  "files": [
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.Config.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.Config.html",
+          "hash": "80MbvJHoTKfEeCXYd0EBEw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.Exceptions.ComponentTaskCanceledException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.Exceptions.ComponentTaskCanceledException.html",
+          "hash": "8S81RmY51gHWooLxLxVvDA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.Exceptions.ContextChangedException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.Exceptions.ContextChangedException.html",
+          "hash": "2Tsy6mzUWaMofuF6JEQt3A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.Exceptions.InactiveComponentException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.Exceptions.InactiveComponentException.html",
+          "hash": "YJbkpkkmwDMdJ69u+7LSfA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.Exceptions.InactiveGameObjectException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.Exceptions.InactiveGameObjectException.html",
+          "hash": "97uDbJZLk1zl/nNpC8mEzg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.Exceptions.NonUnityThreadException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.Exceptions.NonUnityThreadException.html",
+          "hash": "Qy4Qck0rIRFINQCAsiJ4YQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.Exceptions.NotPlayingException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.Exceptions.NotPlayingException.html",
+          "hash": "Mha++Q8l5FBYJ08Z/KuSRg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.Exceptions.TaskCreatorReturnedNullException.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.Exceptions.TaskCreatorReturnedNullException.html",
+          "hash": "PKriFy0FvS8S5ysUpgHDvQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.Exceptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.Exceptions.html",
+          "hash": "T+ssj/EaV44R/gpEZxaWDg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.IDiagnosticLogger.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.IDiagnosticLogger.html",
+          "hash": "TUBbFrZHdahOrOSNhMJNjg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.IExceptionHandler.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.IExceptionHandler.html",
+          "hash": "KYpeEX426XavSiLhweAq4w=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.ITaskRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.ITaskRunner.html",
+          "hash": "HfaKPdoex5MccfOeTh/9TA=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.LocalTaskRunner.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.LocalTaskRunner.html",
+          "hash": "Le8pBN73goTI6Qh1o+OpZg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/ComponentTask.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/ComponentTask.html",
+          "hash": "X6a/kpHHJjxZk7IntXblPw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityEngine.ComponentExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityEngine.ComponentExtensions.html",
+          "hash": "P/uEfMqqUOyqIR8DKwy4zw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityEngine.GameObjectExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityEngine.GameObjectExtensions.html",
+          "hash": "IK51dWCKD/xBNsG8IBsHKQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityEngine.TaskExtensions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityEngine.TaskExtensions.html",
+          "hash": "1DwUfC1PSOR5/3MzJy0W3A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityEngine.TaskRunOptions.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityEngine.TaskRunOptions.html",
+          "hash": "77rph+HuNuK92P1i585g3A=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "ManagedReference",
+      "source_relative_path": "api/UnityEngine.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/UnityEngine.html",
+          "hash": "Oot1ZkflOx4RwwjsPwpYog=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "api/index.md",
+      "output": {
+        ".html": {
+          "relative_path": "api/index.html",
+          "hash": "1SU0iIlMCNOzWSG/QghTsw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "api/toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "api/toc.html",
+          "hash": "YCo5e5gGfwqpAn19pDE8Dg=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "examples.md",
+      "output": {
+        ".html": {
+          "relative_path": "examples.html",
+          "hash": "lcVwGEMjRRlW/+BEc0LCNw=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "how-to.md",
+      "output": {
+        ".html": {
+          "relative_path": "how-to.html",
+          "hash": "0Lw+093pZOYROESdBZVMWg=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
+      "type": "Conceptual",
+      "source_relative_path": "index.md",
+      "output": {
+        ".html": {
+          "relative_path": "index.html",
+          "hash": "kzfCK+FON8X5BBvNnZUbbQ=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    },
+    {
+      "type": "Conceptual",
+      "source_relative_path": "install.md",
+      "output": {
+        ".html": {
+          "relative_path": "install.html",
+          "hash": "51f7sEmi1r4WH5WfCo40eQ=="
+        }
+      },
+      "is_incremental": true,
+      "version": ""
+    },
+    {
+      "type": "Toc",
+      "source_relative_path": "toc.yml",
+      "output": {
+        ".html": {
+          "relative_path": "toc.html",
+          "hash": "mx53zXgLQUeMhTPqimk0vw=="
+        }
+      },
+      "is_incremental": false,
+      "version": ""
+    }
+  ],
+  "incremental_info": [
+    {
+      "status": {
+        "can_incremental": true,
+        "incrementalPhase": "build",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {
+        "TocDocumentProcessor": {
+          "can_incremental": false,
+          "details": "Processor TocDocumentProcessor cannot support incremental build because the processor doesn't implement ISupportIncrementalDocumentProcessor interface.",
+          "incrementalPhase": "build",
+          "total_file_count": 0,
+          "skipped_file_count": 0
+        },
+        "ConceptualDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 5,
+          "skipped_file_count": 4
+        },
+        "ManagedReferenceDocumentProcessor": {
+          "can_incremental": true,
+          "incrementalPhase": "build",
+          "total_file_count": 19,
+          "skipped_file_count": 19
+        }
+      }
+    },
+    {
+      "status": {
+        "can_incremental": true,
+        "details": "Can support incremental post processing.",
+        "incrementalPhase": "postProcessing",
+        "total_file_count": 0,
+        "skipped_file_count": 0
+      },
+      "processors": {}
+    }
+  ],
+  "version_info": {},
+  "groups": [
+    {
+      "xrefmap": "xrefmap.yml"
+    }
+  ]
+}

@@ -1,0 +1,3354 @@
+### YamlMime:ManagedReference
+items:
+- uid: ComponentTask.LocalTaskRunner
+  commentId: T:ComponentTask.LocalTaskRunner
+  id: LocalTaskRunner
+  parent: ComponentTask
+  children:
+  - ComponentTask.LocalTaskRunner.#ctor(ComponentTask.IExceptionHandler)
+  - ComponentTask.LocalTaskRunner.AssertRunningTaskCount(System.Int32)
+  - ComponentTask.LocalTaskRunner.Dispose
+  - ComponentTask.LocalTaskRunner.Execute
+  - ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  - ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  - ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  - ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  - ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  - ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  - ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  - ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  - ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  - ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  - ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  - ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  - ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  - ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  - ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  - ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  langs:
+  - csharp
+  - vb
+  name: LocalTaskRunner
+  nameWithType: LocalTaskRunner
+  fullName: ComponentTask.LocalTaskRunner
+  type: Class
+  source:
+    id: LocalTaskRunner
+    path: ''
+    startLine: 832
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  summary: "\nTaskRunner that you can &apos;tick&apos; manually.\n"
+  example: []
+  syntax:
+    content: 'public sealed class LocalTaskRunner : ITaskRunner, IDisposable'
+    content.vb: >-
+      Public NotInheritable Class LocalTaskRunner
+
+          Implements ITaskRunner, IDisposable
+  inheritance:
+  - System.Object
+  implements:
+  - ComponentTask.ITaskRunner
+  - System.IDisposable
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - sealed
+  - class
+  modifiers.vb:
+  - Public
+  - NotInheritable
+  - Class
+- uid: ComponentTask.LocalTaskRunner.#ctor(ComponentTask.IExceptionHandler)
+  commentId: M:ComponentTask.LocalTaskRunner.#ctor(ComponentTask.IExceptionHandler)
+  id: '#ctor(ComponentTask.IExceptionHandler)'
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: LocalTaskRunner(IExceptionHandler)
+  nameWithType: LocalTaskRunner.LocalTaskRunner(IExceptionHandler)
+  fullName: ComponentTask.LocalTaskRunner.LocalTaskRunner(ComponentTask.IExceptionHandler)
+  type: Constructor
+  source:
+    id: .ctor
+    path: ''
+    startLine: 847
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  summary: "\nConstruct a new instance of the <xref href=\"ComponentTask.LocalTaskRunner\" data-throw-if-not-resolved=\"false\"></xref> class.\n"
+  example: []
+  syntax:
+    content: public LocalTaskRunner(IExceptionHandler exceptionHandler)
+    parameters:
+    - id: exceptionHandler
+      type: ComponentTask.IExceptionHandler
+      description: Handler to use when exception occur in tasks.
+    content.vb: Public Sub New(exceptionHandler As IExceptionHandler)
+  overload: ComponentTask.LocalTaskRunner.#ctor*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ComponentTask.LocalTaskRunner.AssertRunningTaskCount(System.Int32)
+  commentId: M:ComponentTask.LocalTaskRunner.AssertRunningTaskCount(System.Int32)
+  id: AssertRunningTaskCount(System.Int32)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: AssertRunningTaskCount(Int32)
+  nameWithType: LocalTaskRunner.AssertRunningTaskCount(Int32)
+  fullName: ComponentTask.LocalTaskRunner.AssertRunningTaskCount(System.Int32)
+  type: Method
+  source:
+    id: AssertRunningTaskCount
+    path: ''
+    startLine: 855
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  summary: "\nValid in &apos;DEBUG&apos; only, useful for tests.\n"
+  example: []
+  syntax:
+    content: public void AssertRunningTaskCount(int expectedCount)
+    parameters:
+    - id: expectedCount
+      type: System.Int32
+    content.vb: Public Sub AssertRunningTaskCount(expectedCount As Integer)
+  overload: ComponentTask.LocalTaskRunner.AssertRunningTaskCount*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  id: StartTask(System.Func{System.Threading.Tasks.Task})
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask(Func<Task>)
+  nameWithType: LocalTaskRunner.StartTask(Func<Task>)
+  fullName: ComponentTask.LocalTaskRunner.StartTask(System.Func<System.Threading.Tasks.Task>)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 868
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task StartTask(Func<Task> taskCreator)
+    parameters:
+    - id: taskCreator
+      type: System.Func{System.Threading.Tasks.Task}
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartTask(taskCreator As Func(Of Task)) As Task
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  implements:
+  - ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  nameWithType.vb: LocalTaskRunner.StartTask(Func(Of Task))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(System.Func(Of System.Threading.Tasks.Task))
+  name.vb: StartTask(Func(Of Task))
+- uid: ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  id: StartTask(System.Func{System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask(Func<Task>, IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask(Func<Task>, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask(System.Func<System.Threading.Tasks.Task>, ComponentTask.IDiagnosticLogger)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 873
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task StartTask(Func<Task> taskCreator, IDiagnosticLogger logger)
+    parameters:
+    - id: taskCreator
+      type: System.Func{System.Threading.Tasks.Task}
+    - id: logger
+      type: ComponentTask.IDiagnosticLogger
+      description: Optional logger to output diagnostic messages to.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartTask(taskCreator As Func(Of Task), logger As IDiagnosticLogger) As Task
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  nameWithType.vb: LocalTaskRunner.StartTask(Func(Of Task), IDiagnosticLogger)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(System.Func(Of System.Threading.Tasks.Task), ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Func(Of Task), IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  id: StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask(Func<CancellationToken, Task>)
+  nameWithType: LocalTaskRunner.StartTask(Func<CancellationToken, Task>)
+  fullName: ComponentTask.LocalTaskRunner.StartTask(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 892
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task StartTask(Func<CancellationToken, Task> taskCreator)
+    parameters:
+    - id: taskCreator
+      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartTask(taskCreator As Func(Of CancellationToken, Task)) As Task
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  implements:
+  - ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  nameWithType.vb: LocalTaskRunner.StartTask(Func(Of CancellationToken, Task))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task))
+  name.vb: StartTask(Func(Of CancellationToken, Task))
+- uid: ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  id: StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask(Func<CancellationToken, Task>, IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask(Func<CancellationToken, Task>, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, ComponentTask.IDiagnosticLogger)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 897
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task StartTask(Func<CancellationToken, Task> taskCreator, IDiagnosticLogger logger)
+    parameters:
+    - id: taskCreator
+      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+    - id: logger
+      type: ComponentTask.IDiagnosticLogger
+      description: Optional logger to output diagnostic messages to.
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartTask(taskCreator As Func(Of CancellationToken, Task), logger As IDiagnosticLogger) As Task
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  nameWithType.vb: LocalTaskRunner.StartTask(Func(Of CancellationToken, Task), IDiagnosticLogger)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Func(Of CancellationToken, Task), IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  id: StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn>(Func<TIn, Task>, TIn)
+  nameWithType: LocalTaskRunner.StartTask<TIn>(Func<TIn, Task>, TIn)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.Tasks.Task>, TIn)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 916
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task StartTask<TIn>(Func<TIn, Task> taskCreator, TIn data)
+    parameters:
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.Tasks.Task}
+    - id: data
+      type: '{TIn}'
+    typeParameters:
+    - id: TIn
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartTask(Of TIn)(taskCreator As Func(Of TIn, Task), data As TIn) As Task
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  implements:
+  - ComponentTask.ITaskRunner.StartTask``1(System.Func{{TIn},System.Threading.Tasks.Task},{TIn})
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.Tasks.Task), TIn)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  id: StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn>(Func<TIn, Task>, TIn, IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TIn>(Func<TIn, Task>, TIn, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.Tasks.Task>, TIn, ComponentTask.IDiagnosticLogger)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 921
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task StartTask<TIn>(Func<TIn, Task> taskCreator, TIn data, IDiagnosticLogger logger)
+    parameters:
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.Tasks.Task}
+    - id: data
+      type: '{TIn}'
+    - id: logger
+      type: ComponentTask.IDiagnosticLogger
+      description: Optional logger to output diagnostic messages to.
+    typeParameters:
+    - id: TIn
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartTask(Of TIn)(taskCreator As Func(Of TIn, Task), data As TIn, logger As IDiagnosticLogger) As Task
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn)(Func(Of TIn, Task), TIn, IDiagnosticLogger)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.Tasks.Task), TIn, ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, Task), TIn, IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  id: StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  nameWithType: LocalTaskRunner.StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 941
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task StartTask<TIn>(Func<TIn, CancellationToken, Task> taskCreator, TIn data)
+    parameters:
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task}
+    - id: data
+      type: '{TIn}'
+    typeParameters:
+    - id: TIn
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartTask(Of TIn)(taskCreator As Func(Of TIn, CancellationToken, Task), data As TIn) As Task
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  implements:
+  - ComponentTask.ITaskRunner.StartTask``1(System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task},{TIn})
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  id: StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn, IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn, ComponentTask.IDiagnosticLogger)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 946
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task StartTask<TIn>(Func<TIn, CancellationToken, Task> taskCreator, TIn data, IDiagnosticLogger logger)
+    parameters:
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task}
+    - id: data
+      type: '{TIn}'
+    - id: logger
+      type: ComponentTask.IDiagnosticLogger
+      description: Optional logger to output diagnostic messages to.
+    typeParameters:
+    - id: TIn
+    return:
+      type: System.Threading.Tasks.Task
+    content.vb: Public Function StartTask(Of TIn)(taskCreator As Func(Of TIn, CancellationToken, Task), data As TIn, logger As IDiagnosticLogger) As Task
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn, IDiagnosticLogger)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn, ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn, IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  id: StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TOut>(Func<Task<TOut>>)
+  nameWithType: LocalTaskRunner.StartTask<TOut>(Func<Task<TOut>>)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TOut>(System.Func<System.Threading.Tasks.Task<TOut>>)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 966
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task<TOut> StartTask<TOut>(Func<Task<TOut>> taskCreator)
+    parameters:
+    - id: taskCreator
+      type: System.Func{System.Threading.Tasks.Task{{TOut}}}
+    typeParameters:
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+    content.vb: Public Function StartTask(Of TOut)(taskCreator As Func(Of Task(Of TOut))) As Task(Of TOut)
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  implements:
+  - ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{{TOut}}})
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TOut)(Func(Of Task(Of TOut)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.Tasks.Task(Of TOut)))
+  name.vb: StartTask(Of TOut)(Func(Of Task(Of TOut)))
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  id: StartTask``1(System.Func{System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TOut>(Func<Task<TOut>>, IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TOut>(Func<Task<TOut>>, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TOut>(System.Func<System.Threading.Tasks.Task<TOut>>, ComponentTask.IDiagnosticLogger)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 971
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task<TOut> StartTask<TOut>(Func<Task<TOut>> taskCreator, IDiagnosticLogger logger)
+    parameters:
+    - id: taskCreator
+      type: System.Func{System.Threading.Tasks.Task{{TOut}}}
+    - id: logger
+      type: ComponentTask.IDiagnosticLogger
+      description: Optional logger to output diagnostic messages to.
+    typeParameters:
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+    content.vb: Public Function StartTask(Of TOut)(taskCreator As Func(Of Task(Of TOut)), logger As IDiagnosticLogger) As Task(Of TOut)
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TOut)(Func(Of Task(Of TOut)), IDiagnosticLogger)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.Tasks.Task(Of TOut)), ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TOut)(Func(Of Task(Of TOut)), IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  id: StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  nameWithType: LocalTaskRunner.StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TOut>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 990
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task<TOut> StartTask<TOut>(Func<CancellationToken, Task<TOut>> taskCreator)
+    parameters:
+    - id: taskCreator
+      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+    typeParameters:
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+    content.vb: Public Function StartTask(Of TOut)(taskCreator As Func(Of CancellationToken, Task(Of TOut))) As Task(Of TOut)
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  implements:
+  - ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}})
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)))
+  name.vb: StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  id: StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TOut>(Func<CancellationToken, Task<TOut>>, IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TOut>(Func<CancellationToken, Task<TOut>>, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TOut>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, ComponentTask.IDiagnosticLogger)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 995
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task<TOut> StartTask<TOut>(Func<CancellationToken, Task<TOut>> taskCreator, IDiagnosticLogger logger)
+    parameters:
+    - id: taskCreator
+      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+    - id: logger
+      type: ComponentTask.IDiagnosticLogger
+      description: Optional logger to output diagnostic messages to.
+    typeParameters:
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+    content.vb: Public Function StartTask(Of TOut)(taskCreator As Func(Of CancellationToken, Task(Of TOut)), logger As IDiagnosticLogger) As Task(Of TOut)
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)), IDiagnosticLogger)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)), IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  id: StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  nameWithType: LocalTaskRunner.StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.Tasks.Task<TOut>>, TIn)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 1014
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task<TOut> StartTask<TIn, TOut>(Func<TIn, Task<TOut>> taskCreator, TIn data)
+    parameters:
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.Tasks.Task{{TOut}}}
+    - id: data
+      type: '{TIn}'
+    typeParameters:
+    - id: TIn
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+    content.vb: Public Function StartTask(Of TIn, TOut)(taskCreator As Func(Of TIn, Task(Of TOut)), data As TIn) As Task(Of TOut)
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  implements:
+  - ComponentTask.ITaskRunner.StartTask``2(System.Func{{TIn},System.Threading.Tasks.Task{{TOut}}},{TIn})
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+- uid: ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  id: StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn, IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.Tasks.Task<TOut>>, TIn, ComponentTask.IDiagnosticLogger)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 1019
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task<TOut> StartTask<TIn, TOut>(Func<TIn, Task<TOut>> taskCreator, TIn data, IDiagnosticLogger logger)
+    parameters:
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.Tasks.Task{{TOut}}}
+    - id: data
+      type: '{TIn}'
+    - id: logger
+      type: ComponentTask.IDiagnosticLogger
+      description: Optional logger to output diagnostic messages to.
+    typeParameters:
+    - id: TIn
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+    content.vb: Public Function StartTask(Of TIn, TOut)(taskCreator As Func(Of TIn, Task(Of TOut)), data As TIn, logger As IDiagnosticLogger) As Task(Of TOut)
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn, IDiagnosticLogger)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn, ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn, IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  id: StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  nameWithType: LocalTaskRunner.StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 1039
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task<TOut> StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data)
+    parameters:
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+    - id: data
+      type: '{TIn}'
+    typeParameters:
+    - id: TIn
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+    content.vb: Public Function StartTask(Of TIn, TOut)(taskCreator As Func(Of TIn, CancellationToken, Task(Of TOut)), data As TIn) As Task(Of TOut)
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  implements:
+  - ComponentTask.ITaskRunner.StartTask``2(System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}},{TIn})
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+- uid: ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  id: StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn, IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn, ComponentTask.IDiagnosticLogger)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 1044
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public Task<TOut> StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data, IDiagnosticLogger logger)
+    parameters:
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+    - id: data
+      type: '{TIn}'
+    - id: logger
+      type: ComponentTask.IDiagnosticLogger
+      description: Optional logger to output diagnostic messages to.
+    typeParameters:
+    - id: TIn
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+    content.vb: Public Function StartTask(Of TIn, TOut)(taskCreator As Func(Of TIn, CancellationToken, Task(Of TOut)), data As TIn, logger As IDiagnosticLogger) As Task(Of TOut)
+  overload: ComponentTask.LocalTaskRunner.StartTask*
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn, IDiagnosticLogger)
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn, ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn, IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.Execute
+  commentId: M:ComponentTask.LocalTaskRunner.Execute
+  id: Execute
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: Execute()
+  nameWithType: LocalTaskRunner.Execute()
+  fullName: ComponentTask.LocalTaskRunner.Execute()
+  type: Method
+  source:
+    id: Execute
+    path: ''
+    startLine: 1066
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  summary: "\nExecute all the work that was &apos;scheduled&apos; by the tasks running on this runner.\n"
+  example: []
+  syntax:
+    content: public void Execute()
+    content.vb: Public Sub Execute
+  overload: ComponentTask.LocalTaskRunner.Execute*
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+- uid: ComponentTask.LocalTaskRunner.Dispose
+  commentId: M:ComponentTask.LocalTaskRunner.Dispose
+  id: Dispose
+  parent: ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: Dispose()
+  nameWithType: LocalTaskRunner.Dispose()
+  fullName: ComponentTask.LocalTaskRunner.Dispose()
+  type: Method
+  source:
+    id: Dispose
+    path: ''
+    startLine: 1094
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  example: []
+  syntax:
+    content: public void Dispose()
+    content.vb: Public Sub Dispose
+  overload: ComponentTask.LocalTaskRunner.Dispose*
+  implements:
+  - System.IDisposable.Dispose
+  modifiers.csharp:
+  - public
+  modifiers.vb:
+  - Public
+references:
+- uid: ComponentTask
+  commentId: N:ComponentTask
+  name: ComponentTask
+  nameWithType: ComponentTask
+  fullName: ComponentTask
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: ComponentTask.ITaskRunner
+  commentId: T:ComponentTask.ITaskRunner
+  parent: ComponentTask
+  name: ITaskRunner
+  nameWithType: ITaskRunner
+  fullName: ComponentTask.ITaskRunner
+- uid: System.IDisposable
+  commentId: T:System.IDisposable
+  parent: System
+  isExternal: true
+  name: IDisposable
+  nameWithType: IDisposable
+  fullName: System.IDisposable
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: ComponentTask.LocalTaskRunner
+  commentId: T:ComponentTask.LocalTaskRunner
+  name: LocalTaskRunner
+  nameWithType: LocalTaskRunner
+  fullName: ComponentTask.LocalTaskRunner
+- uid: ComponentTask.LocalTaskRunner.#ctor*
+  commentId: Overload:ComponentTask.LocalTaskRunner.#ctor
+  name: LocalTaskRunner
+  nameWithType: LocalTaskRunner.LocalTaskRunner
+  fullName: ComponentTask.LocalTaskRunner.LocalTaskRunner
+- uid: ComponentTask.IExceptionHandler
+  commentId: T:ComponentTask.IExceptionHandler
+  parent: ComponentTask
+  name: IExceptionHandler
+  nameWithType: IExceptionHandler
+  fullName: ComponentTask.IExceptionHandler
+- uid: ComponentTask.LocalTaskRunner.AssertRunningTaskCount*
+  commentId: Overload:ComponentTask.LocalTaskRunner.AssertRunningTaskCount
+  name: AssertRunningTaskCount
+  nameWithType: LocalTaskRunner.AssertRunningTaskCount
+  fullName: ComponentTask.LocalTaskRunner.AssertRunningTaskCount
+- uid: System.Int32
+  commentId: T:System.Int32
+  parent: System
+  isExternal: true
+  name: Int32
+  nameWithType: Int32
+  fullName: System.Int32
+- uid: ComponentTask.LocalTaskRunner.StartTask*
+  commentId: Overload:ComponentTask.LocalTaskRunner.StartTask
+  name: StartTask
+  nameWithType: LocalTaskRunner.StartTask
+  fullName: ComponentTask.LocalTaskRunner.StartTask
+- uid: ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  commentId: M:ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  parent: ComponentTask.ITaskRunner
+  isExternal: true
+  name: StartTask(Func<Task>)
+  nameWithType: ITaskRunner.StartTask(Func<Task>)
+  fullName: ComponentTask.ITaskRunner.StartTask(System.Func<System.Threading.Tasks.Task>)
+  nameWithType.vb: ITaskRunner.StartTask(Func(Of Task))
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(System.Func(Of System.Threading.Tasks.Task))
+  name.vb: StartTask(Func(Of Task))
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+    name: StartTask
+    nameWithType: ITaskRunner.StartTask
+    fullName: ComponentTask.ITaskRunner.StartTask
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+    name: StartTask
+    nameWithType: ITaskRunner.StartTask
+    fullName: ComponentTask.ITaskRunner.StartTask
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: ComponentTask.IDiagnosticLogger
+  commentId: T:ComponentTask.IDiagnosticLogger
+  parent: ComponentTask
+  name: IDiagnosticLogger
+  nameWithType: IDiagnosticLogger
+  fullName: ComponentTask.IDiagnosticLogger
+- uid: ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  commentId: M:ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  parent: ComponentTask.ITaskRunner
+  isExternal: true
+  name: StartTask(Func<CancellationToken, Task>)
+  nameWithType: ITaskRunner.StartTask(Func<CancellationToken, Task>)
+  fullName: ComponentTask.ITaskRunner.StartTask(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>)
+  nameWithType.vb: ITaskRunner.StartTask(Func(Of CancellationToken, Task))
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task))
+  name.vb: StartTask(Func(Of CancellationToken, Task))
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+    name: StartTask
+    nameWithType: ITaskRunner.StartTask
+    fullName: ComponentTask.ITaskRunner.StartTask
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+    name: StartTask
+    nameWithType: ITaskRunner.StartTask
+    fullName: ComponentTask.ITaskRunner.StartTask
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`2
+  name: Func<CancellationToken, Task>
+  nameWithType: Func<CancellationToken, Task>
+  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of CancellationToken, Task)
+  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  name.vb: Func(Of CancellationToken, Task)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{{TIn},System.Threading.Tasks.Task},{TIn})
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  parent: ComponentTask.ITaskRunner
+  definition: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  name: StartTask<TIn>(Func<TIn, Task>, TIn)
+  nameWithType: ITaskRunner.StartTask<TIn>(Func<TIn, Task>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.Tasks.Task>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.Tasks.Task), TIn)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+    name: StartTask<TIn>
+    nameWithType: ITaskRunner.StartTask<TIn>
+    fullName: ComponentTask.ITaskRunner.StartTask<TIn>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+    name: StartTask(Of TIn)
+    nameWithType: ITaskRunner.StartTask(Of TIn)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TIn)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{TIn},System.Threading.Tasks.Task}
+  commentId: T:System.Func{``0,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`2
+  name: Func<TIn, Task>
+  nameWithType: Func<TIn, Task>
+  fullName: System.Func<TIn, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of TIn, Task)
+  fullName.vb: System.Func(Of TIn, System.Threading.Tasks.Task)
+  name.vb: Func(Of TIn, Task)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TIn}'
+  commentId: '!:TIn'
+  definition: TIn
+  name: TIn
+  nameWithType: TIn
+  fullName: TIn
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  isExternal: true
+  name: StartTask<TIn>(Func<TIn, Task>, TIn)
+  nameWithType: ITaskRunner.StartTask<TIn>(Func<TIn, Task>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.Tasks.Task>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.Tasks.Task), TIn)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+    name: StartTask<TIn>
+    nameWithType: ITaskRunner.StartTask<TIn>
+    fullName: ComponentTask.ITaskRunner.StartTask<TIn>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+    name: StartTask(Of TIn)
+    nameWithType: ITaskRunner.StartTask(Of TIn)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TIn)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: TIn
+  name: TIn
+  nameWithType: TIn
+  fullName: TIn
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task},{TIn})
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  parent: ComponentTask.ITaskRunner
+  definition: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  name: StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  nameWithType: ITaskRunner.StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+    name: StartTask<TIn>
+    nameWithType: ITaskRunner.StartTask<TIn>
+    fullName: ComponentTask.ITaskRunner.StartTask<TIn>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+    name: StartTask(Of TIn)
+    nameWithType: ITaskRunner.StartTask(Of TIn)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TIn)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`3
+  name: Func<TIn, CancellationToken, Task>
+  nameWithType: Func<TIn, CancellationToken, Task>
+  fullName: System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of TIn, CancellationToken, Task)
+  fullName.vb: System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  name.vb: Func(Of TIn, CancellationToken, Task)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  isExternal: true
+  name: StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  nameWithType: ITaskRunner.StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+    name: StartTask<TIn>
+    nameWithType: ITaskRunner.StartTask<TIn>
+    fullName: ComponentTask.ITaskRunner.StartTask<TIn>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+    name: StartTask(Of TIn)
+    nameWithType: ITaskRunner.StartTask(Of TIn)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TIn)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{{TOut}}})
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  parent: ComponentTask.ITaskRunner
+  definition: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  name: StartTask<TOut>(Func<Task<TOut>>)
+  nameWithType: ITaskRunner.StartTask<TOut>(Func<Task<TOut>>)
+  fullName: ComponentTask.ITaskRunner.StartTask<TOut>(System.Func<System.Threading.Tasks.Task<TOut>>)
+  nameWithType.vb: ITaskRunner.StartTask(Of TOut)(Func(Of Task(Of TOut)))
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.Tasks.Task(Of TOut)))
+  name.vb: StartTask(Of TOut)(Func(Of Task(Of TOut)))
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+    name: StartTask<TOut>
+    nameWithType: ITaskRunner.StartTask<TOut>
+    fullName: ComponentTask.ITaskRunner.StartTask<TOut>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+    name: StartTask(Of TOut)
+    nameWithType: ITaskRunner.StartTask(Of TOut)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TOut)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`1
+  name: Func<Task<TOut>>
+  nameWithType: Func<Task<TOut>>
+  fullName: System.Func<System.Threading.Tasks.Task<TOut>>
+  nameWithType.vb: Func(Of Task(Of TOut))
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task(Of TOut))
+  name.vb: Func(Of Task(Of TOut))
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{{TOut}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TOut>
+  nameWithType: Task<TOut>
+  fullName: System.Threading.Tasks.Task<TOut>
+  nameWithType.vb: Task(Of TOut)
+  fullName.vb: System.Threading.Tasks.Task(Of TOut)
+  name.vb: Task(Of TOut)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  isExternal: true
+  name: StartTask<TOut>(Func<Task<TOut>>)
+  nameWithType: ITaskRunner.StartTask<TOut>(Func<Task<TOut>>)
+  fullName: ComponentTask.ITaskRunner.StartTask<TOut>(System.Func<System.Threading.Tasks.Task<TOut>>)
+  nameWithType.vb: ITaskRunner.StartTask(Of TOut)(Func(Of Task(Of TOut)))
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.Tasks.Task(Of TOut)))
+  name.vb: StartTask(Of TOut)(Func(Of Task(Of TOut)))
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+    name: StartTask<TOut>
+    nameWithType: ITaskRunner.StartTask<TOut>
+    fullName: ComponentTask.ITaskRunner.StartTask<TOut>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+    name: StartTask(Of TOut)
+    nameWithType: ITaskRunner.StartTask(Of TOut)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TOut)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}})
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  parent: ComponentTask.ITaskRunner
+  definition: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  name: StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  nameWithType: ITaskRunner.StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  fullName: ComponentTask.ITaskRunner.StartTask<TOut>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>)
+  nameWithType.vb: ITaskRunner.StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)))
+  name.vb: StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+    name: StartTask<TOut>
+    nameWithType: ITaskRunner.StartTask<TOut>
+    fullName: ComponentTask.ITaskRunner.StartTask<TOut>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+    name: StartTask(Of TOut)
+    nameWithType: ITaskRunner.StartTask(Of TOut)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TOut)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`2
+  name: Func<CancellationToken, Task<TOut>>
+  nameWithType: Func<CancellationToken, Task<TOut>>
+  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>
+  nameWithType.vb: Func(Of CancellationToken, Task(Of TOut))
+  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut))
+  name.vb: Func(Of CancellationToken, Task(Of TOut))
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  isExternal: true
+  name: StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  nameWithType: ITaskRunner.StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  fullName: ComponentTask.ITaskRunner.StartTask<TOut>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>)
+  nameWithType.vb: ITaskRunner.StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)))
+  name.vb: StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+    name: StartTask<TOut>
+    nameWithType: ITaskRunner.StartTask<TOut>
+    fullName: ComponentTask.ITaskRunner.StartTask<TOut>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+    name: StartTask(Of TOut)
+    nameWithType: ITaskRunner.StartTask(Of TOut)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TOut)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{{TIn},System.Threading.Tasks.Task{{TOut}}},{TIn})
+  commentId: M:ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  parent: ComponentTask.ITaskRunner
+  definition: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  name: StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  nameWithType: ITaskRunner.StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.Tasks.Task<TOut>>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+    name: StartTask<TIn, TOut>
+    nameWithType: ITaskRunner.StartTask<TIn, TOut>
+    fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+    name: StartTask(Of TIn, TOut)
+    nameWithType: ITaskRunner.StartTask(Of TIn, TOut)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{TIn},System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{``0,System.Threading.Tasks.Task{``1}}
+  parent: System
+  definition: System.Func`2
+  name: Func<TIn, Task<TOut>>
+  nameWithType: Func<TIn, Task<TOut>>
+  fullName: System.Func<TIn, System.Threading.Tasks.Task<TOut>>
+  nameWithType.vb: Func(Of TIn, Task(Of TOut))
+  fullName.vb: System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut))
+  name.vb: Func(Of TIn, Task(Of TOut))
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  commentId: M:ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  isExternal: true
+  name: StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  nameWithType: ITaskRunner.StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.Tasks.Task<TOut>>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+    name: StartTask<TIn, TOut>
+    nameWithType: ITaskRunner.StartTask<TIn, TOut>
+    fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+    name: StartTask(Of TIn, TOut)
+    nameWithType: ITaskRunner.StartTask(Of TIn, TOut)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}},{TIn})
+  commentId: M:ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  parent: ComponentTask.ITaskRunner
+  definition: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  name: StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  nameWithType: ITaskRunner.StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+    name: StartTask<TIn, TOut>
+    nameWithType: ITaskRunner.StartTask<TIn, TOut>
+    fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+    name: StartTask(Of TIn, TOut)
+    nameWithType: ITaskRunner.StartTask(Of TIn, TOut)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}}
+  parent: System
+  definition: System.Func`3
+  name: Func<TIn, CancellationToken, Task<TOut>>
+  nameWithType: Func<TIn, CancellationToken, Task<TOut>>
+  fullName: System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>
+  nameWithType.vb: Func(Of TIn, CancellationToken, Task(Of TOut))
+  fullName.vb: System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut))
+  name.vb: Func(Of TIn, CancellationToken, Task(Of TOut))
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  commentId: M:ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  isExternal: true
+  name: StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  nameWithType: ITaskRunner.StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+  spec.csharp:
+  - uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+    name: StartTask<TIn, TOut>
+    nameWithType: ITaskRunner.StartTask<TIn, TOut>
+    fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+    name: StartTask(Of TIn, TOut)
+    nameWithType: ITaskRunner.StartTask(Of TIn, TOut)
+    fullName: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.LocalTaskRunner.Execute*
+  commentId: Overload:ComponentTask.LocalTaskRunner.Execute
+  name: Execute
+  nameWithType: LocalTaskRunner.Execute
+  fullName: ComponentTask.LocalTaskRunner.Execute
+- uid: ComponentTask.LocalTaskRunner.Dispose*
+  commentId: Overload:ComponentTask.LocalTaskRunner.Dispose
+  name: Dispose
+  nameWithType: LocalTaskRunner.Dispose
+  fullName: ComponentTask.LocalTaskRunner.Dispose
+- uid: System.IDisposable.Dispose
+  commentId: M:System.IDisposable.Dispose
+  parent: System.IDisposable
+  isExternal: true
+  name: Dispose()
+  nameWithType: IDisposable.Dispose()
+  fullName: System.IDisposable.Dispose()
+  spec.csharp:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.IDisposable.Dispose
+    name: Dispose
+    nameWithType: IDisposable.Dispose
+    fullName: System.IDisposable.Dispose
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )

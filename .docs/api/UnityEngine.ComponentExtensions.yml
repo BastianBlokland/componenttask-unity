@@ -1,0 +1,1843 @@
+### YamlMime:ManagedReference
+items:
+- uid: UnityEngine.ComponentExtensions
+  commentId: T:UnityEngine.ComponentExtensions
+  id: ComponentExtensions
+  parent: UnityEngine
+  children:
+  - UnityEngine.ComponentExtensions.GetTaskRunner(Component,UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  langs:
+  - csharp
+  - vb
+  name: ComponentExtensions
+  nameWithType: ComponentExtensions
+  fullName: UnityEngine.ComponentExtensions
+  type: Class
+  source:
+    id: ComponentExtensions
+    path: ''
+    startLine: 12
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nExtensions for <see cref=\"!:UnityEngine.Component\"></see>.\n"
+  example: []
+  syntax:
+    content: public static class ComponentExtensions
+    content.vb: Public Module ComponentExtensions
+  inheritance:
+  - System.Object
+  inheritedMembers:
+  - System.Object.Equals(System.Object)
+  - System.Object.Equals(System.Object,System.Object)
+  - System.Object.GetHashCode
+  - System.Object.GetType
+  - System.Object.MemberwiseClone
+  - System.Object.ToString
+  - System.Object.ReferenceEquals(System.Object,System.Object)
+  modifiers.csharp:
+  - public
+  - static
+  - class
+  modifiers.vb:
+  - Public
+  - Module
+- uid: UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  id: StartTask(Component,System.Func{System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.ComponentExtensions
+  langs:
+  - csharp
+  - vb
+  name: StartTask(Component, Func<Task>, TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask(Component, Func<Task>, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask(Component, System.Func<System.Threading.Tasks.Task>, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 51
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nStart a task scoped to the given component.\n"
+  remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static Task StartTask(this Component component, Func<Task> taskCreator, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: component
+      type: Component
+      description: Component to run the task &apos;on&apos;.
+    - id: taskCreator
+      type: System.Func{System.Threading.Tasks.Task}
+      description: Function for creating the task.
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how the task is run.
+    return:
+      type: System.Threading.Tasks.Task
+      description: "\nTask that completes when the original task completes or when the component gets destroyed.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function StartTask(component As Component, taskCreator As Func(Of Task), options As TaskRunOptions = TaskRunOptions.Default) As Task
+  overload: UnityEngine.ComponentExtensions.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
+  - type: ComponentTask.Exceptions.InactiveGameObjectException
+    commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+    description: "\nThrown when attempting to start a task on a disabled gameobject.\n"
+  - type: ComponentTask.Exceptions.InactiveComponentException
+    commentId: T:ComponentTask.Exceptions.InactiveComponentException
+    description: "\nThrown when attempting to start a task on a disabled component.\nDoes not happen when giving <xref href=\"UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled\" data-throw-if-not-resolved=\"false\"></xref> flag.\n"
+  nameWithType.vb: ComponentExtensions.StartTask(Component, Func(Of Task), TaskRunOptions)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Component, System.Func(Of System.Threading.Tasks.Task), UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Component, Func(Of Task), TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  id: StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.ComponentExtensions
+  langs:
+  - csharp
+  - vb
+  name: StartTask(Component, Func<CancellationToken, Task>, TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask(Component, Func<CancellationToken, Task>, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask(Component, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 105
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nStart a task scoped to the given component.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
+  remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static Task StartTask(this Component component, Func<CancellationToken, Task> taskCreator, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: component
+      type: Component
+      description: Component to run the task &apos;on&apos;.
+    - id: taskCreator
+      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      description: Function for creating the task.
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how the task is run.
+    return:
+      type: System.Threading.Tasks.Task
+      description: "\nTask that completes when the original task completes or when the component gets destroyed.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function StartTask(component As Component, taskCreator As Func(Of CancellationToken, Task), options As TaskRunOptions = TaskRunOptions.Default) As Task
+  overload: UnityEngine.ComponentExtensions.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
+  - type: ComponentTask.Exceptions.InactiveGameObjectException
+    commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+    description: "\nThrown when attempting to start a task on a disabled gameobject.\n"
+  - type: ComponentTask.Exceptions.InactiveComponentException
+    commentId: T:ComponentTask.Exceptions.InactiveComponentException
+    description: "\nThrown when attempting to start a task on a disabled component.\nDoes not happen when giving <xref href=\"UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled\" data-throw-if-not-resolved=\"false\"></xref> flag.\n"
+  nameWithType.vb: ComponentExtensions.StartTask(Component, Func(Of CancellationToken, Task), TaskRunOptions)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Component, System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Component, Func(Of CancellationToken, Task), TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  id: StartTask``1(Component,System.Func{``0,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.ComponentExtensions
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn>(Component, Func<TIn, Task>, TIn, TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TIn>(Component, Func<TIn, Task>, TIn, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn>(Component, System.Func<TIn, System.Threading.Tasks.Task>, TIn, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 157
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nStart a task scoped to the given component.\n"
+  remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static Task StartTask<TIn>(this Component component, Func<TIn, Task> taskCreator, TIn data, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: component
+      type: Component
+      description: Component to run the task &apos;on&apos;.
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.Tasks.Task}
+      description: Function for creating the task.
+    - id: data
+      type: '{TIn}'
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how the task is run.
+    typeParameters:
+    - id: TIn
+    return:
+      type: System.Threading.Tasks.Task
+      description: "\nTask that completes when the original task completes or when the component gets destroyed.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function StartTask(Of TIn)(component As Component, taskCreator As Func(Of TIn, Task), data As TIn, options As TaskRunOptions = TaskRunOptions.Default) As Task
+  overload: UnityEngine.ComponentExtensions.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
+  - type: ComponentTask.Exceptions.InactiveGameObjectException
+    commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+    description: "\nThrown when attempting to start a task on a disabled gameobject.\n"
+  - type: ComponentTask.Exceptions.InactiveComponentException
+    commentId: T:ComponentTask.Exceptions.InactiveComponentException
+    description: "\nThrown when attempting to start a task on a disabled component.\nDoes not happen when giving <xref href=\"UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled\" data-throw-if-not-resolved=\"false\"></xref> flag.\n"
+  nameWithType.vb: ComponentExtensions.StartTask(Of TIn)(Component, Func(Of TIn, Task), TIn, TaskRunOptions)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn)(Component, System.Func(Of TIn, System.Threading.Tasks.Task), TIn, UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TIn)(Component, Func(Of TIn, Task), TIn, TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  id: StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.ComponentExtensions
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn>(Component, Func<TIn, CancellationToken, Task>, TIn, TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TIn>(Component, Func<TIn, CancellationToken, Task>, TIn, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn>(Component, System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 212
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nStart a task scoped to the given component.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
+  remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static Task StartTask<TIn>(this Component component, Func<TIn, CancellationToken, Task> taskCreator, TIn data, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: component
+      type: Component
+      description: Component to run the task &apos;on&apos;.
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      description: Function for creating the task.
+    - id: data
+      type: '{TIn}'
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how the task is run.
+    typeParameters:
+    - id: TIn
+    return:
+      type: System.Threading.Tasks.Task
+      description: "\nTask that completes when the original task completes or when the component gets destroyed.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function StartTask(Of TIn)(component As Component, taskCreator As Func(Of TIn, CancellationToken, Task), data As TIn, options As TaskRunOptions = TaskRunOptions.Default) As Task
+  overload: UnityEngine.ComponentExtensions.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
+  - type: ComponentTask.Exceptions.InactiveGameObjectException
+    commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+    description: "\nThrown when attempting to start a task on a disabled gameobject.\n"
+  - type: ComponentTask.Exceptions.InactiveComponentException
+    commentId: T:ComponentTask.Exceptions.InactiveComponentException
+    description: "\nThrown when attempting to start a task on a disabled component.\nDoes not happen when giving <xref href=\"UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled\" data-throw-if-not-resolved=\"false\"></xref> flag.\n"
+  nameWithType.vb: ComponentExtensions.StartTask(Of TIn)(Component, Func(Of TIn, CancellationToken, Task), TIn, TaskRunOptions)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn)(Component, System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn, UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TIn)(Component, Func(Of TIn, CancellationToken, Task), TIn, TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  id: StartTask``1(Component,System.Func{System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.ComponentExtensions
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TOut>(Component, Func<Task<TOut>>, TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TOut>(Component, Func<Task<TOut>>, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TOut>(Component, System.Func<System.Threading.Tasks.Task<TOut>>, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 265
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nStart a task scoped to the given component.\n"
+  remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static Task<TOut> StartTask<TOut>(this Component component, Func<Task<TOut>> taskCreator, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: component
+      type: Component
+      description: Component to run the task &apos;on&apos;.
+    - id: taskCreator
+      type: System.Func{System.Threading.Tasks.Task{{TOut}}}
+      description: Function for creating the task.
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how the task is run.
+    typeParameters:
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+      description: "\nTask that completes when the original task completes or when the component gets destroyed.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function StartTask(Of TOut)(component As Component, taskCreator As Func(Of Task(Of TOut)), options As TaskRunOptions = TaskRunOptions.Default) As Task(Of TOut)
+  overload: UnityEngine.ComponentExtensions.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
+  - type: ComponentTask.Exceptions.InactiveGameObjectException
+    commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+    description: "\nThrown when attempting to start a task on a disabled gameobject.\n"
+  - type: ComponentTask.Exceptions.InactiveComponentException
+    commentId: T:ComponentTask.Exceptions.InactiveComponentException
+    description: "\nThrown when attempting to start a task on a disabled component.\nDoes not happen when giving <xref href=\"UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled\" data-throw-if-not-resolved=\"false\"></xref> flag.\n"
+  nameWithType.vb: ComponentExtensions.StartTask(Of TOut)(Component, Func(Of Task(Of TOut)), TaskRunOptions)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TOut)(Component, System.Func(Of System.Threading.Tasks.Task(Of TOut)), UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TOut)(Component, Func(Of Task(Of TOut)), TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  id: StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.ComponentExtensions
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TOut>(Component, Func<CancellationToken, Task<TOut>>, TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TOut>(Component, Func<CancellationToken, Task<TOut>>, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TOut>(Component, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 319
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nStart a task scoped to the given component.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
+  remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static Task<TOut> StartTask<TOut>(this Component component, Func<CancellationToken, Task<TOut>> taskCreator, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: component
+      type: Component
+      description: Component to run the task &apos;on&apos;.
+    - id: taskCreator
+      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+      description: Function for creating the task.
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how the task is run.
+    typeParameters:
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+      description: "\nTask that completes when the original task completes or when the component gets destroyed.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function StartTask(Of TOut)(component As Component, taskCreator As Func(Of CancellationToken, Task(Of TOut)), options As TaskRunOptions = TaskRunOptions.Default) As Task(Of TOut)
+  overload: UnityEngine.ComponentExtensions.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
+  - type: ComponentTask.Exceptions.InactiveGameObjectException
+    commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+    description: "\nThrown when attempting to start a task on a disabled gameobject.\n"
+  - type: ComponentTask.Exceptions.InactiveComponentException
+    commentId: T:ComponentTask.Exceptions.InactiveComponentException
+    description: "\nThrown when attempting to start a task on a disabled component.\nDoes not happen when giving <xref href=\"UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled\" data-throw-if-not-resolved=\"false\"></xref> flag.\n"
+  nameWithType.vb: ComponentExtensions.StartTask(Of TOut)(Component, Func(Of CancellationToken, Task(Of TOut)), TaskRunOptions)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TOut)(Component, System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TOut)(Component, Func(Of CancellationToken, Task(Of TOut)), TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  id: StartTask``2(Component,System.Func{``0,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.ComponentExtensions
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn, TOut>(Component, Func<TIn, Task<TOut>>, TIn, TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TIn, TOut>(Component, Func<TIn, Task<TOut>>, TIn, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn, TOut>(Component, System.Func<TIn, System.Threading.Tasks.Task<TOut>>, TIn, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 371
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nStart a task scoped to the given component.\n"
+  remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static Task<TOut> StartTask<TIn, TOut>(this Component component, Func<TIn, Task<TOut>> taskCreator, TIn data, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: component
+      type: Component
+      description: Component to run the task &apos;on&apos;.
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.Tasks.Task{{TOut}}}
+      description: Function for creating the task.
+    - id: data
+      type: '{TIn}'
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how the task is run.
+    typeParameters:
+    - id: TIn
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+      description: "\nTask that completes when the original task completes or when the component gets destroyed.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function StartTask(Of TIn, TOut)(component As Component, taskCreator As Func(Of TIn, Task(Of TOut)), data As TIn, options As TaskRunOptions = TaskRunOptions.Default) As Task(Of TOut)
+  overload: UnityEngine.ComponentExtensions.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
+  - type: ComponentTask.Exceptions.InactiveGameObjectException
+    commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+    description: "\nThrown when attempting to start a task on a disabled gameobject.\n"
+  - type: ComponentTask.Exceptions.InactiveComponentException
+    commentId: T:ComponentTask.Exceptions.InactiveComponentException
+    description: "\nThrown when attempting to start a task on a disabled component.\nDoes not happen when giving <xref href=\"UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled\" data-throw-if-not-resolved=\"false\"></xref> flag.\n"
+  nameWithType.vb: ComponentExtensions.StartTask(Of TIn, TOut)(Component, Func(Of TIn, Task(Of TOut)), TIn, TaskRunOptions)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn, TOut)(Component, System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn, UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TIn, TOut)(Component, Func(Of TIn, Task(Of TOut)), TIn, TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  id: StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.ComponentExtensions
+  langs:
+  - csharp
+  - vb
+  name: StartTask<TIn, TOut>(Component, Func<TIn, CancellationToken, Task<TOut>>, TIn, TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TIn, TOut>(Component, Func<TIn, CancellationToken, Task<TOut>>, TIn, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn, TOut>(Component, System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: StartTask
+    path: ''
+    startLine: 426
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nStart a task scoped to the given component.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
+  remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static Task<TOut> StartTask<TIn, TOut>(this Component component, Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: component
+      type: Component
+      description: Component to run the task &apos;on&apos;.
+    - id: taskCreator
+      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+      description: Function for creating the task.
+    - id: data
+      type: '{TIn}'
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how the task is run.
+    typeParameters:
+    - id: TIn
+    - id: TOut
+    return:
+      type: System.Threading.Tasks.Task{{TOut}}
+      description: "\nTask that completes when the original task completes or when the component gets destroyed.\n"
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function StartTask(Of TIn, TOut)(component As Component, taskCreator As Func(Of TIn, CancellationToken, Task(Of TOut)), data As TIn, options As TaskRunOptions = TaskRunOptions.Default) As Task(Of TOut)
+  overload: UnityEngine.ComponentExtensions.StartTask*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  - type: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    description: "\nThrown when null is returned from the &apos;taskCreator&apos;.\n"
+  - type: ComponentTask.Exceptions.ComponentTaskCanceledException
+    commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+    description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
+  - type: ComponentTask.Exceptions.InactiveGameObjectException
+    commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+    description: "\nThrown when attempting to start a task on a disabled gameobject.\n"
+  - type: ComponentTask.Exceptions.InactiveComponentException
+    commentId: T:ComponentTask.Exceptions.InactiveComponentException
+    description: "\nThrown when attempting to start a task on a disabled component.\nDoes not happen when giving <xref href=\"UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled\" data-throw-if-not-resolved=\"false\"></xref> flag.\n"
+  nameWithType.vb: ComponentExtensions.StartTask(Of TIn, TOut)(Component, Func(Of TIn, CancellationToken, Task(Of TOut)), TIn, TaskRunOptions)
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn, TOut)(Component, System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn, UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TIn, TOut)(Component, Func(Of TIn, CancellationToken, Task(Of TOut)), TIn, TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.GetTaskRunner(Component,UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.GetTaskRunner(Component,UnityEngine.TaskRunOptions)
+  id: GetTaskRunner(Component,UnityEngine.TaskRunOptions)
+  isExtensionMethod: true
+  parent: UnityEngine.ComponentExtensions
+  langs:
+  - csharp
+  - vb
+  name: GetTaskRunner(Component, TaskRunOptions)
+  nameWithType: ComponentExtensions.GetTaskRunner(Component, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.GetTaskRunner(Component, UnityEngine.TaskRunOptions)
+  type: Method
+  source:
+    id: GetTaskRunner
+    path: ''
+    startLine: 462
+  assemblies:
+  - cs.temp.dll
+  namespace: UnityEngine
+  summary: "\nGet a <xref href=\"ComponentTask.ITaskRunner\" data-throw-if-not-resolved=\"false\"></xref> for the given component.\n"
+  remarks: "\nIf a existing runner exists for the component then that is returned, otherwise a new\nrunner is created.\n\nCan only be called from the unity-thread in play-mode.\n"
+  example: []
+  syntax:
+    content: public static ITaskRunner GetTaskRunner(this Component component, TaskRunOptions options = TaskRunOptions.Default)
+    parameters:
+    - id: component
+      type: Component
+      description: Component to get the runner for.
+    - id: options
+      type: UnityEngine.TaskRunOptions
+      description: Options for configuring how tasks are run on this runner.
+    return:
+      type: ComponentTask.ITaskRunner
+      description: <xref href="ComponentTask.ITaskRunner" data-throw-if-not-resolved="false"></xref> scoped to the given component.
+    content.vb: >-
+      <ExtensionAttribute>
+
+      Public Shared Function GetTaskRunner(component As Component, options As TaskRunOptions = TaskRunOptions.Default) As ITaskRunner
+  overload: UnityEngine.ComponentExtensions.GetTaskRunner*
+  exceptions:
+  - type: ComponentTask.Exceptions.NotPlayingException
+    commentId: T:ComponentTask.Exceptions.NotPlayingException
+    description: "\nThrown when called in edit-mode.\n"
+  - type: ComponentTask.Exceptions.NonUnityThreadException
+    commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+    description: "\nThrown when called from a non-unity thread.\n"
+  modifiers.csharp:
+  - public
+  - static
+  modifiers.vb:
+  - Public
+  - Shared
+references:
+- uid: UnityEngine
+  commentId: N:UnityEngine
+  name: UnityEngine
+  nameWithType: UnityEngine
+  fullName: UnityEngine
+- uid: System.Object
+  commentId: T:System.Object
+  parent: System
+  isExternal: true
+  name: Object
+  nameWithType: Object
+  fullName: System.Object
+- uid: System.Object.Equals(System.Object)
+  commentId: M:System.Object.Equals(System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object)
+  nameWithType: Object.Equals(Object)
+  fullName: System.Object.Equals(System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.Equals(System.Object,System.Object)
+  commentId: M:System.Object.Equals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: Equals(Object, Object)
+  nameWithType: Object.Equals(Object, Object)
+  fullName: System.Object.Equals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.Equals(System.Object,System.Object)
+    name: Equals
+    nameWithType: Object.Equals
+    fullName: System.Object.Equals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetHashCode
+  commentId: M:System.Object.GetHashCode
+  parent: System.Object
+  isExternal: true
+  name: GetHashCode()
+  nameWithType: Object.GetHashCode()
+  fullName: System.Object.GetHashCode()
+  spec.csharp:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetHashCode
+    name: GetHashCode
+    nameWithType: Object.GetHashCode
+    fullName: System.Object.GetHashCode
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.GetType
+  commentId: M:System.Object.GetType
+  parent: System.Object
+  isExternal: true
+  name: GetType()
+  nameWithType: Object.GetType()
+  fullName: System.Object.GetType()
+  spec.csharp:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.GetType
+    name: GetType
+    nameWithType: Object.GetType
+    fullName: System.Object.GetType
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.MemberwiseClone
+  commentId: M:System.Object.MemberwiseClone
+  parent: System.Object
+  isExternal: true
+  name: MemberwiseClone()
+  nameWithType: Object.MemberwiseClone()
+  fullName: System.Object.MemberwiseClone()
+  spec.csharp:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.MemberwiseClone
+    name: MemberwiseClone
+    nameWithType: Object.MemberwiseClone
+    fullName: System.Object.MemberwiseClone
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ToString
+  commentId: M:System.Object.ToString
+  parent: System.Object
+  isExternal: true
+  name: ToString()
+  nameWithType: Object.ToString()
+  fullName: System.Object.ToString()
+  spec.csharp:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ToString
+    name: ToString
+    nameWithType: Object.ToString
+    fullName: System.Object.ToString
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Object.ReferenceEquals(System.Object,System.Object)
+  commentId: M:System.Object.ReferenceEquals(System.Object,System.Object)
+  parent: System.Object
+  isExternal: true
+  name: ReferenceEquals(Object, Object)
+  nameWithType: Object.ReferenceEquals(Object, Object)
+  fullName: System.Object.ReferenceEquals(System.Object, System.Object)
+  spec.csharp:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+  spec.vb:
+  - uid: System.Object.ReferenceEquals(System.Object,System.Object)
+    name: ReferenceEquals
+    nameWithType: Object.ReferenceEquals
+    fullName: System.Object.ReferenceEquals
+    isExternal: true
+  - name: (
+    nameWithType: (
+    fullName: (
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Object
+    name: Object
+    nameWithType: Object
+    fullName: System.Object
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System
+- uid: UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled
+  commentId: F:UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled
+  isExternal: true
+- uid: ComponentTask.Exceptions.NotPlayingException
+  commentId: T:ComponentTask.Exceptions.NotPlayingException
+  name: NotPlayingException
+  nameWithType: NotPlayingException
+  fullName: ComponentTask.Exceptions.NotPlayingException
+- uid: ComponentTask.Exceptions.NonUnityThreadException
+  commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+  name: NonUnityThreadException
+  nameWithType: NonUnityThreadException
+  fullName: ComponentTask.Exceptions.NonUnityThreadException
+- uid: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  name: TaskCreatorReturnedNullException
+  nameWithType: TaskCreatorReturnedNullException
+  fullName: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+- uid: ComponentTask.Exceptions.ComponentTaskCanceledException
+  commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+  name: ComponentTaskCanceledException
+  nameWithType: ComponentTaskCanceledException
+  fullName: ComponentTask.Exceptions.ComponentTaskCanceledException
+- uid: ComponentTask.Exceptions.InactiveGameObjectException
+  commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+  name: InactiveGameObjectException
+  nameWithType: InactiveGameObjectException
+  fullName: ComponentTask.Exceptions.InactiveGameObjectException
+- uid: ComponentTask.Exceptions.InactiveComponentException
+  commentId: T:ComponentTask.Exceptions.InactiveComponentException
+  name: InactiveComponentException
+  nameWithType: InactiveComponentException
+  fullName: ComponentTask.Exceptions.InactiveComponentException
+- uid: UnityEngine.ComponentExtensions.StartTask*
+  commentId: Overload:UnityEngine.ComponentExtensions.StartTask
+  name: StartTask
+  nameWithType: ComponentExtensions.StartTask
+  fullName: UnityEngine.ComponentExtensions.StartTask
+- uid: Component
+  isExternal: true
+  name: Component
+  nameWithType: Component
+  fullName: Component
+- uid: System.Func{System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`1
+  name: Func<Task>
+  nameWithType: Func<Task>
+  fullName: System.Func<System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of Task)
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task)
+  name.vb: Func(Of Task)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: UnityEngine.TaskRunOptions
+  commentId: T:UnityEngine.TaskRunOptions
+  parent: UnityEngine
+  name: TaskRunOptions
+  nameWithType: TaskRunOptions
+  fullName: UnityEngine.TaskRunOptions
+- uid: System.Threading.Tasks.Task
+  commentId: T:System.Threading.Tasks.Task
+  parent: System.Threading.Tasks
+  isExternal: true
+  name: Task
+  nameWithType: Task
+  fullName: System.Threading.Tasks.Task
+- uid: System.Func`1
+  commentId: T:System.Func`1
+  isExternal: true
+  name: Func<TResult>
+  nameWithType: Func<TResult>
+  fullName: System.Func<TResult>
+  nameWithType.vb: Func(Of TResult)
+  fullName.vb: System.Func(Of TResult)
+  name.vb: Func(Of TResult)
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks
+  commentId: N:System.Threading.Tasks
+  isExternal: true
+  name: System.Threading.Tasks
+  nameWithType: System.Threading.Tasks
+  fullName: System.Threading.Tasks
+- uid: System.Threading.CancellationToken
+  commentId: T:System.Threading.CancellationToken
+  isExternal: true
+- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`2
+  name: Func<CancellationToken, Task>
+  nameWithType: Func<CancellationToken, Task>
+  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of CancellationToken, Task)
+  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  name.vb: Func(Of CancellationToken, Task)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`2
+  commentId: T:System.Func`2
+  isExternal: true
+  name: Func<T, TResult>
+  nameWithType: Func<T, TResult>
+  fullName: System.Func<T, TResult>
+  nameWithType.vb: Func(Of T, TResult)
+  fullName.vb: System.Func(Of T, TResult)
+  name.vb: Func(Of T, TResult)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T
+    nameWithType: T
+    fullName: T
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{TIn},System.Threading.Tasks.Task}
+  commentId: T:System.Func{``0,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`2
+  name: Func<TIn, Task>
+  nameWithType: Func<TIn, Task>
+  fullName: System.Func<TIn, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of TIn, Task)
+  fullName.vb: System.Func(Of TIn, System.Threading.Tasks.Task)
+  name.vb: Func(Of TIn, Task)
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: '{TIn}'
+  commentId: '!:TIn'
+  definition: TIn
+  name: TIn
+  nameWithType: TIn
+  fullName: TIn
+- uid: TIn
+  name: TIn
+  nameWithType: TIn
+  fullName: TIn
+- uid: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+  parent: System
+  definition: System.Func`3
+  name: Func<TIn, CancellationToken, Task>
+  nameWithType: Func<TIn, CancellationToken, Task>
+  fullName: System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  nameWithType.vb: Func(Of TIn, CancellationToken, Task)
+  fullName.vb: System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  name.vb: Func(Of TIn, CancellationToken, Task)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func`3
+  commentId: T:System.Func`3
+  isExternal: true
+  name: Func<T1, T2, TResult>
+  nameWithType: Func<T1, T2, TResult>
+  fullName: System.Func<T1, T2, TResult>
+  nameWithType.vb: Func(Of T1, T2, TResult)
+  fullName.vb: System.Func(Of T1, T2, TResult)
+  name.vb: Func(Of T1, T2, TResult)
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: T1
+    nameWithType: T1
+    fullName: T1
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: T2
+    nameWithType: T2
+    fullName: T2
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`1
+  name: Func<Task<TOut>>
+  nameWithType: Func<Task<TOut>>
+  fullName: System.Func<System.Threading.Tasks.Task<TOut>>
+  nameWithType.vb: Func(Of Task(Of TOut))
+  fullName.vb: System.Func(Of System.Threading.Tasks.Task(Of TOut))
+  name.vb: Func(Of Task(Of TOut))
+  spec.csharp:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`1
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task{{TOut}}
+  commentId: T:System.Threading.Tasks.Task{``0}
+  parent: System.Threading.Tasks
+  definition: System.Threading.Tasks.Task`1
+  name: Task<TOut>
+  nameWithType: Task<TOut>
+  fullName: System.Threading.Tasks.Task<TOut>
+  nameWithType.vb: Task(Of TOut)
+  fullName.vb: System.Threading.Tasks.Task(Of TOut)
+  name.vb: Task(Of TOut)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Threading.Tasks.Task`1
+  commentId: T:System.Threading.Tasks.Task`1
+  isExternal: true
+  name: Task<TResult>
+  nameWithType: Task<TResult>
+  fullName: System.Threading.Tasks.Task<TResult>
+  nameWithType.vb: Task(Of TResult)
+  fullName.vb: System.Threading.Tasks.Task(Of TResult)
+  name.vb: Task(Of TResult)
+  spec.csharp:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TResult
+    nameWithType: TResult
+    fullName: TResult
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}}
+  parent: System
+  definition: System.Func`2
+  name: Func<CancellationToken, Task<TOut>>
+  nameWithType: Func<CancellationToken, Task<TOut>>
+  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>
+  nameWithType.vb: Func(Of CancellationToken, Task(Of TOut))
+  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut))
+  name.vb: Func(Of CancellationToken, Task(Of TOut))
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{TIn},System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{``0,System.Threading.Tasks.Task{``1}}
+  parent: System
+  definition: System.Func`2
+  name: Func<TIn, Task<TOut>>
+  nameWithType: Func<TIn, Task<TOut>>
+  fullName: System.Func<TIn, System.Threading.Tasks.Task<TOut>>
+  nameWithType.vb: Func(Of TIn, Task(Of TOut))
+  fullName.vb: System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut))
+  name.vb: Func(Of TIn, Task(Of TOut))
+  spec.csharp:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`2
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}}
+  parent: System
+  definition: System.Func`3
+  name: Func<TIn, CancellationToken, Task<TOut>>
+  nameWithType: Func<TIn, CancellationToken, Task<TOut>>
+  fullName: System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>
+  nameWithType.vb: Func(Of TIn, CancellationToken, Task(Of TOut))
+  fullName.vb: System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut))
+  name.vb: Func(Of TIn, CancellationToken, Task(Of TOut))
+  spec.csharp:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: <
+    nameWithType: <
+    fullName: <
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  - name: '>'
+    nameWithType: '>'
+    fullName: '>'
+  spec.vb:
+  - uid: System.Func`3
+    name: Func
+    nameWithType: Func
+    fullName: System.Func
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TIn
+    nameWithType: TIn
+    fullName: TIn
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.CancellationToken
+    name: CancellationToken
+    nameWithType: CancellationToken
+    fullName: System.Threading.CancellationToken
+    isExternal: true
+  - name: ', '
+    nameWithType: ', '
+    fullName: ', '
+  - uid: System.Threading.Tasks.Task`1
+    name: Task
+    nameWithType: Task
+    fullName: System.Threading.Tasks.Task
+    isExternal: true
+  - name: '(Of '
+    nameWithType: '(Of '
+    fullName: '(Of '
+  - name: TOut
+    nameWithType: TOut
+    fullName: TOut
+  - name: )
+    nameWithType: )
+    fullName: )
+  - name: )
+    nameWithType: )
+    fullName: )
+- uid: ComponentTask.ITaskRunner
+  commentId: T:ComponentTask.ITaskRunner
+  parent: ComponentTask
+  name: ITaskRunner
+  nameWithType: ITaskRunner
+  fullName: ComponentTask.ITaskRunner
+- uid: UnityEngine.ComponentExtensions.GetTaskRunner*
+  commentId: Overload:UnityEngine.ComponentExtensions.GetTaskRunner
+  name: GetTaskRunner
+  nameWithType: ComponentExtensions.GetTaskRunner
+  fullName: UnityEngine.ComponentExtensions.GetTaskRunner
+- uid: ComponentTask
+  commentId: N:ComponentTask
+  name: ComponentTask
+  nameWithType: ComponentTask
+  fullName: ComponentTask

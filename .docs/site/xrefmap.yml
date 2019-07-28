@@ -1,0 +1,574 @@
+### YamlMime:XRefMap
+sorted: true
+references:
+- uid: ComponentTask
+  name: ComponentTask
+  href: api/ComponentTask.html
+  commentId: N:ComponentTask
+  fullName: ComponentTask
+  nameWithType: ComponentTask
+- uid: ComponentTask.Config
+  name: Config
+  href: api/ComponentTask.Config.html
+  commentId: T:ComponentTask.Config
+  fullName: ComponentTask.Config
+  nameWithType: Config
+- uid: ComponentTask.Config.GlobalDiagnosticsActive
+  name: GlobalDiagnosticsActive
+  href: api/ComponentTask.Config.html#ComponentTask_Config_GlobalDiagnosticsActive
+  commentId: P:ComponentTask.Config.GlobalDiagnosticsActive
+  fullName: ComponentTask.Config.GlobalDiagnosticsActive
+  nameWithType: Config.GlobalDiagnosticsActive
+- uid: ComponentTask.Config.GlobalDiagnosticsActive*
+  name: GlobalDiagnosticsActive
+  href: api/ComponentTask.Config.html#ComponentTask_Config_GlobalDiagnosticsActive_
+  commentId: Overload:ComponentTask.Config.GlobalDiagnosticsActive
+  isSpec: "True"
+  fullName: ComponentTask.Config.GlobalDiagnosticsActive
+  nameWithType: Config.GlobalDiagnosticsActive
+- uid: ComponentTask.Exceptions
+  name: ComponentTask.Exceptions
+  href: api/ComponentTask.Exceptions.html
+  commentId: N:ComponentTask.Exceptions
+  fullName: ComponentTask.Exceptions
+  nameWithType: ComponentTask.Exceptions
+- uid: ComponentTask.Exceptions.ComponentTaskCanceledException
+  name: ComponentTaskCanceledException
+  href: api/ComponentTask.Exceptions.ComponentTaskCanceledException.html
+  commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+  fullName: ComponentTask.Exceptions.ComponentTaskCanceledException
+  nameWithType: ComponentTaskCanceledException
+- uid: ComponentTask.Exceptions.ContextChangedException
+  name: ContextChangedException
+  href: api/ComponentTask.Exceptions.ContextChangedException.html
+  commentId: T:ComponentTask.Exceptions.ContextChangedException
+  fullName: ComponentTask.Exceptions.ContextChangedException
+  nameWithType: ContextChangedException
+- uid: ComponentTask.Exceptions.InactiveComponentException
+  name: InactiveComponentException
+  href: api/ComponentTask.Exceptions.InactiveComponentException.html
+  commentId: T:ComponentTask.Exceptions.InactiveComponentException
+  fullName: ComponentTask.Exceptions.InactiveComponentException
+  nameWithType: InactiveComponentException
+- uid: ComponentTask.Exceptions.InactiveGameObjectException
+  name: InactiveGameObjectException
+  href: api/ComponentTask.Exceptions.InactiveGameObjectException.html
+  commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
+  fullName: ComponentTask.Exceptions.InactiveGameObjectException
+  nameWithType: InactiveGameObjectException
+- uid: ComponentTask.Exceptions.NonUnityThreadException
+  name: NonUnityThreadException
+  href: api/ComponentTask.Exceptions.NonUnityThreadException.html
+  commentId: T:ComponentTask.Exceptions.NonUnityThreadException
+  fullName: ComponentTask.Exceptions.NonUnityThreadException
+  nameWithType: NonUnityThreadException
+- uid: ComponentTask.Exceptions.NotPlayingException
+  name: NotPlayingException
+  href: api/ComponentTask.Exceptions.NotPlayingException.html
+  commentId: T:ComponentTask.Exceptions.NotPlayingException
+  fullName: ComponentTask.Exceptions.NotPlayingException
+  nameWithType: NotPlayingException
+- uid: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  name: TaskCreatorReturnedNullException
+  href: api/ComponentTask.Exceptions.TaskCreatorReturnedNullException.html
+  commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  fullName: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+  nameWithType: TaskCreatorReturnedNullException
+- uid: ComponentTask.IDiagnosticLogger
+  name: IDiagnosticLogger
+  href: api/ComponentTask.IDiagnosticLogger.html
+  commentId: T:ComponentTask.IDiagnosticLogger
+  fullName: ComponentTask.IDiagnosticLogger
+  nameWithType: IDiagnosticLogger
+- uid: ComponentTask.IDiagnosticLogger.Log(System.String)
+  name: Log(String)
+  href: api/ComponentTask.IDiagnosticLogger.html#ComponentTask_IDiagnosticLogger_Log_System_String_
+  commentId: M:ComponentTask.IDiagnosticLogger.Log(System.String)
+  fullName: ComponentTask.IDiagnosticLogger.Log(System.String)
+  nameWithType: IDiagnosticLogger.Log(String)
+- uid: ComponentTask.IDiagnosticLogger.Log*
+  name: Log
+  href: api/ComponentTask.IDiagnosticLogger.html#ComponentTask_IDiagnosticLogger_Log_
+  commentId: Overload:ComponentTask.IDiagnosticLogger.Log
+  isSpec: "True"
+  fullName: ComponentTask.IDiagnosticLogger.Log
+  nameWithType: IDiagnosticLogger.Log
+- uid: ComponentTask.IExceptionHandler
+  name: IExceptionHandler
+  href: api/ComponentTask.IExceptionHandler.html
+  commentId: T:ComponentTask.IExceptionHandler
+  fullName: ComponentTask.IExceptionHandler
+  nameWithType: IExceptionHandler
+- uid: ComponentTask.IExceptionHandler.Handle(System.Exception)
+  name: Handle(Exception)
+  href: api/ComponentTask.IExceptionHandler.html#ComponentTask_IExceptionHandler_Handle_System_Exception_
+  commentId: M:ComponentTask.IExceptionHandler.Handle(System.Exception)
+  fullName: ComponentTask.IExceptionHandler.Handle(System.Exception)
+  nameWithType: IExceptionHandler.Handle(Exception)
+- uid: ComponentTask.IExceptionHandler.Handle*
+  name: Handle
+  href: api/ComponentTask.IExceptionHandler.html#ComponentTask_IExceptionHandler_Handle_
+  commentId: Overload:ComponentTask.IExceptionHandler.Handle
+  isSpec: "True"
+  fullName: ComponentTask.IExceptionHandler.Handle
+  nameWithType: IExceptionHandler.Handle
+- uid: ComponentTask.ITaskRunner
+  name: ITaskRunner
+  href: api/ComponentTask.ITaskRunner.html
+  commentId: T:ComponentTask.ITaskRunner
+  fullName: ComponentTask.ITaskRunner
+  nameWithType: ITaskRunner
+- uid: ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  name: StartTask(Func<CancellationToken, Task>)
+  href: api/ComponentTask.ITaskRunner.html#ComponentTask_ITaskRunner_StartTask_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__
+  commentId: M:ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  name.vb: StartTask(Func(Of CancellationToken, Task))
+  fullName: ComponentTask.ITaskRunner.StartTask(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task))
+  nameWithType: ITaskRunner.StartTask(Func<CancellationToken, Task>)
+  nameWithType.vb: ITaskRunner.StartTask(Func(Of CancellationToken, Task))
+- uid: ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  name: StartTask(Func<Task>)
+  href: api/ComponentTask.ITaskRunner.html#ComponentTask_ITaskRunner_StartTask_System_Func_System_Threading_Tasks_Task__
+  commentId: M:ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  name.vb: StartTask(Func(Of Task))
+  fullName: ComponentTask.ITaskRunner.StartTask(System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(System.Func(Of System.Threading.Tasks.Task))
+  nameWithType: ITaskRunner.StartTask(Func<Task>)
+  nameWithType.vb: ITaskRunner.StartTask(Func(Of Task))
+- uid: ComponentTask.ITaskRunner.StartTask*
+  name: StartTask
+  href: api/ComponentTask.ITaskRunner.html#ComponentTask_ITaskRunner_StartTask_
+  commentId: Overload:ComponentTask.ITaskRunner.StartTask
+  isSpec: "True"
+  fullName: ComponentTask.ITaskRunner.StartTask
+  nameWithType: ITaskRunner.StartTask
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  name: StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  href: api/ComponentTask.ITaskRunner.html#ComponentTask_ITaskRunner_StartTask__1_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task____0_
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn)
+  nameWithType: ITaskRunner.StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  name: StartTask<TIn>(Func<TIn, Task>, TIn)
+  href: api/ComponentTask.ITaskRunner.html#ComponentTask_ITaskRunner_StartTask__1_System_Func___0_System_Threading_Tasks_Task____0_
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.Tasks.Task>, TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.Tasks.Task), TIn)
+  nameWithType: ITaskRunner.StartTask<TIn>(Func<TIn, Task>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  name: StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  href: api/ComponentTask.ITaskRunner.html#ComponentTask_ITaskRunner_StartTask__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  name.vb: StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+  fullName: ComponentTask.ITaskRunner.StartTask<TOut>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)))
+  nameWithType: ITaskRunner.StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  nameWithType.vb: ITaskRunner.StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  name: StartTask<TOut>(Func<Task<TOut>>)
+  href: api/ComponentTask.ITaskRunner.html#ComponentTask_ITaskRunner_StartTask__1_System_Func_System_Threading_Tasks_Task___0___
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  name.vb: StartTask(Of TOut)(Func(Of Task(Of TOut)))
+  fullName: ComponentTask.ITaskRunner.StartTask<TOut>(System.Func<System.Threading.Tasks.Task<TOut>>)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.Tasks.Task(Of TOut)))
+  nameWithType: ITaskRunner.StartTask<TOut>(Func<Task<TOut>>)
+  nameWithType.vb: ITaskRunner.StartTask(Of TOut)(Func(Of Task(Of TOut)))
+- uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  name: StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  href: api/ComponentTask.ITaskRunner.html#ComponentTask_ITaskRunner_StartTask__2_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task___1_____0_
+  commentId: M:ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn)
+  nameWithType: ITaskRunner.StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+- uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  name: StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  href: api/ComponentTask.ITaskRunner.html#ComponentTask_ITaskRunner_StartTask__2_System_Func___0_System_Threading_Tasks_Task___1_____0_
+  commentId: M:ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.Tasks.Task<TOut>>, TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn)
+  nameWithType: ITaskRunner.StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  nameWithType.vb: ITaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+- uid: ComponentTask.LocalTaskRunner
+  name: LocalTaskRunner
+  href: api/ComponentTask.LocalTaskRunner.html
+  commentId: T:ComponentTask.LocalTaskRunner
+  fullName: ComponentTask.LocalTaskRunner
+  nameWithType: LocalTaskRunner
+- uid: ComponentTask.LocalTaskRunner.#ctor(ComponentTask.IExceptionHandler)
+  name: LocalTaskRunner(IExceptionHandler)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner__ctor_ComponentTask_IExceptionHandler_
+  commentId: M:ComponentTask.LocalTaskRunner.#ctor(ComponentTask.IExceptionHandler)
+  fullName: ComponentTask.LocalTaskRunner.LocalTaskRunner(ComponentTask.IExceptionHandler)
+  nameWithType: LocalTaskRunner.LocalTaskRunner(IExceptionHandler)
+- uid: ComponentTask.LocalTaskRunner.#ctor*
+  name: LocalTaskRunner
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner__ctor_
+  commentId: Overload:ComponentTask.LocalTaskRunner.#ctor
+  isSpec: "True"
+  fullName: ComponentTask.LocalTaskRunner.LocalTaskRunner
+  nameWithType: LocalTaskRunner.LocalTaskRunner
+- uid: ComponentTask.LocalTaskRunner.AssertRunningTaskCount(System.Int32)
+  name: AssertRunningTaskCount(Int32)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_AssertRunningTaskCount_System_Int32_
+  commentId: M:ComponentTask.LocalTaskRunner.AssertRunningTaskCount(System.Int32)
+  fullName: ComponentTask.LocalTaskRunner.AssertRunningTaskCount(System.Int32)
+  nameWithType: LocalTaskRunner.AssertRunningTaskCount(Int32)
+- uid: ComponentTask.LocalTaskRunner.AssertRunningTaskCount*
+  name: AssertRunningTaskCount
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_AssertRunningTaskCount_
+  commentId: Overload:ComponentTask.LocalTaskRunner.AssertRunningTaskCount
+  isSpec: "True"
+  fullName: ComponentTask.LocalTaskRunner.AssertRunningTaskCount
+  nameWithType: LocalTaskRunner.AssertRunningTaskCount
+- uid: ComponentTask.LocalTaskRunner.Dispose
+  name: Dispose()
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_Dispose
+  commentId: M:ComponentTask.LocalTaskRunner.Dispose
+  fullName: ComponentTask.LocalTaskRunner.Dispose()
+  nameWithType: LocalTaskRunner.Dispose()
+- uid: ComponentTask.LocalTaskRunner.Dispose*
+  name: Dispose
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_Dispose_
+  commentId: Overload:ComponentTask.LocalTaskRunner.Dispose
+  isSpec: "True"
+  fullName: ComponentTask.LocalTaskRunner.Dispose
+  nameWithType: LocalTaskRunner.Dispose
+- uid: ComponentTask.LocalTaskRunner.Execute
+  name: Execute()
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_Execute
+  commentId: M:ComponentTask.LocalTaskRunner.Execute
+  fullName: ComponentTask.LocalTaskRunner.Execute()
+  nameWithType: LocalTaskRunner.Execute()
+- uid: ComponentTask.LocalTaskRunner.Execute*
+  name: Execute
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_Execute_
+  commentId: Overload:ComponentTask.LocalTaskRunner.Execute
+  isSpec: "True"
+  fullName: ComponentTask.LocalTaskRunner.Execute
+  nameWithType: LocalTaskRunner.Execute
+- uid: ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  name: StartTask(Func<CancellationToken, Task>)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  name.vb: StartTask(Func(Of CancellationToken, Task))
+  fullName: ComponentTask.LocalTaskRunner.StartTask(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task))
+  nameWithType: LocalTaskRunner.StartTask(Func<CancellationToken, Task>)
+  nameWithType.vb: LocalTaskRunner.StartTask(Func(Of CancellationToken, Task))
+- uid: ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  name: StartTask(Func<CancellationToken, Task>, IDiagnosticLogger)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__ComponentTask_IDiagnosticLogger_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Func(Of CancellationToken, Task), IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, ComponentTask.IDiagnosticLogger)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), ComponentTask.IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask(Func<CancellationToken, Task>, IDiagnosticLogger)
+  nameWithType.vb: LocalTaskRunner.StartTask(Func(Of CancellationToken, Task), IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  name: StartTask(Func<Task>)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask_System_Func_System_Threading_Tasks_Task__
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
+  name.vb: StartTask(Func(Of Task))
+  fullName: ComponentTask.LocalTaskRunner.StartTask(System.Func<System.Threading.Tasks.Task>)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(System.Func(Of System.Threading.Tasks.Task))
+  nameWithType: LocalTaskRunner.StartTask(Func<Task>)
+  nameWithType.vb: LocalTaskRunner.StartTask(Func(Of Task))
+- uid: ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  name: StartTask(Func<Task>, IDiagnosticLogger)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask_System_Func_System_Threading_Tasks_Task__ComponentTask_IDiagnosticLogger_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Func(Of Task), IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask(System.Func<System.Threading.Tasks.Task>, ComponentTask.IDiagnosticLogger)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(System.Func(Of System.Threading.Tasks.Task), ComponentTask.IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask(Func<Task>, IDiagnosticLogger)
+  nameWithType.vb: LocalTaskRunner.StartTask(Func(Of Task), IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask*
+  name: StartTask
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask_
+  commentId: Overload:ComponentTask.LocalTaskRunner.StartTask
+  isSpec: "True"
+  fullName: ComponentTask.LocalTaskRunner.StartTask
+  nameWithType: LocalTaskRunner.StartTask
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  name: StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__1_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task____0_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn)
+  nameWithType: LocalTaskRunner.StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  name: StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn, IDiagnosticLogger)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__1_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task____0_ComponentTask_IDiagnosticLogger_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn, ComponentTask.IDiagnosticLogger)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn, ComponentTask.IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn, IDiagnosticLogger)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn, IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  name: StartTask<TIn>(Func<TIn, Task>, TIn)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__1_System_Func___0_System_Threading_Tasks_Task____0_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.Tasks.Task>, TIn)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.Tasks.Task), TIn)
+  nameWithType: LocalTaskRunner.StartTask<TIn>(Func<TIn, Task>, TIn)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn)(Func(Of TIn, Task), TIn)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  name: StartTask<TIn>(Func<TIn, Task>, TIn, IDiagnosticLogger)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__1_System_Func___0_System_Threading_Tasks_Task____0_ComponentTask_IDiagnosticLogger_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TIn)(Func(Of TIn, Task), TIn, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.Tasks.Task>, TIn, ComponentTask.IDiagnosticLogger)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.Tasks.Task), TIn, ComponentTask.IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TIn>(Func<TIn, Task>, TIn, IDiagnosticLogger)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn)(Func(Of TIn, Task), TIn, IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  name: StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  name.vb: StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TOut>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)))
+  nameWithType: LocalTaskRunner.StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  name: StartTask<TOut>(Func<CancellationToken, Task<TOut>>, IDiagnosticLogger)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___ComponentTask_IDiagnosticLogger_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)), IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TOut>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, ComponentTask.IDiagnosticLogger)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), ComponentTask.IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TOut>(Func<CancellationToken, Task<TOut>>, IDiagnosticLogger)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)), IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  name: StartTask<TOut>(Func<Task<TOut>>)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__1_System_Func_System_Threading_Tasks_Task___0___
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
+  name.vb: StartTask(Of TOut)(Func(Of Task(Of TOut)))
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TOut>(System.Func<System.Threading.Tasks.Task<TOut>>)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.Tasks.Task(Of TOut)))
+  nameWithType: LocalTaskRunner.StartTask<TOut>(Func<Task<TOut>>)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TOut)(Func(Of Task(Of TOut)))
+- uid: ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  name: StartTask<TOut>(Func<Task<TOut>>, IDiagnosticLogger)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__1_System_Func_System_Threading_Tasks_Task___0___ComponentTask_IDiagnosticLogger_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TOut)(Func(Of Task(Of TOut)), IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TOut>(System.Func<System.Threading.Tasks.Task<TOut>>, ComponentTask.IDiagnosticLogger)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.Tasks.Task(Of TOut)), ComponentTask.IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TOut>(Func<Task<TOut>>, IDiagnosticLogger)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TOut)(Func(Of Task(Of TOut)), IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  name: StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__2_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task___1_____0_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn)
+  nameWithType: LocalTaskRunner.StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
+- uid: ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  name: StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn, IDiagnosticLogger)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__2_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task___1_____0_ComponentTask_IDiagnosticLogger_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn, ComponentTask.IDiagnosticLogger)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn, ComponentTask.IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn, IDiagnosticLogger)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn, IDiagnosticLogger)
+- uid: ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  name: StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__2_System_Func___0_System_Threading_Tasks_Task___1_____0_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.Tasks.Task<TOut>>, TIn)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn)
+  nameWithType: LocalTaskRunner.StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
+- uid: ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  name: StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn, IDiagnosticLogger)
+  href: api/ComponentTask.LocalTaskRunner.html#ComponentTask_LocalTaskRunner_StartTask__2_System_Func___0_System_Threading_Tasks_Task___1_____0_ComponentTask_IDiagnosticLogger_
+  commentId: M:ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)
+  name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn, IDiagnosticLogger)
+  fullName: ComponentTask.LocalTaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.Tasks.Task<TOut>>, TIn, ComponentTask.IDiagnosticLogger)
+  fullName.vb: ComponentTask.LocalTaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn, ComponentTask.IDiagnosticLogger)
+  nameWithType: LocalTaskRunner.StartTask<TIn, TOut>(Func<TIn, Task<TOut>>, TIn, IDiagnosticLogger)
+  nameWithType.vb: LocalTaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn, IDiagnosticLogger)
+- uid: UnityEngine
+  name: UnityEngine
+  href: api/UnityEngine.html
+  commentId: N:UnityEngine
+  fullName: UnityEngine
+  nameWithType: UnityEngine
+- uid: UnityEngine.ComponentExtensions
+  name: ComponentExtensions
+  href: api/UnityEngine.ComponentExtensions.html
+  commentId: T:UnityEngine.ComponentExtensions
+  fullName: UnityEngine.ComponentExtensions
+  nameWithType: ComponentExtensions
+- uid: UnityEngine.ComponentExtensions.GetTaskRunner(Component,UnityEngine.TaskRunOptions)
+  name: GetTaskRunner(Component, TaskRunOptions)
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_GetTaskRunner_Component_UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.ComponentExtensions.GetTaskRunner(Component,UnityEngine.TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.GetTaskRunner(Component, UnityEngine.TaskRunOptions)
+  nameWithType: ComponentExtensions.GetTaskRunner(Component, TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.GetTaskRunner*
+  name: GetTaskRunner
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_GetTaskRunner_
+  commentId: Overload:UnityEngine.ComponentExtensions.GetTaskRunner
+  isSpec: "True"
+  fullName: UnityEngine.ComponentExtensions.GetTaskRunner
+  nameWithType: ComponentExtensions.GetTaskRunner
+- uid: UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  name: StartTask(Component, Func<CancellationToken, Task>, TaskRunOptions)
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_StartTask_Component_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Component, Func(Of CancellationToken, Task), TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask(Component, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Component, System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), UnityEngine.TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask(Component, Func<CancellationToken, Task>, TaskRunOptions)
+  nameWithType.vb: ComponentExtensions.StartTask(Component, Func(Of CancellationToken, Task), TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  name: StartTask(Component, Func<Task>, TaskRunOptions)
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_StartTask_Component_System_Func_System_Threading_Tasks_Task__UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Component, Func(Of Task), TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask(Component, System.Func<System.Threading.Tasks.Task>, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Component, System.Func(Of System.Threading.Tasks.Task), UnityEngine.TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask(Component, Func<Task>, TaskRunOptions)
+  nameWithType.vb: ComponentExtensions.StartTask(Component, Func(Of Task), TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask*
+  name: StartTask
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_StartTask_
+  commentId: Overload:UnityEngine.ComponentExtensions.StartTask
+  isSpec: "True"
+  fullName: UnityEngine.ComponentExtensions.StartTask
+  nameWithType: ComponentExtensions.StartTask
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  name: StartTask<TIn>(Component, Func<TIn, CancellationToken, Task>, TIn, TaskRunOptions)
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task____0_UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TIn)(Component, Func(Of TIn, CancellationToken, Task), TIn, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn>(Component, System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn)(Component, System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn, UnityEngine.TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TIn>(Component, Func<TIn, CancellationToken, Task>, TIn, TaskRunOptions)
+  nameWithType.vb: ComponentExtensions.StartTask(Of TIn)(Component, Func(Of TIn, CancellationToken, Task), TIn, TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  name: StartTask<TIn>(Component, Func<TIn, Task>, TIn, TaskRunOptions)
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func___0_System_Threading_Tasks_Task____0_UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TIn)(Component, Func(Of TIn, Task), TIn, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn>(Component, System.Func<TIn, System.Threading.Tasks.Task>, TIn, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn)(Component, System.Func(Of TIn, System.Threading.Tasks.Task), TIn, UnityEngine.TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TIn>(Component, Func<TIn, Task>, TIn, TaskRunOptions)
+  nameWithType.vb: ComponentExtensions.StartTask(Of TIn)(Component, Func(Of TIn, Task), TIn, TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  name: StartTask<TOut>(Component, Func<CancellationToken, Task<TOut>>, TaskRunOptions)
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TOut)(Component, Func(Of CancellationToken, Task(Of TOut)), TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TOut>(Component, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TOut)(Component, System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), UnityEngine.TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TOut>(Component, Func<CancellationToken, Task<TOut>>, TaskRunOptions)
+  nameWithType.vb: ComponentExtensions.StartTask(Of TOut)(Component, Func(Of CancellationToken, Task(Of TOut)), TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  name: StartTask<TOut>(Component, Func<Task<TOut>>, TaskRunOptions)
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func_System_Threading_Tasks_Task___0___UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TOut)(Component, Func(Of Task(Of TOut)), TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TOut>(Component, System.Func<System.Threading.Tasks.Task<TOut>>, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TOut)(Component, System.Func(Of System.Threading.Tasks.Task(Of TOut)), UnityEngine.TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TOut>(Component, Func<Task<TOut>>, TaskRunOptions)
+  nameWithType.vb: ComponentExtensions.StartTask(Of TOut)(Component, Func(Of Task(Of TOut)), TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  name: StartTask<TIn, TOut>(Component, Func<TIn, CancellationToken, Task<TOut>>, TIn, TaskRunOptions)
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_StartTask__2_Component_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task___1_____0_UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TIn, TOut)(Component, Func(Of TIn, CancellationToken, Task(Of TOut)), TIn, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn, TOut>(Component, System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn, TOut)(Component, System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn, UnityEngine.TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TIn, TOut>(Component, Func<TIn, CancellationToken, Task<TOut>>, TIn, TaskRunOptions)
+  nameWithType.vb: ComponentExtensions.StartTask(Of TIn, TOut)(Component, Func(Of TIn, CancellationToken, Task(Of TOut)), TIn, TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  name: StartTask<TIn, TOut>(Component, Func<TIn, Task<TOut>>, TIn, TaskRunOptions)
+  href: api/UnityEngine.ComponentExtensions.html#UnityEngine_ComponentExtensions_StartTask__2_Component_System_Func___0_System_Threading_Tasks_Task___1_____0_UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  name.vb: StartTask(Of TIn, TOut)(Component, Func(Of TIn, Task(Of TOut)), TIn, TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn, TOut>(Component, System.Func<TIn, System.Threading.Tasks.Task<TOut>>, TIn, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn, TOut)(Component, System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn, UnityEngine.TaskRunOptions)
+  nameWithType: ComponentExtensions.StartTask<TIn, TOut>(Component, Func<TIn, Task<TOut>>, TIn, TaskRunOptions)
+  nameWithType.vb: ComponentExtensions.StartTask(Of TIn, TOut)(Component, Func(Of TIn, Task(Of TOut)), TIn, TaskRunOptions)
+- uid: UnityEngine.GameObjectExtensions
+  name: GameObjectExtensions
+  href: api/UnityEngine.GameObjectExtensions.html
+  commentId: T:UnityEngine.GameObjectExtensions
+  fullName: UnityEngine.GameObjectExtensions
+  nameWithType: GameObjectExtensions
+- uid: UnityEngine.GameObjectExtensions.CreateTaskRunner(GameObject,UnityEngine.TaskRunOptions)
+  name: CreateTaskRunner(GameObject, TaskRunOptions)
+  href: api/UnityEngine.GameObjectExtensions.html#UnityEngine_GameObjectExtensions_CreateTaskRunner_GameObject_UnityEngine_TaskRunOptions_
+  commentId: M:UnityEngine.GameObjectExtensions.CreateTaskRunner(GameObject,UnityEngine.TaskRunOptions)
+  fullName: UnityEngine.GameObjectExtensions.CreateTaskRunner(GameObject, UnityEngine.TaskRunOptions)
+  nameWithType: GameObjectExtensions.CreateTaskRunner(GameObject, TaskRunOptions)
+- uid: UnityEngine.GameObjectExtensions.CreateTaskRunner*
+  name: CreateTaskRunner
+  href: api/UnityEngine.GameObjectExtensions.html#UnityEngine_GameObjectExtensions_CreateTaskRunner_
+  commentId: Overload:UnityEngine.GameObjectExtensions.CreateTaskRunner
+  isSpec: "True"
+  fullName: UnityEngine.GameObjectExtensions.CreateTaskRunner
+  nameWithType: GameObjectExtensions.CreateTaskRunner
+- uid: UnityEngine.TaskExtensions
+  name: TaskExtensions
+  href: api/UnityEngine.TaskExtensions.html
+  commentId: T:UnityEngine.TaskExtensions
+  fullName: UnityEngine.TaskExtensions
+  nameWithType: TaskExtensions
+- uid: UnityEngine.TaskExtensions.DontWait(System.Threading.Tasks.Task)
+  name: DontWait(Task)
+  href: api/UnityEngine.TaskExtensions.html#UnityEngine_TaskExtensions_DontWait_System_Threading_Tasks_Task_
+  commentId: M:UnityEngine.TaskExtensions.DontWait(System.Threading.Tasks.Task)
+  fullName: UnityEngine.TaskExtensions.DontWait(System.Threading.Tasks.Task)
+  nameWithType: TaskExtensions.DontWait(Task)
+- uid: UnityEngine.TaskExtensions.DontWait*
+  name: DontWait
+  href: api/UnityEngine.TaskExtensions.html#UnityEngine_TaskExtensions_DontWait_
+  commentId: Overload:UnityEngine.TaskExtensions.DontWait
+  isSpec: "True"
+  fullName: UnityEngine.TaskExtensions.DontWait
+  nameWithType: TaskExtensions.DontWait
+- uid: UnityEngine.TaskRunOptions
+  name: TaskRunOptions
+  href: api/UnityEngine.TaskRunOptions.html
+  commentId: T:UnityEngine.TaskRunOptions
+  fullName: UnityEngine.TaskRunOptions
+  nameWithType: TaskRunOptions
+- uid: UnityEngine.TaskRunOptions.Default
+  name: Default
+  href: api/UnityEngine.TaskRunOptions.html#UnityEngine_TaskRunOptions_Default
+  commentId: F:UnityEngine.TaskRunOptions.Default
+  fullName: UnityEngine.TaskRunOptions.Default
+  nameWithType: TaskRunOptions.Default
+- uid: UnityEngine.TaskRunOptions.DiagnosticLogging
+  name: DiagnosticLogging
+  href: api/UnityEngine.TaskRunOptions.html#UnityEngine_TaskRunOptions_DiagnosticLogging
+  commentId: F:UnityEngine.TaskRunOptions.DiagnosticLogging
+  fullName: UnityEngine.TaskRunOptions.DiagnosticLogging
+  nameWithType: TaskRunOptions.DiagnosticLogging
+- uid: UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled
+  name: UpdateWhileComponentDisabled
+  href: api/UnityEngine.TaskRunOptions.html#UnityEngine_TaskRunOptions_UpdateWhileComponentDisabled
+  commentId: F:UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled
+  fullName: UnityEngine.TaskRunOptions.UpdateWhileComponentDisabled
+  nameWithType: TaskRunOptions.UpdateWhileComponentDisabled

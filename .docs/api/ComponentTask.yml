@@ -1,0 +1,54 @@
+### YamlMime:ManagedReference
+items:
+- uid: ComponentTask
+  commentId: N:ComponentTask
+  id: ComponentTask
+  children:
+  - ComponentTask.Config
+  - ComponentTask.IDiagnosticLogger
+  - ComponentTask.IExceptionHandler
+  - ComponentTask.ITaskRunner
+  - ComponentTask.LocalTaskRunner
+  langs:
+  - csharp
+  - vb
+  name: ComponentTask
+  nameWithType: ComponentTask
+  fullName: ComponentTask
+  type: Namespace
+  assemblies:
+  - cs.temp.dll
+references:
+- uid: ComponentTask.Config
+  commentId: T:ComponentTask.Config
+  name: Config
+  nameWithType: Config
+  fullName: ComponentTask.Config
+- uid: ComponentTask.IDiagnosticLogger
+  commentId: T:ComponentTask.IDiagnosticLogger
+  parent: ComponentTask
+  name: IDiagnosticLogger
+  nameWithType: IDiagnosticLogger
+  fullName: ComponentTask.IDiagnosticLogger
+- uid: ComponentTask.IExceptionHandler
+  commentId: T:ComponentTask.IExceptionHandler
+  parent: ComponentTask
+  name: IExceptionHandler
+  nameWithType: IExceptionHandler
+  fullName: ComponentTask.IExceptionHandler
+- uid: ComponentTask.ITaskRunner
+  commentId: T:ComponentTask.ITaskRunner
+  parent: ComponentTask
+  name: ITaskRunner
+  nameWithType: ITaskRunner
+  fullName: ComponentTask.ITaskRunner
+- uid: ComponentTask.LocalTaskRunner
+  commentId: T:ComponentTask.LocalTaskRunner
+  name: LocalTaskRunner
+  nameWithType: LocalTaskRunner
+  fullName: ComponentTask.LocalTaskRunner
+- uid: ComponentTask
+  commentId: N:ComponentTask
+  name: ComponentTask
+  nameWithType: ComponentTask
+  fullName: ComponentTask

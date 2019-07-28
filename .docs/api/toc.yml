@@ -1,0 +1,42 @@
+### YamlMime:TableOfContent
+- uid: ComponentTask
+  name: ComponentTask
+  items:
+  - uid: ComponentTask.Config
+    name: Config
+  - uid: ComponentTask.IDiagnosticLogger
+    name: IDiagnosticLogger
+  - uid: ComponentTask.IExceptionHandler
+    name: IExceptionHandler
+  - uid: ComponentTask.ITaskRunner
+    name: ITaskRunner
+  - uid: ComponentTask.LocalTaskRunner
+    name: LocalTaskRunner
+- uid: ComponentTask.Exceptions
+  name: ComponentTask.Exceptions
+  items:
+  - uid: ComponentTask.Exceptions.ComponentTaskCanceledException
+    name: ComponentTaskCanceledException
+  - uid: ComponentTask.Exceptions.ContextChangedException
+    name: ContextChangedException
+  - uid: ComponentTask.Exceptions.InactiveComponentException
+    name: InactiveComponentException
+  - uid: ComponentTask.Exceptions.InactiveGameObjectException
+    name: InactiveGameObjectException
+  - uid: ComponentTask.Exceptions.NonUnityThreadException
+    name: NonUnityThreadException
+  - uid: ComponentTask.Exceptions.NotPlayingException
+    name: NotPlayingException
+  - uid: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+    name: TaskCreatorReturnedNullException
+- uid: UnityEngine
+  name: UnityEngine
+  items:
+  - uid: UnityEngine.ComponentExtensions
+    name: ComponentExtensions
+  - uid: UnityEngine.GameObjectExtensions
+    name: GameObjectExtensions
+  - uid: UnityEngine.TaskExtensions
+    name: TaskExtensions
+  - uid: UnityEngine.TaskRunOptions
+    name: TaskRunOptions
