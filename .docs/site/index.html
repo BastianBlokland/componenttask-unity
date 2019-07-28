@@ -66,7 +66,7 @@
 <a href="https://github.com/BastianBlokland/componenttask-unity/releases/"><img src="https://img.shields.io/github/release/BastianBlokland/componenttask-unity.svg" alt="GitHub release"></a>
 <img src="https://img.shields.io/badge/License-MIT-blue.svg" alt="License: MIT"></p>
 <p>Unity package for running dotnet <code>Task</code> and <code>Task&lt;T&gt;</code> scoped to Unity components.</p>
-<h2 id="description">Description</h2>
+<h3 id="description">Description</h3>
 <p>Common problem with using c# <code>async</code> methods in Unity is that they have no concept of a component
 life-time.
 So unlike <a href="https://docs.unity3d.com/ScriptReference/Coroutine.html">Coroutines</a> when you 'start' a
@@ -76,17 +76,17 @@ of the component after it has been destroyed on the Unity side. And as a workaro
 write ugly '<code>if (!this) return;</code>' guards after every await.</p>
 <p>This library aims to fix that problem by allowing you to run tasks 'on' your <code>MonoBehaviour</code> with very
 similar behaviour as Unity's <code>Coroutines</code>.</p>
-<h2 id="documentation">Documentation:</h2>
+<h3 id="documentation">Documentation:</h3>
 <ul>
 <li><a href="install.html">Install</a></li>
 <li><a href="how-to.html">How To</a></li>
 <li><a href="examples.html">Examples</a></li>
 <li><a href="/api/">Api Reference</a></li>
 </ul>
-<h2 id="repository">Repository</h2>
+<h3 id="repository">Repository</h3>
 <p><a href="https://GitHub.com/BastianBlokland/componenttask-unity/issues/"><img src="https://img.shields.io/github/issues/BastianBlokland/componenttask-unity.svg" alt="GitHub issues"></a>
 <a href="https://github.com/BastianBlokland/componenttask-unity/pulls"><img src="https://img.shields.io/badge/PRs-welcome-brightgreen.svg?style=flat-square" alt="PRs Welcome"></a></p>
-<h2 id="ci">Ci</h2>
+<h3 id="ci">CI</h3>
 <p>Basic Azure pipeline for running tests: <a href="https://dev.azure.com/bastian-blokland/ComponentTask/_build?definitionId=6">Pipeline</a>.</p>
 </article>
           </div>

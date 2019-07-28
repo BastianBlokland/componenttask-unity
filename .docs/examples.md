@@ -60,7 +60,7 @@ class MyClass : MonoBehaviour
 }
 ```
 When you `await` other methods they automatically belong to the same scope as the task that starts
-them. So in this example `GetValueAsync` also runs as part of the `MyClass` scope and stop when
+them. So in this example `GetValueAsync` also runs as part of the `MyClass` scope and stops when
 the component is destroyed.
 
 
@@ -307,3 +307,50 @@ class MyClass : MonoBehaviour, IExceptionHandler
     }
 }
 ```
+
+### OnGUI tasks using custom LocalTaskRunner.
+Because with a custom LocalTaskRunner you control when tasks are updated you could implement tasks
+that run during `OnGUI` to draw ui.
+```c#
+using System;
+using System.Threading.Tasks;
+using UnityEngine;
+using ComponentTask;
+
+class MyClass : MonoBehaviour, IExceptionHandler
+{
+    private LocalTaskRunner guiTaskRunner;
+
+    void Start()
+    {
+        this.guiTaskRunner = new LocalTaskRunner(exceptionHandler: this);
+        this.guiTaskRunner.StartTask(this.DrawUIAsync);
+    }
+
+    void OnGUI()
+    {
+        this.guiTaskRunner.Execute();
+    }
+
+    void OnDestroy()
+    {
+        this.guiTaskRunner.Dispose();
+    }
+
+    async Task DrawUIAsync()
+    {
+        while (true)
+        {
+            await Task.Yield();
+            GUI.Label(new Rect(0f, 0f, 100f, 100f), "Drawn from a task :)");
+        }
+    }
+
+    void IExceptionHandler.Handle(Exception exception)
+    {
+        Debug.Log($"Exception occurred: '{exception.Message}'");
+    }
+}
+```
+Using a similar pattern your can make tasks task run during `FixedUpdate` to interact with Unity's
+physics world for example.

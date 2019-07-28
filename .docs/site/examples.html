@@ -60,7 +60,7 @@
         <div class="article row grid">
           <div class="col-md-10">
             <article class="content wrap" id="_content" data-uid="">
-<h2 id="examples">Examples</h2>
+<h1 id="examples">Examples</h1>
 
 <p>These examples can also be found in the <a href="https://github.com/BastianBlokland/componenttask-unity/tree/master/.example"><code>.example</code></a> directory.</p>
 <h3 id="basic-example">Basic example</h3>
@@ -115,7 +115,7 @@ class MyClass : MonoBehaviour
 }
 </code></pre>
 <p>When you <code>await</code> other methods they automatically belong to the same scope as the task that starts
-them. So in this example <code>GetValueAsync</code> also runs as part of the <code>MyClass</code> scope and stop when
+them. So in this example <code>GetValueAsync</code> also runs as part of the <code>MyClass</code> scope and stops when
 the component is destroyed.</p>
 <h3 id="exposing-a-method-that-produces-a-value">Exposing a method that produces a value</h3>
 <p>But what if you want to expose a api that produces a value, what happens to the task once your component
@@ -268,6 +268,125 @@ class MyClass : MonoBehaviour
 </code></pre>
 <p>Even though <code>VeryExpensiveBlockingCode</code> blocks for 5 seconds because we run it on a background-thread
 (with <a href="https://docs.microsoft.com/en-us/dotnet/api/system.threading.tasks.task.run">Task.Run</a>) the unity-thread stays responsive.</p>
+<h3 id="caching-a-task-runner">Caching a task-runner.</h3>
+<p>If you are going to start many tasks you can also create a ITaskRunner on a gameobject and cache
+a reference to it. That runner will remain valid as long as that gameobject is still alive.</p>
+<pre><code class="lang-c#">using System.Threading.Tasks;
+using UnityEngine;
+using ComponentTask;
+
+class MyClass : MonoBehaviour
+{
+    private ITaskRunner runner;
+
+    void Start()
+    {
+        this.runner = this.gameObject.CreateTaskRunner();
+    }
+
+    void Update()
+    {
+        this.runner.StartTask(this.WaitAndLogAsync);
+    }
+
+    async Task WaitAndLogAsync()
+    {
+        await Task.Yield();
+        Debug.Log(&quot;Running&quot;);
+    }
+}
+</code></pre>
+<h3 id="custom-localtaskrunner">Custom LocalTaskRunner.</h3>
+<p>If you dont to scope you tasks to Unity Components but control the update ticks yourself you can
+manually create a 'LocalTaskRunner' and control its ticks yourself.</p>
+<pre><code class="lang-c#">using System;
+using System.Threading.Tasks;
+using UnityEngine;
+using ComponentTask;
+
+class MyClass : MonoBehaviour, IExceptionHandler
+{
+    [SerializeField] private bool isPaused;
+
+    private LocalTaskRunner runner;
+
+    void Start()
+    {
+        this.runner = new LocalTaskRunner(exceptionHandler: this);
+        this.runner.StartTask(this.RunAsync);
+    }
+
+    void Update()
+    {
+        if (!this.isPaused)
+            this.runner.Execute();
+    }
+
+    void OnDestroy()
+    {
+        this.runner.Dispose();
+    }
+
+    async Task RunAsync()
+    {
+        while (true)
+        {
+            Debug.Log(&quot;Running&quot;);
+            await Task.Yield();
+        }
+    }
+
+    void IExceptionHandler.Handle(Exception exception)
+    {
+        Debug.Log($&quot;Exception occurred: '{exception.Message}'&quot;);
+    }
+}
+</code></pre>
+<h3 id="ongui-tasks-using-custom-localtaskrunner">OnGUI tasks using custom LocalTaskRunner.</h3>
+<p>Because with a custom LocalTaskRunner you control when tasks are updated you could implement tasks
+that run during <code>OnGUI</code> to draw ui.</p>
+<pre><code class="lang-c#">using System;
+using System.Threading.Tasks;
+using UnityEngine;
+using ComponentTask;
+
+class MyClass : MonoBehaviour, IExceptionHandler
+{
+    private LocalTaskRunner guiTaskRunner;
+
+    void Start()
+    {
+        this.guiTaskRunner = new LocalTaskRunner(exceptionHandler: this);
+        this.guiTaskRunner.StartTask(this.DrawUIAsync);
+    }
+
+    void OnGUI()
+    {
+        this.guiTaskRunner.Execute();
+    }
+
+    void OnDestroy()
+    {
+        this.guiTaskRunner.Dispose();
+    }
+
+    async Task DrawUIAsync()
+    {
+        while (true)
+        {
+            await Task.Yield();
+            GUI.Label(new Rect(0f, 0f, 100f, 100f), &quot;Drawn from a task :)&quot;);
+        }
+    }
+
+    void IExceptionHandler.Handle(Exception exception)
+    {
+        Debug.Log($&quot;Exception occurred: '{exception.Message}'&quot;);
+    }
+}
+</code></pre>
+<p>Using a similar pattern your can make tasks task run during <code>FixedUpdate</code> to interact with Unity's
+physics world for example.</p>
 </article>
           </div>
           

@@ -26,4 +26,4 @@
 /.example/obj/
 /.example/*.csproj
 /.example/*.sln
-/.example/.vscode/
+/.example/.*/
