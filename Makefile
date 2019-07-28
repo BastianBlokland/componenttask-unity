@@ -1,4 +1,4 @@
-.PHONY: install-dependencies test edit-example
+.PHONY: install-dependencies test edit-example docs
 default: test
 
 # --------------------------------------------------------------------------------------------------
@@ -13,3 +13,6 @@ test:
 
 edit-example:
 	./.ci/open-unity.sh '.example'
+
+docs:
+	./.ci/docs-build.sh

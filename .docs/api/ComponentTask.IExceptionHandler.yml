@@ -1,0 +1,91 @@
+### YamlMime:ManagedReference
+items:
+- uid: ComponentTask.IExceptionHandler
+  commentId: T:ComponentTask.IExceptionHandler
+  id: IExceptionHandler
+  parent: ComponentTask
+  children:
+  - ComponentTask.IExceptionHandler.Handle(System.Exception)
+  langs:
+  - csharp
+  - vb
+  name: IExceptionHandler
+  nameWithType: IExceptionHandler
+  fullName: ComponentTask.IExceptionHandler
+  type: Interface
+  source:
+    id: IExceptionHandler
+    path: ''
+    startLine: 670
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  summary: "\nInterface for a exception handler.\n"
+  remarks: "\nCan be used to log exceptions when using a custom <xref href=\"ComponentTask.LocalTaskRunner\" data-throw-if-not-resolved=\"false\"></xref>.\n"
+  example: []
+  syntax:
+    content: public interface IExceptionHandler
+    content.vb: Public Interface IExceptionHandler
+  modifiers.csharp:
+  - public
+  - interface
+  modifiers.vb:
+  - Public
+  - Interface
+- uid: ComponentTask.IExceptionHandler.Handle(System.Exception)
+  commentId: M:ComponentTask.IExceptionHandler.Handle(System.Exception)
+  id: Handle(System.Exception)
+  parent: ComponentTask.IExceptionHandler
+  langs:
+  - csharp
+  - vb
+  name: Handle(Exception)
+  nameWithType: IExceptionHandler.Handle(Exception)
+  fullName: ComponentTask.IExceptionHandler.Handle(System.Exception)
+  type: Method
+  source:
+    id: Handle
+    path: ''
+    startLine: 676
+  assemblies:
+  - cs.temp.dll
+  namespace: ComponentTask
+  summary: "\nHandle the exception that was thrown.\n"
+  example: []
+  syntax:
+    content: void Handle(Exception exception)
+    parameters:
+    - id: exception
+      type: System.Exception
+      description: Exception that was thrown.
+    content.vb: Sub Handle(exception As Exception)
+  overload: ComponentTask.IExceptionHandler.Handle*
+references:
+- uid: ComponentTask.LocalTaskRunner
+  commentId: T:ComponentTask.LocalTaskRunner
+  name: LocalTaskRunner
+  nameWithType: LocalTaskRunner
+  fullName: ComponentTask.LocalTaskRunner
+- uid: ComponentTask
+  commentId: N:ComponentTask
+  name: ComponentTask
+  nameWithType: ComponentTask
+  fullName: ComponentTask
+- uid: ComponentTask.IExceptionHandler.Handle*
+  commentId: Overload:ComponentTask.IExceptionHandler.Handle
+  name: Handle
+  nameWithType: IExceptionHandler.Handle
+  fullName: ComponentTask.IExceptionHandler.Handle
+- uid: System.Exception
+  commentId: T:System.Exception
+  parent: System
+  isExternal: true
+  name: Exception
+  nameWithType: Exception
+  fullName: System.Exception
+- uid: System
+  commentId: N:System
+  isExternal: true
+  name: System
+  nameWithType: System
+  fullName: System

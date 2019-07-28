@@ -4,7 +4,7 @@ using System.Threading.Tasks;
 namespace UnityEngine
 {
     /// <summary>
-    /// Extensions for <see cref="System.Task"/>.
+    /// Extensions for 'System.Task'.
     /// </summary>
     public static class TaskExtensions
     {

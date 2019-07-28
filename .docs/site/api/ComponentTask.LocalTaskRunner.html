@@ -1,0 +1,1250 @@
+﻿<!DOCTYPE html>
+<!--[if IE]><![endif]-->
+<html>
+  
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title>Class LocalTaskRunner
+   | ComponentTask </title>
+    <meta name="viewport" content="width=device-width">
+    <meta name="title" content="Class LocalTaskRunner
+   | ComponentTask ">
+    <meta name="generator" content="docfx 2.43.3.0">
+    
+    <link rel="shortcut icon" href="../favicon.ico">
+    <link rel="stylesheet" href="../styles/docfx.vendor.css">
+    <link rel="stylesheet" href="../styles/docfx.css">
+    <link rel="stylesheet" href="../styles/main.css">
+    <meta property="docfx:navrel" content="../toc.html">
+    <meta property="docfx:tocrel" content="toc.html">
+    
+    
+    
+  </head>
+  <body data-spy="scroll" data-target="#affix" data-offset="120">
+    <div id="wrapper">
+      <header>
+        
+        <nav id="autocollapse" class="navbar navbar-inverse ng-scope" role="navigation">
+          <div class="container">
+            <div class="navbar-header">
+              <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+              </button>
+              
+              <a class="navbar-brand" href="../index.html">
+                <img id="logo" class="svg" src="../logo.svg" alt="">
+              </a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar">
+              <form class="navbar-form navbar-right" role="search" id="search">
+                <div class="form-group">
+                  <input type="text" class="form-control" id="search-query" placeholder="Search" autocomplete="off">
+                </div>
+              </form>
+            </div>
+          </div>
+        </nav>
+        
+        <div class="subnav navbar navbar-default">
+          <div class="container hide-when-search" id="breadcrumb">
+            <ul class="breadcrumb">
+              <li></li>
+            </ul>
+          </div>
+        </div>
+      </header>
+      <div role="main" class="container body-content hide-when-search">
+        
+        <div class="sidenav hide-when-search">
+          <a class="btn toc-toggle collapse" data-toggle="collapse" href="#sidetoggle" aria-expanded="false" aria-controls="sidetoggle">Show / Hide Table of Contents</a>
+          <div class="sidetoggle collapse" id="sidetoggle">
+            <div id="sidetoc"></div>
+          </div>
+        </div>
+        <div class="article row grid-right">
+          <div class="col-md-10">
+            <article class="content wrap" id="_content" data-uid="ComponentTask.LocalTaskRunner">
+  
+  
+  <h1 id="ComponentTask_LocalTaskRunner" data-uid="ComponentTask.LocalTaskRunner" class="text-break">Class LocalTaskRunner
+  </h1>
+  <div class="markdown level0 summary"><p>TaskRunner that you can 'tick' manually.</p>
+</div>
+  <div class="markdown level0 conceptual"></div>
+  <div class="inheritance">
+    <h5>Inheritance</h5>
+    <div class="level0"><span class="xref">System.Object</span></div>
+    <div class="level1"><span class="xref">LocalTaskRunner</span></div>
+  </div>
+  <div classs="implements">
+    <h5>Implements</h5>
+    <div><a class="xref" href="ComponentTask.ITaskRunner.html">ITaskRunner</a></div>
+    <div><span class="xref">System.IDisposable</span></div>
+  </div>
+  <div class="inheritedMembers">
+    <h5>Inherited Members</h5>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.Equals(System.Object, System.Object)</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetHashCode()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.GetType()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.MemberwiseClone()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ToString()</span>
+    </div>
+    <div>
+      <span class="xref">System.Object.ReferenceEquals(System.Object, System.Object)</span>
+    </div>
+  </div>
+  <h6><strong>Namespace</strong>: <a class="xref" href="ComponentTask.html">ComponentTask</a></h6>
+  <h6><strong>Assembly</strong>: cs.temp.dll.dll</h6>
+  <h5 id="ComponentTask_LocalTaskRunner_syntax">Syntax</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public sealed class LocalTaskRunner : ITaskRunner, IDisposable</code></pre>
+  </div>
+  <h3 id="constructors">Constructors
+  </h3>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner__ctor_" data-uid="ComponentTask.LocalTaskRunner.#ctor*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner__ctor_ComponentTask_IExceptionHandler_" data-uid="ComponentTask.LocalTaskRunner.#ctor(ComponentTask.IExceptionHandler)">LocalTaskRunner(IExceptionHandler)</h4>
+  <div class="markdown level1 summary"><p>Construct a new instance of the <a class="xref" href="ComponentTask.LocalTaskRunner.html">LocalTaskRunner</a> class.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public LocalTaskRunner(IExceptionHandler exceptionHandler)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ComponentTask.IExceptionHandler.html">IExceptionHandler</a></td>
+        <td><span class="parametername">exceptionHandler</span></td>
+        <td><p>Handler to use when exception occur in tasks.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="methods">Methods
+  </h3>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_AssertRunningTaskCount_" data-uid="ComponentTask.LocalTaskRunner.AssertRunningTaskCount*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_AssertRunningTaskCount_System_Int32_" data-uid="ComponentTask.LocalTaskRunner.AssertRunningTaskCount(System.Int32)">AssertRunningTaskCount(Int32)</h4>
+  <div class="markdown level1 summary"><p>Valid in 'DEBUG' only, useful for tests.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void AssertRunningTaskCount(int expectedCount)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Int32</span></td>
+        <td><span class="parametername">expectedCount</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_Dispose_" data-uid="ComponentTask.LocalTaskRunner.Dispose*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_Dispose" data-uid="ComponentTask.LocalTaskRunner.Dispose">Dispose()</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Dispose()</code></pre>
+  </div>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_Execute_" data-uid="ComponentTask.LocalTaskRunner.Execute*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_Execute" data-uid="ComponentTask.LocalTaskRunner.Execute">Execute()</h4>
+  <div class="markdown level1 summary"><p>Execute all the work that was 'scheduled' by the tasks running on this runner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public void Execute()</code></pre>
+  </div>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__" data-uid="ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})">StartTask(Func&lt;CancellationToken, Task&gt;)</h4>
+  <div class="markdown level1 summary"><p>Start a task on this runner.
+<span class="xref">System.Threading.CancellationToken</span> that is passed to the task-creator is cancelled when the
+runner is disposed, this can be usefull for cancelling external processes.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartTask(Func&lt;CancellationToken, Task&gt; taskCreator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td><p>Function for creating the task.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>Task that completes when the original task completes or when the runner gets disposed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ComponentTask.Exceptions.TaskCreatorReturnedNullException.html">TaskCreatorReturnedNullException</a></td>
+        <td><p>Thrown when null is returned from the 'taskCreator'.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.Exceptions.ComponentTaskCanceledException.html">ComponentTaskCanceledException</a></td>
+        <td><p>Thrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting
+a component that gets destroyed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__ComponentTask_IDiagnosticLogger_" data-uid="ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)">StartTask(Func&lt;CancellationToken, Task&gt;, IDiagnosticLogger)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartTask(Func&lt;CancellationToken, Task&gt; taskCreator, IDiagnosticLogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.IDiagnosticLogger.html">IDiagnosticLogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Optional logger to output diagnostic messages to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask_System_Func_System_Threading_Tasks_Task__" data-uid="ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})">StartTask(Func&lt;Task&gt;)</h4>
+  <div class="markdown level1 summary"><p>Start a task on this runner.</p>
+</div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartTask(Func&lt;Task&gt; taskCreator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td><p>Function for creating the task.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td><p>Task that completes when the original task completes or when the runner gets disposed.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="exceptions">Exceptions</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Condition</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><a class="xref" href="ComponentTask.Exceptions.TaskCreatorReturnedNullException.html">TaskCreatorReturnedNullException</a></td>
+        <td><p>Thrown when null is returned from the 'taskCreator'.</p>
+</td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.Exceptions.ComponentTaskCanceledException.html">ComponentTaskCanceledException</a></td>
+        <td><p>Thrown when awaiting a component-task that gets cancelled.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask_System_Func_System_Threading_Tasks_Task__ComponentTask_IDiagnosticLogger_" data-uid="ComponentTask.LocalTaskRunner.StartTask(System.Func{System.Threading.Tasks.Task},ComponentTask.IDiagnosticLogger)">StartTask(Func&lt;Task&gt;, IDiagnosticLogger)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartTask(Func&lt;Task&gt; taskCreator, IDiagnosticLogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.IDiagnosticLogger.html">IDiagnosticLogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Optional logger to output diagnostic messages to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__1_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task____0_" data-uid="ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)">StartTask&lt;TIn&gt;(Func&lt;TIn, CancellationToken, Task&gt;, TIn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartTask&lt;TIn&gt;(Func&lt;TIn, CancellationToken, Task&gt; taskCreator, TIn data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIn</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__1_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task____0_ComponentTask_IDiagnosticLogger_" data-uid="ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)">StartTask&lt;TIn&gt;(Func&lt;TIn, CancellationToken, Task&gt;, TIn, IDiagnosticLogger)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartTask&lt;TIn&gt;(Func&lt;TIn, CancellationToken, Task&gt; taskCreator, TIn data, IDiagnosticLogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIn</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.IDiagnosticLogger.html">IDiagnosticLogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Optional logger to output diagnostic messages to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__1_System_Func___0_System_Threading_Tasks_Task____0_" data-uid="ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)">StartTask&lt;TIn&gt;(Func&lt;TIn, Task&gt;, TIn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartTask&lt;TIn&gt;(Func&lt;TIn, Task&gt; taskCreator, TIn data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIn</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__1_System_Func___0_System_Threading_Tasks_Task____0_ComponentTask_IDiagnosticLogger_" data-uid="ComponentTask.LocalTaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0,ComponentTask.IDiagnosticLogger)">StartTask&lt;TIn&gt;(Func&lt;TIn, Task&gt;, TIn, IDiagnosticLogger)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task StartTask&lt;TIn&gt;(Func&lt;TIn, Task&gt; taskCreator, TIn data, IDiagnosticLogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIn</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.IDiagnosticLogger.html">IDiagnosticLogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Optional logger to output diagnostic messages to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIn</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___" data-uid="ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})">StartTask&lt;TOut&gt;(Func&lt;CancellationToken, Task&lt;TOut&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TOut&gt; StartTask&lt;TOut&gt;(Func&lt;CancellationToken, Task&lt;TOut&gt;&gt; taskCreator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TOut</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__1_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___ComponentTask_IDiagnosticLogger_" data-uid="ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)">StartTask&lt;TOut&gt;(Func&lt;CancellationToken, Task&lt;TOut&gt;&gt;, IDiagnosticLogger)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TOut&gt; StartTask&lt;TOut&gt;(Func&lt;CancellationToken, Task&lt;TOut&gt;&gt; taskCreator, IDiagnosticLogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.IDiagnosticLogger.html">IDiagnosticLogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Optional logger to output diagnostic messages to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TOut</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__1_System_Func_System_Threading_Tasks_Task___0___" data-uid="ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})">StartTask&lt;TOut&gt;(Func&lt;Task&lt;TOut&gt;&gt;)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TOut&gt; StartTask&lt;TOut&gt;(Func&lt;Task&lt;TOut&gt;&gt; taskCreator)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TOut</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__1_System_Func_System_Threading_Tasks_Task___0___ComponentTask_IDiagnosticLogger_" data-uid="ComponentTask.LocalTaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}},ComponentTask.IDiagnosticLogger)">StartTask&lt;TOut&gt;(Func&lt;Task&lt;TOut&gt;&gt;, IDiagnosticLogger)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TOut&gt; StartTask&lt;TOut&gt;(Func&lt;Task&lt;TOut&gt;&gt; taskCreator, IDiagnosticLogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.IDiagnosticLogger.html">IDiagnosticLogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Optional logger to output diagnostic messages to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TOut</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__2_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task___1_____0_" data-uid="ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)">StartTask&lt;TIn, TOut&gt;(Func&lt;TIn, CancellationToken, Task&lt;TOut&gt;&gt;, TIn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TOut&gt; StartTask&lt;TIn, TOut&gt;(Func&lt;TIn, CancellationToken, Task&lt;TOut&gt;&gt; taskCreator, TIn data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIn</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TOut</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__2_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task___1_____0_ComponentTask_IDiagnosticLogger_" data-uid="ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)">StartTask&lt;TIn, TOut&gt;(Func&lt;TIn, CancellationToken, Task&lt;TOut&gt;&gt;, TIn, IDiagnosticLogger)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TOut&gt; StartTask&lt;TIn, TOut&gt;(Func&lt;TIn, CancellationToken, Task&lt;TOut&gt;&gt; taskCreator, TIn data, IDiagnosticLogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIn</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.IDiagnosticLogger.html">IDiagnosticLogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Optional logger to output diagnostic messages to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TOut</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__2_System_Func___0_System_Threading_Tasks_Task___1_____0_" data-uid="ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)">StartTask&lt;TIn, TOut&gt;(Func&lt;TIn, Task&lt;TOut&gt;&gt;, TIn)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TOut&gt; StartTask&lt;TIn, TOut&gt;(Func&lt;TIn, Task&lt;TOut&gt;&gt; taskCreator, TIn data)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIn</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TOut</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  
+  
+  <a id="ComponentTask_LocalTaskRunner_StartTask_" data-uid="ComponentTask.LocalTaskRunner.StartTask*"></a>
+  <h4 id="ComponentTask_LocalTaskRunner_StartTask__2_System_Func___0_System_Threading_Tasks_Task___1_____0_ComponentTask_IDiagnosticLogger_" data-uid="ComponentTask.LocalTaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0,ComponentTask.IDiagnosticLogger)">StartTask&lt;TIn, TOut&gt;(Func&lt;TIn, Task&lt;TOut&gt;&gt;, TIn, IDiagnosticLogger)</h4>
+  <div class="markdown level1 summary"></div>
+  <div class="markdown level1 conceptual"></div>
+  <h5 class="decalaration">Declaration</h5>
+  <div class="codewrapper">
+    <pre><code class="lang-csharp hljs">public Task&lt;TOut&gt; StartTask&lt;TIn, TOut&gt;(Func&lt;TIn, Task&lt;TOut&gt;&gt; taskCreator, TIn data, IDiagnosticLogger logger)</code></pre>
+  </div>
+  <h5 class="parameters">Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="parametername">taskCreator</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="xref">TIn</span></td>
+        <td><span class="parametername">data</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><a class="xref" href="ComponentTask.IDiagnosticLogger.html">IDiagnosticLogger</a></td>
+        <td><span class="parametername">logger</span></td>
+        <td><p>Optional logger to output diagnostic messages to.</p>
+</td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="returns">Returns</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Type</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;</td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h5 class="typeParameters">Type Parameters</h5>
+  <table class="table table-bordered table-striped table-condensed">
+    <thead>
+      <tr>
+        <th>Name</th>
+        <th>Description</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td><span class="parametername">TIn</span></td>
+        <td></td>
+      </tr>
+      <tr>
+        <td><span class="parametername">TOut</span></td>
+        <td></td>
+      </tr>
+    </tbody>
+  </table>
+  <h3 id="implements">Implements</h3>
+  <div>
+      <a class="xref" href="ComponentTask.ITaskRunner.html">ITaskRunner</a>
+  </div>
+  <div>
+      <span class="xref">System.IDisposable</span>
+  </div>
+</article>
+          </div>
+          
+          <div class="hidden-sm col-md-2" role="complementary">
+            <div class="sideaffix">
+              <div class="contribution">
+                <ul class="nav">
+                </ul>
+              </div>
+              <nav class="bs-docs-sidebar hidden-print hidden-xs hidden-sm affix" id="affix">
+              <!-- <p><a class="back-to-top" href="#top">Back to top</a><p> -->
+              </nav>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <footer>
+        <div class="grad-bottom"></div>
+        <div class="footer">
+          <div class="container">
+            <span class="pull-right">
+              <a href="#top">Back to top</a>
+            </span>
+            ComponentTask documentation
+            
+          </div>
+        </div>
+      </footer>
+    </div>
+    
+    <script type="text/javascript" src="../styles/docfx.vendor.js"></script>
+    <script type="text/javascript" src="../styles/docfx.js"></script>
+    <script type="text/javascript" src="../styles/main.js"></script>
+  </body>
+</html>
