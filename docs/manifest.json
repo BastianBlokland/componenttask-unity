@@ -232,15 +232,18 @@
       "version": ""
     },
     {
+      "log_codes": [
+        "InvalidFileLink"
+      ],
       "type": "Conceptual",
       "source_relative_path": "api/index.md",
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "d+EcZCTs9k5cn5AXLbimew=="
+          "hash": "r9d7vxdxEeHeEkefNEpcNA=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -288,7 +291,7 @@
           "hash": "kW6+8bHPw8aGiDd/Kp/c4A=="
         }
       },
-      "is_incremental": true,
+      "is_incremental": false,
       "version": ""
     },
     {
@@ -342,7 +345,7 @@
           "can_incremental": true,
           "incrementalPhase": "build",
           "total_file_count": 5,
-          "skipped_file_count": 5
+          "skipped_file_count": 4
         }
       }
     },
