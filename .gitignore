@@ -18,10 +18,6 @@
 
 # Docs temp files.
 /.docfx/obj/
-/docs/**/*.meta
-
-# Root meta files.
-/*.meta
 
 # Example
 /.example/Library/
