@@ -16,7 +16,7 @@ items:
   source:
     id: TaskExtensions
     path: ''
-    startLine: 558
+    startLine: 8
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
@@ -57,7 +57,7 @@ items:
   source:
     id: DontWait
     path: ''
-    startLine: 568
+    startLine: 18
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine

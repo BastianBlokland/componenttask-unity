@@ -19,23 +19,17 @@ items:
   assemblies:
   - cs.temp.dll
 references:
-- uid: ComponentTask.Config
-  commentId: T:ComponentTask.Config
-  name: Config
-  nameWithType: Config
-  fullName: ComponentTask.Config
 - uid: ComponentTask.IDiagnosticLogger
   commentId: T:ComponentTask.IDiagnosticLogger
   parent: ComponentTask
   name: IDiagnosticLogger
   nameWithType: IDiagnosticLogger
   fullName: ComponentTask.IDiagnosticLogger
-- uid: ComponentTask.IExceptionHandler
-  commentId: T:ComponentTask.IExceptionHandler
-  parent: ComponentTask
-  name: IExceptionHandler
-  nameWithType: IExceptionHandler
-  fullName: ComponentTask.IExceptionHandler
+- uid: ComponentTask.Config
+  commentId: T:ComponentTask.Config
+  name: Config
+  nameWithType: Config
+  fullName: ComponentTask.Config
 - uid: ComponentTask.ITaskRunner
   commentId: T:ComponentTask.ITaskRunner
   parent: ComponentTask
@@ -47,6 +41,12 @@ references:
   name: LocalTaskRunner
   nameWithType: LocalTaskRunner
   fullName: ComponentTask.LocalTaskRunner
+- uid: ComponentTask.IExceptionHandler
+  commentId: T:ComponentTask.IExceptionHandler
+  parent: ComponentTask
+  name: IExceptionHandler
+  nameWithType: IExceptionHandler
+  fullName: ComponentTask.IExceptionHandler
 - uid: ComponentTask
   commentId: N:ComponentTask
   name: ComponentTask

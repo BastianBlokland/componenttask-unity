@@ -16,7 +16,7 @@ items:
   source:
     id: IExceptionHandler
     path: ''
-    startLine: 670
+    startLine: 1211
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -46,7 +46,7 @@ items:
   source:
     id: Handle
     path: ''
-    startLine: 676
+    startLine: 1217
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask

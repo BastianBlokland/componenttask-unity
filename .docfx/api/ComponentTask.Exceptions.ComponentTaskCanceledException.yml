@@ -15,7 +15,7 @@ items:
   source:
     id: ComponentTaskCanceledException
     path: ''
-    startLine: 1229
+    startLine: 2168
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask.Exceptions

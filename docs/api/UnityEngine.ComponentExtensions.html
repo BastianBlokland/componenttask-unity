@@ -10,7 +10,7 @@
     <meta name="viewport" content="width=device-width">
     <meta name="title" content="Class ComponentExtensions
    | ComponentTask ">
-    <meta name="generator" content="docfx 2.43.3.0">
+    <meta name="generator" content="docfx 2.44.0.0">
     
     <link rel="shortcut icon" href="../favicon.ico">
     <link rel="stylesheet" href="../styles/docfx.vendor.css">
@@ -127,7 +127,7 @@
   
   <a id="UnityEngine_ComponentExtensions_GetTaskRunner_" data-uid="UnityEngine.ComponentExtensions.GetTaskRunner*"></a>
   <h4 id="UnityEngine_ComponentExtensions_GetTaskRunner_Component_UnityEngine_TaskRunOptions_" data-uid="UnityEngine.ComponentExtensions.GetTaskRunner(Component,UnityEngine.TaskRunOptions)">GetTaskRunner(Component, TaskRunOptions)</h4>
-  <div class="markdown level1 summary"><p>Get a <a class="xref" href="ComponentTask.ITaskRunner.html">ITaskRunner</a> for the given component.</p>
+  <div class="markdown level1 summary"><p>Get a <see cref="!:ITaskRunner"></see> for the given component.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
   <h5 class="decalaration">Declaration</h5>
@@ -168,8 +168,8 @@
     </thead>
     <tbody>
       <tr>
-        <td><a class="xref" href="ComponentTask.ITaskRunner.html">ITaskRunner</a></td>
-        <td><p><a class="xref" href="ComponentTask.ITaskRunner.html">ITaskRunner</a> scoped to the given component.</p>
+        <td><span class="xref">ITaskRunner</span></td>
+        <td><p><see cref="!:ITaskRunner"></see> scoped to the given component.</p>
 </td>
       </tr>
     </tbody>
@@ -203,9 +203,9 @@ runner is created.</p>
   
   
   <a id="UnityEngine_ComponentExtensions_StartTask_" data-uid="UnityEngine.ComponentExtensions.StartTask*"></a>
-  <h4 id="UnityEngine_ComponentExtensions_StartTask_Component_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__UnityEngine_TaskRunOptions_" data-uid="UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)">StartTask(Component, Func&lt;CancellationToken, Task&gt;, TaskRunOptions)</h4>
+  <h4 id="UnityEngine_ComponentExtensions_StartTask_Component_System_Func_CancellationToken_System_Threading_Tasks_Task__UnityEngine_TaskRunOptions_" data-uid="UnityEngine.ComponentExtensions.StartTask(Component,System.Func{CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)">StartTask(Component, Func&lt;CancellationToken, Task&gt;, TaskRunOptions)</h4>
   <div class="markdown level1 summary"><p>Start a task scoped to the given component.
-<span class="xref">System.Threading.CancellationToken</span> that is passed to the task-creator is cancelled when the
+<see cref="!:CancellationToken"></see> that is passed to the task-creator is cancelled when the
 component gets destroyed, this can be usefull for cancelling external processes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -230,7 +230,7 @@ component gets destroyed, this can be usefull for cancelling external processes.
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
         <td><span class="parametername">taskCreator</span></td>
         <td><p>Function for creating the task.</p>
 </td>
@@ -259,7 +259,7 @@ component gets destroyed, this can be usefull for cancelling external processes.
       </tr>
     </tbody>
   </table>
-  <h5 id="UnityEngine_ComponentExtensions_StartTask_Component_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task__UnityEngine_TaskRunOptions__remarks">Remarks</h5>
+  <h5 id="UnityEngine_ComponentExtensions_StartTask_Component_System_Func_CancellationToken_System_Threading_Tasks_Task__UnityEngine_TaskRunOptions__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The task will run 'on' the component, meaning that the task gets paused when the component
 is disabled and the task will get cancelled when the component is destroyed.</p>
 <p>Can only be called from the unity-thread in play-mode.</p>
@@ -415,9 +415,9 @@ Does not happen when giving <a class="xref" href="UnityEngine.TaskRunOptions.htm
   
   
   <a id="UnityEngine_ComponentExtensions_StartTask_" data-uid="UnityEngine.ComponentExtensions.StartTask*"></a>
-  <h4 id="UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task____0_UnityEngine_TaskRunOptions_" data-uid="UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)">StartTask&lt;TIn&gt;(Component, Func&lt;TIn, CancellationToken, Task&gt;, TIn, TaskRunOptions)</h4>
+  <h4 id="UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func___0_CancellationToken_System_Threading_Tasks_Task____0_UnityEngine_TaskRunOptions_" data-uid="UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)">StartTask&lt;TIn&gt;(Component, Func&lt;TIn, CancellationToken, Task&gt;, TIn, TaskRunOptions)</h4>
   <div class="markdown level1 summary"><p>Start a task scoped to the given component.
-<span class="xref">System.Threading.CancellationToken</span> that is passed to the task-creator is cancelled when the
+<see cref="!:CancellationToken"></see> that is passed to the task-creator is cancelled when the
 component gets destroyed, this can be usefull for cancelling external processes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -442,7 +442,7 @@ component gets destroyed, this can be usefull for cancelling external processes.
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&gt;</td>
         <td><span class="parametername">taskCreator</span></td>
         <td><p>Function for creating the task.</p>
 </td>
@@ -491,7 +491,7 @@ component gets destroyed, this can be usefull for cancelling external processes.
       </tr>
     </tbody>
   </table>
-  <h5 id="UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task____0_UnityEngine_TaskRunOptions__remarks">Remarks</h5>
+  <h5 id="UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func___0_CancellationToken_System_Threading_Tasks_Task____0_UnityEngine_TaskRunOptions__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The task will run 'on' the component, meaning that the task gets paused when the component
 is disabled and the task will get cancelled when the component is destroyed.</p>
 <p>Can only be called from the unity-thread in play-mode.</p>
@@ -667,9 +667,9 @@ Does not happen when giving <a class="xref" href="UnityEngine.TaskRunOptions.htm
   
   
   <a id="UnityEngine_ComponentExtensions_StartTask_" data-uid="UnityEngine.ComponentExtensions.StartTask*"></a>
-  <h4 id="UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___UnityEngine_TaskRunOptions_" data-uid="UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)">StartTask&lt;TOut&gt;(Component, Func&lt;CancellationToken, Task&lt;TOut&gt;&gt;, TaskRunOptions)</h4>
+  <h4 id="UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func_CancellationToken_System_Threading_Tasks_Task___0___UnityEngine_TaskRunOptions_" data-uid="UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)">StartTask&lt;TOut&gt;(Component, Func&lt;CancellationToken, Task&lt;TOut&gt;&gt;, TaskRunOptions)</h4>
   <div class="markdown level1 summary"><p>Start a task scoped to the given component.
-<span class="xref">System.Threading.CancellationToken</span> that is passed to the task-creator is cancelled when the
+<see cref="!:CancellationToken"></see> that is passed to the task-creator is cancelled when the
 component gets destroyed, this can be usefull for cancelling external processes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -694,7 +694,7 @@ component gets destroyed, this can be usefull for cancelling external processes.
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;<span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;<span class="xref">CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
         <td><span class="parametername">taskCreator</span></td>
         <td><p>Function for creating the task.</p>
 </td>
@@ -738,7 +738,7 @@ component gets destroyed, this can be usefull for cancelling external processes.
       </tr>
     </tbody>
   </table>
-  <h5 id="UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func_System_Threading_CancellationToken_System_Threading_Tasks_Task___0___UnityEngine_TaskRunOptions__remarks">Remarks</h5>
+  <h5 id="UnityEngine_ComponentExtensions_StartTask__1_Component_System_Func_CancellationToken_System_Threading_Tasks_Task___0___UnityEngine_TaskRunOptions__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The task will run 'on' the component, meaning that the task gets paused when the component
 is disabled and the task will get cancelled when the component is destroyed.</p>
 <p>Can only be called from the unity-thread in play-mode.</p>
@@ -909,9 +909,9 @@ Does not happen when giving <a class="xref" href="UnityEngine.TaskRunOptions.htm
   
   
   <a id="UnityEngine_ComponentExtensions_StartTask_" data-uid="UnityEngine.ComponentExtensions.StartTask*"></a>
-  <h4 id="UnityEngine_ComponentExtensions_StartTask__2_Component_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task___1_____0_UnityEngine_TaskRunOptions_" data-uid="UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)">StartTask&lt;TIn, TOut&gt;(Component, Func&lt;TIn, CancellationToken, Task&lt;TOut&gt;&gt;, TIn, TaskRunOptions)</h4>
+  <h4 id="UnityEngine_ComponentExtensions_StartTask__2_Component_System_Func___0_CancellationToken_System_Threading_Tasks_Task___1_____0_UnityEngine_TaskRunOptions_" data-uid="UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)">StartTask&lt;TIn, TOut&gt;(Component, Func&lt;TIn, CancellationToken, Task&lt;TOut&gt;&gt;, TIn, TaskRunOptions)</h4>
   <div class="markdown level1 summary"><p>Start a task scoped to the given component.
-<span class="xref">System.Threading.CancellationToken</span> that is passed to the task-creator is cancelled when the
+<see cref="!:CancellationToken"></see> that is passed to the task-creator is cancelled when the
 component gets destroyed, this can be usefull for cancelling external processes.</p>
 </div>
   <div class="markdown level1 conceptual"></div>
@@ -936,7 +936,7 @@ component gets destroyed, this can be usefull for cancelling external processes.
 </td>
       </tr>
       <tr>
-        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">System.Threading.CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
+        <td><span class="xref">System.Func</span>&lt;TIn, <span class="xref">CancellationToken</span>, <span class="xref">System.Threading.Tasks.Task</span>&lt;TOut&gt;&gt;</td>
         <td><span class="parametername">taskCreator</span></td>
         <td><p>Function for creating the task.</p>
 </td>
@@ -989,7 +989,7 @@ component gets destroyed, this can be usefull for cancelling external processes.
       </tr>
     </tbody>
   </table>
-  <h5 id="UnityEngine_ComponentExtensions_StartTask__2_Component_System_Func___0_System_Threading_CancellationToken_System_Threading_Tasks_Task___1_____0_UnityEngine_TaskRunOptions__remarks">Remarks</h5>
+  <h5 id="UnityEngine_ComponentExtensions_StartTask__2_Component_System_Func___0_CancellationToken_System_Threading_Tasks_Task___1_____0_UnityEngine_TaskRunOptions__remarks">Remarks</h5>
   <div class="markdown level1 remarks"><p>The task will run 'on' the component, meaning that the task gets paused when the component
 is disabled and the task will get cancelled when the component is destroyed.</p>
 <p>Can only be called from the unity-thread in play-mode.</p>

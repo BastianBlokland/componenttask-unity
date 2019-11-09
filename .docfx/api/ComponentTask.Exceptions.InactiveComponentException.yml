@@ -15,7 +15,7 @@ items:
   source:
     id: InactiveComponentException
     path: ''
-    startLine: 1263
+    startLine: 2067
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask.Exceptions

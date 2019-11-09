@@ -16,7 +16,7 @@ items:
   source:
     id: GameObjectExtensions
     path: ''
-    startLine: 510
+    startLine: 34
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
@@ -57,11 +57,11 @@ items:
   source:
     id: CreateTaskRunner
     path: ''
-    startLine: 530
+    startLine: 54
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
-  summary: "\nCreate a <xref href=\"ComponentTask.ITaskRunner\" data-throw-if-not-resolved=\"false\"></xref> on the given gameobject.\n"
+  summary: "\nCreate a <see cref=\"!:ITaskRunner\"></see> on the given gameobject.\n"
   remarks: "\nIf you run tasks on the returned runner then they are cancelled automatically when the\ngameobject is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
   example: []
   syntax:
@@ -74,8 +74,8 @@ items:
       type: UnityEngine.TaskRunOptions
       description: Options for configuring how tasks are run on this runner.
     return:
-      type: ComponentTask.ITaskRunner
-      description: Newly created <xref href="ComponentTask.ITaskRunner" data-throw-if-not-resolved="false"></xref>.
+      type: ITaskRunner
+      description: Newly created <see cref="!:ITaskRunner"></see>.
     content.vb: >-
       <ExtensionAttribute>
 
@@ -392,12 +392,6 @@ references:
   name: System
   nameWithType: System
   fullName: System
-- uid: ComponentTask.ITaskRunner
-  commentId: T:ComponentTask.ITaskRunner
-  parent: ComponentTask
-  name: ITaskRunner
-  nameWithType: ITaskRunner
-  fullName: ComponentTask.ITaskRunner
 - uid: ComponentTask.Exceptions.NotPlayingException
   commentId: T:ComponentTask.Exceptions.NotPlayingException
   name: NotPlayingException
@@ -425,8 +419,8 @@ references:
   name: TaskRunOptions
   nameWithType: TaskRunOptions
   fullName: UnityEngine.TaskRunOptions
-- uid: ComponentTask
-  commentId: N:ComponentTask
-  name: ComponentTask
-  nameWithType: ComponentTask
-  fullName: ComponentTask
+- uid: ITaskRunner
+  isExternal: true
+  name: ITaskRunner
+  nameWithType: ITaskRunner
+  fullName: ITaskRunner

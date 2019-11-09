@@ -18,7 +18,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Config.html",
-          "hash": "WgR6RuI3c1ilG5wi1Ut39Q=="
+          "hash": "LKi/fXL93FUOHI5fHfEJUw=="
         }
       },
       "is_incremental": false,
@@ -30,7 +30,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.ComponentTaskCanceledException.html",
-          "hash": "psbv/gn1coXTybMZMDE2Tw=="
+          "hash": "Xa1y07mB8ITZgEoBKWunkA=="
         }
       },
       "is_incremental": false,
@@ -42,7 +42,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.ContextChangedException.html",
-          "hash": "Bt4vQy771Vi5aFw6dyTmhQ=="
+          "hash": "ahHtNWQtLq0A5p6yIpHedg=="
         }
       },
       "is_incremental": false,
@@ -54,7 +54,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.InactiveComponentException.html",
-          "hash": "OiFh0Rk5D8cZrzLGfCWXbg=="
+          "hash": "LKWBv29I9hR4K+I+cIZBlw=="
         }
       },
       "is_incremental": false,
@@ -66,7 +66,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.InactiveGameObjectException.html",
-          "hash": "7zPvJa2TLeU0r/oXS/r4vw=="
+          "hash": "FmAsIQGkgtwtzoqXQql+UQ=="
         }
       },
       "is_incremental": false,
@@ -78,7 +78,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.NonUnityThreadException.html",
-          "hash": "BRJMb9DbEY9v5CVzDau0yg=="
+          "hash": "t19Rv9vyLULv/3muPiZmdw=="
         }
       },
       "is_incremental": false,
@@ -90,7 +90,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.NotPlayingException.html",
-          "hash": "K27UeAAFtmM++QTVseK1Tw=="
+          "hash": "vyT2dO0yPcmoEtc7oO+77A=="
         }
       },
       "is_incremental": false,
@@ -102,7 +102,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.TaskCreatorReturnedNullException.html",
-          "hash": "szu6fSiVlfxFhddEUN0IFA=="
+          "hash": "v9OTQ1CRyDLNsTGAmPbMCg=="
         }
       },
       "is_incremental": false,
@@ -114,7 +114,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.Exceptions.html",
-          "hash": "e6R7iwPi9KWibgLr/WiMxg=="
+          "hash": "ZZbt21zxukLtYtOIIUX6LA=="
         }
       },
       "is_incremental": false,
@@ -126,7 +126,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.IDiagnosticLogger.html",
-          "hash": "YpXijhYm4li4OSgN1DnDYQ=="
+          "hash": "eaTk+HuboW58Q1RyN4UEwA=="
         }
       },
       "is_incremental": false,
@@ -138,7 +138,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.IExceptionHandler.html",
-          "hash": "KmOd4droqAoSPrydUPU8Sg=="
+          "hash": "nzF8EBq6suCEOybdVJzJQQ=="
         }
       },
       "is_incremental": false,
@@ -150,7 +150,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.ITaskRunner.html",
-          "hash": "ILDUS7Tz4rOaDaQK43HY/A=="
+          "hash": "YGWyUMShRHIKl2gQyFNoxg=="
         }
       },
       "is_incremental": false,
@@ -162,7 +162,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.LocalTaskRunner.html",
-          "hash": "zBVzR+TJPKmoEPTpY1mC7Q=="
+          "hash": "M8b5/O3pGqNArPa2iTg8uw=="
         }
       },
       "is_incremental": false,
@@ -174,7 +174,7 @@
       "output": {
         ".html": {
           "relative_path": "api/ComponentTask.html",
-          "hash": "pOCRBzpgyaVaMVMAycoMhQ=="
+          "hash": "PDet/H4PSxfg4GM4rCX2Ng=="
         }
       },
       "is_incremental": false,
@@ -186,7 +186,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.ComponentExtensions.html",
-          "hash": "F5ywm7khJoS/RpClZ93pNQ=="
+          "hash": "xVxJiiNan7xK570m6PQbgg=="
         }
       },
       "is_incremental": false,
@@ -198,7 +198,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.GameObjectExtensions.html",
-          "hash": "756BNTaoI9YV0YBzpHwOTQ=="
+          "hash": "fImKz/9ivn2D4Qd48E2/sg=="
         }
       },
       "is_incremental": false,
@@ -210,7 +210,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.TaskExtensions.html",
-          "hash": "A1+QQGa32C5mkhzet9m6XA=="
+          "hash": "ZCS+jvhodk3Wm1c4MpEfew=="
         }
       },
       "is_incremental": false,
@@ -222,7 +222,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.TaskRunOptions.html",
-          "hash": "hKmFnXzZ2PJTduPy16X4aw=="
+          "hash": "S7MzZzwYHBFJ65Fr3AtE9g=="
         }
       },
       "is_incremental": false,
@@ -234,7 +234,7 @@
       "output": {
         ".html": {
           "relative_path": "api/UnityEngine.html",
-          "hash": "izLnl8ZnuSSXxrrQDlODtw=="
+          "hash": "gY/m5pXmPa5pKKCSqQOjFg=="
         }
       },
       "is_incremental": false,
@@ -249,7 +249,7 @@
       "output": {
         ".html": {
           "relative_path": "api/index.html",
-          "hash": "r3ENm/juunYnPr0ySM63/A=="
+          "hash": "RJMlCgTDRdQ/c5yo0kQTVw=="
         }
       },
       "is_incremental": false,
@@ -273,7 +273,7 @@
       "output": {
         ".html": {
           "relative_path": "examples.html",
-          "hash": "+Yeoo/BzA4cegOcOSc+sZQ=="
+          "hash": "urzL49nTzItxfUDH53XUYQ=="
         }
       },
       "is_incremental": false,
@@ -285,7 +285,7 @@
       "output": {
         ".html": {
           "relative_path": "how-to.html",
-          "hash": "kk94L/GhBMDBb2sJhDGW9A=="
+          "hash": "DfkCL5cnS5kJJS/NgGNlNw=="
         }
       },
       "is_incremental": false,
@@ -297,7 +297,7 @@
       "output": {
         ".html": {
           "relative_path": "index.html",
-          "hash": "qU/RYpmesg4W08ebr7K+IA=="
+          "hash": "57q0trhUX+h1DXt5zG+L7A=="
         }
       },
       "is_incremental": false,
@@ -309,7 +309,7 @@
       "output": {
         ".html": {
           "relative_path": "install.html",
-          "hash": "AkyZ3ZbHa8m4BX6Yenqpew=="
+          "hash": "fz+ysIDc01d3ISaAiSs/Vw=="
         }
       },
       "is_incremental": false,
@@ -331,10 +331,12 @@
   "incremental_info": [
     {
       "status": {
-        "can_incremental": true,
+        "can_incremental": false,
+        "details": "Cannot build incrementally because docfx version changed from 2.43.3.0 to 2.44.0.0.",
         "incrementalPhase": "build",
         "total_file_count": 0,
-        "skipped_file_count": 0
+        "skipped_file_count": 0,
+        "full_build_reason_code": "DocfxVersionChanged"
       },
       "processors": {
         "TocDocumentProcessor": {
@@ -345,16 +347,16 @@
           "skipped_file_count": 0
         },
         "ManagedReferenceDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 19,
-          "skipped_file_count": 19
+          "skipped_file_count": 0
         },
         "ConceptualDocumentProcessor": {
-          "can_incremental": true,
+          "can_incremental": false,
           "incrementalPhase": "build",
           "total_file_count": 5,
-          "skipped_file_count": 4
+          "skipped_file_count": 0
         }
       }
     },

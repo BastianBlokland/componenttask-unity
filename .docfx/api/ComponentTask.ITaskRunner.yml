@@ -5,13 +5,13 @@ items:
   id: ITaskRunner
   parent: ComponentTask
   children:
-  - ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+  - ComponentTask.ITaskRunner.StartTask(System.Func{CancellationToken,System.Threading.Tasks.Task})
   - ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.Tasks.Task})
-  - ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+  - ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,CancellationToken,System.Threading.Tasks.Task},``0)
   - ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
-  - ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+  - ComponentTask.ITaskRunner.StartTask``1(System.Func{CancellationToken,System.Threading.Tasks.Task{``0}})
   - ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
-  - ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  - ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}},``0)
   - ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
   langs:
   - csharp
@@ -23,7 +23,7 @@ items:
   source:
     id: ITaskRunner
     path: ''
-    startLine: 689
+    startLine: 669
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -52,7 +52,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 704
+    startLine: 684
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -79,31 +79,31 @@ items:
   nameWithType.vb: ITaskRunner.StartTask(Func(Of Task))
   fullName.vb: ComponentTask.ITaskRunner.StartTask(System.Func(Of System.Threading.Tasks.Task))
   name.vb: StartTask(Func(Of Task))
-- uid: ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
-  commentId: M:ComponentTask.ITaskRunner.StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
-  id: StartTask(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task})
+- uid: ComponentTask.ITaskRunner.StartTask(System.Func{CancellationToken,System.Threading.Tasks.Task})
+  commentId: M:ComponentTask.ITaskRunner.StartTask(System.Func{CancellationToken,System.Threading.Tasks.Task})
+  id: StartTask(System.Func{CancellationToken,System.Threading.Tasks.Task})
   parent: ComponentTask.ITaskRunner
   langs:
   - csharp
   - vb
   name: StartTask(Func<CancellationToken, Task>)
   nameWithType: ITaskRunner.StartTask(Func<CancellationToken, Task>)
-  fullName: ComponentTask.ITaskRunner.StartTask(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>)
+  fullName: ComponentTask.ITaskRunner.StartTask(System.Func<CancellationToken, System.Threading.Tasks.Task>)
   type: Method
   source:
     id: StartTask
     path: ''
-    startLine: 722
+    startLine: 702
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
-  summary: "\nStart a task on this runner.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\nrunner is disposed, this can be usefull for cancelling external processes.\n"
+  summary: "\nStart a task on this runner.\n<see cref=\"!:CancellationToken\"></see> that is passed to the task-creator is cancelled when the\nrunner is disposed, this can be usefull for cancelling external processes.\n"
   example: []
   syntax:
     content: Task StartTask(Func<CancellationToken, Task> taskCreator)
     parameters:
     - id: taskCreator
-      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      type: System.Func{CancellationToken,System.Threading.Tasks.Task}
       description: Function for creating the task.
     return:
       type: System.Threading.Tasks.Task
@@ -118,7 +118,7 @@ items:
     commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
     description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
   nameWithType.vb: ITaskRunner.StartTask(Func(Of CancellationToken, Task))
-  fullName.vb: ComponentTask.ITaskRunner.StartTask(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task))
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(System.Func(Of CancellationToken, System.Threading.Tasks.Task))
   name.vb: StartTask(Func(Of CancellationToken, Task))
 - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
   commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.Tasks.Task},``0)
@@ -134,7 +134,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 739
+    startLine: 719
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -167,31 +167,31 @@ items:
   nameWithType.vb: ITaskRunner.StartTask(Of TIn)(Func(Of TIn, Task), TIn)
   fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.Tasks.Task), TIn)
   name.vb: StartTask(Of TIn)(Func(Of TIn, Task), TIn)
-- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
-  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
-  id: StartTask``1(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0)
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,CancellationToken,System.Threading.Tasks.Task},``0)
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{``0,CancellationToken,System.Threading.Tasks.Task},``0)
+  id: StartTask``1(System.Func{``0,CancellationToken,System.Threading.Tasks.Task},``0)
   parent: ComponentTask.ITaskRunner
   langs:
   - csharp
   - vb
   name: StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
   nameWithType: ITaskRunner.StartTask<TIn>(Func<TIn, CancellationToken, Task>, TIn)
-  fullName: ComponentTask.ITaskRunner.StartTask<TIn>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn>(System.Func<TIn, CancellationToken, System.Threading.Tasks.Task>, TIn)
   type: Method
   source:
     id: StartTask
     path: ''
-    startLine: 759
+    startLine: 739
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
-  summary: "\nStart a task on this runner.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\nrunner is disposed, this can be usefull for cancelling external processes.\n"
+  summary: "\nStart a task on this runner.\n<see cref=\"!:CancellationToken\"></see> that is passed to the task-creator is cancelled when the\nrunner is disposed, this can be usefull for cancelling external processes.\n"
   example: []
   syntax:
     content: Task StartTask<TIn>(Func<TIn, CancellationToken, Task> taskCreator, TIn data)
     parameters:
     - id: taskCreator
-      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      type: System.Func{{TIn},CancellationToken,System.Threading.Tasks.Task}
       description: Function for creating the task.
     - id: data
       type: '{TIn}'
@@ -212,7 +212,7 @@ items:
     commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
     description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
   nameWithType.vb: ITaskRunner.StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
-  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn)(System.Func(Of TIn, CancellationToken, System.Threading.Tasks.Task), TIn)
   name.vb: StartTask(Of TIn)(Func(Of TIn, CancellationToken, Task), TIn)
 - uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
   commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.Tasks.Task{``0}})
@@ -228,7 +228,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 774
+    startLine: 754
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -257,31 +257,31 @@ items:
   nameWithType.vb: ITaskRunner.StartTask(Of TOut)(Func(Of Task(Of TOut)))
   fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.Tasks.Task(Of TOut)))
   name.vb: StartTask(Of TOut)(Func(Of Task(Of TOut)))
-- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
-  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
-  id: StartTask``1(System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}})
+- uid: ComponentTask.ITaskRunner.StartTask``1(System.Func{CancellationToken,System.Threading.Tasks.Task{``0}})
+  commentId: M:ComponentTask.ITaskRunner.StartTask``1(System.Func{CancellationToken,System.Threading.Tasks.Task{``0}})
+  id: StartTask``1(System.Func{CancellationToken,System.Threading.Tasks.Task{``0}})
   parent: ComponentTask.ITaskRunner
   langs:
   - csharp
   - vb
   name: StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
   nameWithType: ITaskRunner.StartTask<TOut>(Func<CancellationToken, Task<TOut>>)
-  fullName: ComponentTask.ITaskRunner.StartTask<TOut>(System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>)
+  fullName: ComponentTask.ITaskRunner.StartTask<TOut>(System.Func<CancellationToken, System.Threading.Tasks.Task<TOut>>)
   type: Method
   source:
     id: StartTask
     path: ''
-    startLine: 792
+    startLine: 772
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
-  summary: "\nStart a task on this runner.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\nrunner is disposed, this can be usefull for cancelling external processes.\n"
+  summary: "\nStart a task on this runner.\n<see cref=\"!:CancellationToken\"></see> that is passed to the task-creator is cancelled when the\nrunner is disposed, this can be usefull for cancelling external processes.\n"
   example: []
   syntax:
     content: Task<TOut> StartTask<TOut>(Func<CancellationToken, Task<TOut>> taskCreator)
     parameters:
     - id: taskCreator
-      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+      type: System.Func{CancellationToken,System.Threading.Tasks.Task{{TOut}}}
       description: Function for creating the task.
     typeParameters:
     - id: TOut
@@ -298,7 +298,7 @@ items:
     commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
     description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
   nameWithType.vb: ITaskRunner.StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
-  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TOut)(System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)))
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TOut)(System.Func(Of CancellationToken, System.Threading.Tasks.Task(Of TOut)))
   name.vb: StartTask(Of TOut)(Func(Of CancellationToken, Task(Of TOut)))
 - uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
   commentId: M:ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.Tasks.Task{``1}},``0)
@@ -314,7 +314,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 809
+    startLine: 789
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -348,31 +348,31 @@ items:
   nameWithType.vb: ITaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
   fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn)
   name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, Task(Of TOut)), TIn)
-- uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
-  commentId: M:ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
-  id: StartTask``2(System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+- uid: ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  commentId: M:ComponentTask.ITaskRunner.StartTask``2(System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}},``0)
+  id: StartTask``2(System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}},``0)
   parent: ComponentTask.ITaskRunner
   langs:
   - csharp
   - vb
   name: StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
   nameWithType: ITaskRunner.StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>>, TIn)
-  fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>(System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn)
+  fullName: ComponentTask.ITaskRunner.StartTask<TIn, TOut>(System.Func<TIn, CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn)
   type: Method
   source:
     id: StartTask
     path: ''
-    startLine: 827
+    startLine: 807
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
-  summary: "\nStart a task on this runner.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\nrunner is disposed, this can be usefull for cancelling external processes.\n"
+  summary: "\nStart a task on this runner.\n<see cref=\"!:CancellationToken\"></see> that is passed to the task-creator is cancelled when the\nrunner is disposed, this can be usefull for cancelling external processes.\n"
   example: []
   syntax:
     content: Task<TOut> StartTask<TIn, TOut>(Func<TIn, CancellationToken, Task<TOut>> taskCreator, TIn data)
     parameters:
     - id: taskCreator
-      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+      type: System.Func{{TIn},CancellationToken,System.Threading.Tasks.Task{{TOut}}}
       description: Function for creating the task.
     - id: data
       type: '{TIn}'
@@ -392,7 +392,7 @@ items:
     commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
     description: "\nThrown when awaiting a component-task that gets cancelled. Can happen if you are awaiting\na component that gets destroyed.\n"
   nameWithType.vb: ITaskRunner.StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
-  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn)
+  fullName.vb: ComponentTask.ITaskRunner.StartTask(Of TIn, TOut)(System.Func(Of TIn, CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn)
   name.vb: StartTask(Of TIn, TOut)(Func(Of TIn, CancellationToken, Task(Of TOut)), TIn)
 references:
 - uid: ComponentTask
@@ -517,18 +517,15 @@ references:
   name: System.Threading.Tasks
   nameWithType: System.Threading.Tasks
   fullName: System.Threading.Tasks
-- uid: System.Threading.CancellationToken
-  commentId: T:System.Threading.CancellationToken
-  isExternal: true
-- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
-  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+- uid: System.Func{CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{CancellationToken,System.Threading.Tasks.Task}
   parent: System
   definition: System.Func`2
   name: Func<CancellationToken, Task>
   nameWithType: Func<CancellationToken, Task>
-  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  fullName: System.Func<CancellationToken, System.Threading.Tasks.Task>
   nameWithType.vb: Func(Of CancellationToken, Task)
-  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  fullName.vb: System.Func(Of CancellationToken, System.Threading.Tasks.Task)
   name.vb: Func(Of CancellationToken, Task)
   spec.csharp:
   - uid: System.Func`2
@@ -539,10 +536,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -564,10 +561,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -697,15 +694,15 @@ references:
   name: TIn
   nameWithType: TIn
   fullName: TIn
-- uid: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task}
-  commentId: T:System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+- uid: System.Func{{TIn},CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{``0,CancellationToken,System.Threading.Tasks.Task}
   parent: System
   definition: System.Func`3
   name: Func<TIn, CancellationToken, Task>
   nameWithType: Func<TIn, CancellationToken, Task>
-  fullName: System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  fullName: System.Func<TIn, CancellationToken, System.Threading.Tasks.Task>
   nameWithType.vb: Func(Of TIn, CancellationToken, Task)
-  fullName.vb: System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  fullName.vb: System.Func(Of TIn, CancellationToken, System.Threading.Tasks.Task)
   name.vb: Func(Of TIn, CancellationToken, Task)
   spec.csharp:
   - uid: System.Func`3
@@ -722,10 +719,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -753,10 +750,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -973,15 +970,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
-  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}}
+- uid: System.Func{CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{CancellationToken,System.Threading.Tasks.Task{``0}}
   parent: System
   definition: System.Func`2
   name: Func<CancellationToken, Task<TOut>>
   nameWithType: Func<CancellationToken, Task<TOut>>
-  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>
+  fullName: System.Func<CancellationToken, System.Threading.Tasks.Task<TOut>>
   nameWithType.vb: Func(Of CancellationToken, Task(Of TOut))
-  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut))
+  fullName.vb: System.Func(Of CancellationToken, System.Threading.Tasks.Task(Of TOut))
   name.vb: Func(Of CancellationToken, Task(Of TOut))
   spec.csharp:
   - uid: System.Func`2
@@ -992,10 +989,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1026,10 +1023,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1125,15 +1122,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
-  commentId: T:System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}}
+- uid: System.Func{{TIn},CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}}
   parent: System
   definition: System.Func`3
   name: Func<TIn, CancellationToken, Task<TOut>>
   nameWithType: Func<TIn, CancellationToken, Task<TOut>>
-  fullName: System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>
+  fullName: System.Func<TIn, CancellationToken, System.Threading.Tasks.Task<TOut>>
   nameWithType.vb: Func(Of TIn, CancellationToken, Task(Of TOut))
-  fullName.vb: System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut))
+  fullName.vb: System.Func(Of TIn, CancellationToken, System.Threading.Tasks.Task(Of TOut))
   name.vb: Func(Of TIn, CancellationToken, Task(Of TOut))
   spec.csharp:
   - uid: System.Func`3
@@ -1150,10 +1147,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1190,10 +1187,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '

@@ -16,7 +16,7 @@ items:
   source:
     id: IDiagnosticLogger
     path: ''
-    startLine: 650
+    startLine: 617
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask
@@ -46,7 +46,7 @@ items:
   source:
     id: Log
     path: ''
-    startLine: 656
+    startLine: 623
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask

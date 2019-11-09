@@ -6,13 +6,13 @@ items:
   parent: UnityEngine
   children:
   - UnityEngine.ComponentExtensions.GetTaskRunner(Component,UnityEngine.TaskRunOptions)
-  - UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask(Component,System.Func{CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
   - UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
-  - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
   - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
-  - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
   - UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
-  - UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  - UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
   - UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
   langs:
   - csharp
@@ -24,7 +24,7 @@ items:
   source:
     id: ComponentExtensions
     path: ''
-    startLine: 12
+    startLine: 86
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
@@ -65,7 +65,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 51
+    startLine: 125
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
@@ -120,9 +120,9 @@ items:
   - Shared
   fullName.vb: UnityEngine.ComponentExtensions.StartTask(Component, System.Func(Of System.Threading.Tasks.Task), UnityEngine.TaskRunOptions)
   name.vb: StartTask(Component, Func(Of Task), TaskRunOptions)
-- uid: UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
-  commentId: M:UnityEngine.ComponentExtensions.StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
-  id: StartTask(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask(Component,System.Func{CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask(Component,System.Func{CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
+  id: StartTask(Component,System.Func{CancellationToken,System.Threading.Tasks.Task},UnityEngine.TaskRunOptions)
   isExtensionMethod: true
   parent: UnityEngine.ComponentExtensions
   langs:
@@ -130,16 +130,16 @@ items:
   - vb
   name: StartTask(Component, Func<CancellationToken, Task>, TaskRunOptions)
   nameWithType: ComponentExtensions.StartTask(Component, Func<CancellationToken, Task>, TaskRunOptions)
-  fullName: UnityEngine.ComponentExtensions.StartTask(Component, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>, UnityEngine.TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask(Component, System.Func<CancellationToken, System.Threading.Tasks.Task>, UnityEngine.TaskRunOptions)
   type: Method
   source:
     id: StartTask
     path: ''
-    startLine: 105
+    startLine: 179
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
-  summary: "\nStart a task scoped to the given component.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
+  summary: "\nStart a task scoped to the given component.\n<see cref=\"!:CancellationToken\"></see> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
   remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
   example: []
   syntax:
@@ -149,7 +149,7 @@ items:
       type: Component
       description: Component to run the task &apos;on&apos;.
     - id: taskCreator
-      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      type: System.Func{CancellationToken,System.Threading.Tasks.Task}
       description: Function for creating the task.
     - id: options
       type: UnityEngine.TaskRunOptions
@@ -188,7 +188,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Component, System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task), UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Component, System.Func(Of CancellationToken, System.Threading.Tasks.Task), UnityEngine.TaskRunOptions)
   name.vb: StartTask(Component, Func(Of CancellationToken, Task), TaskRunOptions)
 - uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
   commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
@@ -205,7 +205,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 157
+    startLine: 231
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
@@ -264,9 +264,9 @@ items:
   - Shared
   fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn)(Component, System.Func(Of TIn, System.Threading.Tasks.Task), TIn, UnityEngine.TaskRunOptions)
   name.vb: StartTask(Of TIn)(Component, Func(Of TIn, Task), TIn, TaskRunOptions)
-- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
-  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
-  id: StartTask``1(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
+  id: StartTask``1(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task},``0,UnityEngine.TaskRunOptions)
   isExtensionMethod: true
   parent: UnityEngine.ComponentExtensions
   langs:
@@ -274,16 +274,16 @@ items:
   - vb
   name: StartTask<TIn>(Component, Func<TIn, CancellationToken, Task>, TIn, TaskRunOptions)
   nameWithType: ComponentExtensions.StartTask<TIn>(Component, Func<TIn, CancellationToken, Task>, TIn, TaskRunOptions)
-  fullName: UnityEngine.ComponentExtensions.StartTask<TIn>(Component, System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>, TIn, UnityEngine.TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn>(Component, System.Func<TIn, CancellationToken, System.Threading.Tasks.Task>, TIn, UnityEngine.TaskRunOptions)
   type: Method
   source:
     id: StartTask
     path: ''
-    startLine: 212
+    startLine: 286
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
-  summary: "\nStart a task scoped to the given component.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
+  summary: "\nStart a task scoped to the given component.\n<see cref=\"!:CancellationToken\"></see> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
   remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
   example: []
   syntax:
@@ -293,7 +293,7 @@ items:
       type: Component
       description: Component to run the task &apos;on&apos;.
     - id: taskCreator
-      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task}
+      type: System.Func{{TIn},CancellationToken,System.Threading.Tasks.Task}
       description: Function for creating the task.
     - id: data
       type: '{TIn}'
@@ -336,7 +336,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn)(Component, System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task), TIn, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn)(Component, System.Func(Of TIn, CancellationToken, System.Threading.Tasks.Task), TIn, UnityEngine.TaskRunOptions)
   name.vb: StartTask(Of TIn)(Component, Func(Of TIn, CancellationToken, Task), TIn, TaskRunOptions)
 - uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
   commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
@@ -353,7 +353,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 265
+    startLine: 339
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
@@ -410,9 +410,9 @@ items:
   - Shared
   fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TOut)(Component, System.Func(Of System.Threading.Tasks.Task(Of TOut)), UnityEngine.TaskRunOptions)
   name.vb: StartTask(Of TOut)(Component, Func(Of Task(Of TOut)), TaskRunOptions)
-- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
-  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
-  id: StartTask``1(Component,System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``1(Component,System.Func{CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
+  id: StartTask``1(Component,System.Func{CancellationToken,System.Threading.Tasks.Task{``0}},UnityEngine.TaskRunOptions)
   isExtensionMethod: true
   parent: UnityEngine.ComponentExtensions
   langs:
@@ -420,16 +420,16 @@ items:
   - vb
   name: StartTask<TOut>(Component, Func<CancellationToken, Task<TOut>>, TaskRunOptions)
   nameWithType: ComponentExtensions.StartTask<TOut>(Component, Func<CancellationToken, Task<TOut>>, TaskRunOptions)
-  fullName: UnityEngine.ComponentExtensions.StartTask<TOut>(Component, System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, UnityEngine.TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TOut>(Component, System.Func<CancellationToken, System.Threading.Tasks.Task<TOut>>, UnityEngine.TaskRunOptions)
   type: Method
   source:
     id: StartTask
     path: ''
-    startLine: 319
+    startLine: 393
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
-  summary: "\nStart a task scoped to the given component.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
+  summary: "\nStart a task scoped to the given component.\n<see cref=\"!:CancellationToken\"></see> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
   remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
   example: []
   syntax:
@@ -439,7 +439,7 @@ items:
       type: Component
       description: Component to run the task &apos;on&apos;.
     - id: taskCreator
-      type: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+      type: System.Func{CancellationToken,System.Threading.Tasks.Task{{TOut}}}
       description: Function for creating the task.
     - id: options
       type: UnityEngine.TaskRunOptions
@@ -480,7 +480,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TOut)(Component, System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TOut)(Component, System.Func(Of CancellationToken, System.Threading.Tasks.Task(Of TOut)), UnityEngine.TaskRunOptions)
   name.vb: StartTask(Of TOut)(Component, Func(Of CancellationToken, Task(Of TOut)), TaskRunOptions)
 - uid: UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
   commentId: M:UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
@@ -497,7 +497,7 @@ items:
   source:
     id: StartTask
     path: ''
-    startLine: 371
+    startLine: 445
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
@@ -557,9 +557,9 @@ items:
   - Shared
   fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn, TOut)(Component, System.Func(Of TIn, System.Threading.Tasks.Task(Of TOut)), TIn, UnityEngine.TaskRunOptions)
   name.vb: StartTask(Of TIn, TOut)(Component, Func(Of TIn, Task(Of TOut)), TIn, TaskRunOptions)
-- uid: UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
-  commentId: M:UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
-  id: StartTask``2(Component,System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+- uid: UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  commentId: M:UnityEngine.ComponentExtensions.StartTask``2(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
+  id: StartTask``2(Component,System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}},``0,UnityEngine.TaskRunOptions)
   isExtensionMethod: true
   parent: UnityEngine.ComponentExtensions
   langs:
@@ -567,16 +567,16 @@ items:
   - vb
   name: StartTask<TIn, TOut>(Component, Func<TIn, CancellationToken, Task<TOut>>, TIn, TaskRunOptions)
   nameWithType: ComponentExtensions.StartTask<TIn, TOut>(Component, Func<TIn, CancellationToken, Task<TOut>>, TIn, TaskRunOptions)
-  fullName: UnityEngine.ComponentExtensions.StartTask<TIn, TOut>(Component, System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn, UnityEngine.TaskRunOptions)
+  fullName: UnityEngine.ComponentExtensions.StartTask<TIn, TOut>(Component, System.Func<TIn, CancellationToken, System.Threading.Tasks.Task<TOut>>, TIn, UnityEngine.TaskRunOptions)
   type: Method
   source:
     id: StartTask
     path: ''
-    startLine: 426
+    startLine: 500
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
-  summary: "\nStart a task scoped to the given component.\n<xref href=\"System.Threading.CancellationToken\" data-throw-if-not-resolved=\"false\"></xref> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
+  summary: "\nStart a task scoped to the given component.\n<see cref=\"!:CancellationToken\"></see> that is passed to the task-creator is cancelled when the\ncomponent gets destroyed, this can be usefull for cancelling external processes.\n"
   remarks: "\nThe task will run &apos;on&apos; the component, meaning that the task gets paused when the component\nis disabled and the task will get cancelled when the component is destroyed.\n\nCan only be called from the unity-thread in play-mode.\n"
   example: []
   syntax:
@@ -586,7 +586,7 @@ items:
       type: Component
       description: Component to run the task &apos;on&apos;.
     - id: taskCreator
-      type: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+      type: System.Func{{TIn},CancellationToken,System.Threading.Tasks.Task{{TOut}}}
       description: Function for creating the task.
     - id: data
       type: '{TIn}'
@@ -630,7 +630,7 @@ items:
   modifiers.vb:
   - Public
   - Shared
-  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn, TOut)(Component, System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn, UnityEngine.TaskRunOptions)
+  fullName.vb: UnityEngine.ComponentExtensions.StartTask(Of TIn, TOut)(Component, System.Func(Of TIn, CancellationToken, System.Threading.Tasks.Task(Of TOut)), TIn, UnityEngine.TaskRunOptions)
   name.vb: StartTask(Of TIn, TOut)(Component, Func(Of TIn, CancellationToken, Task(Of TOut)), TIn, TaskRunOptions)
 - uid: UnityEngine.ComponentExtensions.GetTaskRunner(Component,UnityEngine.TaskRunOptions)
   commentId: M:UnityEngine.ComponentExtensions.GetTaskRunner(Component,UnityEngine.TaskRunOptions)
@@ -647,11 +647,11 @@ items:
   source:
     id: GetTaskRunner
     path: ''
-    startLine: 462
+    startLine: 536
   assemblies:
   - cs.temp.dll
   namespace: UnityEngine
-  summary: "\nGet a <xref href=\"ComponentTask.ITaskRunner\" data-throw-if-not-resolved=\"false\"></xref> for the given component.\n"
+  summary: "\nGet a <see cref=\"!:ITaskRunner\"></see> for the given component.\n"
   remarks: "\nIf a existing runner exists for the component then that is returned, otherwise a new\nrunner is created.\n\nCan only be called from the unity-thread in play-mode.\n"
   example: []
   syntax:
@@ -664,8 +664,8 @@ items:
       type: UnityEngine.TaskRunOptions
       description: Options for configuring how tasks are run on this runner.
     return:
-      type: ComponentTask.ITaskRunner
-      description: <xref href="ComponentTask.ITaskRunner" data-throw-if-not-resolved="false"></xref> scoped to the given component.
+      type: ITaskRunner
+      description: <see cref="!:ITaskRunner"></see> scoped to the given component.
     content.vb: >-
       <ExtensionAttribute>
 
@@ -1127,18 +1127,15 @@ references:
   name: System.Threading.Tasks
   nameWithType: System.Threading.Tasks
   fullName: System.Threading.Tasks
-- uid: System.Threading.CancellationToken
-  commentId: T:System.Threading.CancellationToken
-  isExternal: true
-- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
-  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task}
+- uid: System.Func{CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{CancellationToken,System.Threading.Tasks.Task}
   parent: System
   definition: System.Func`2
   name: Func<CancellationToken, Task>
   nameWithType: Func<CancellationToken, Task>
-  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  fullName: System.Func<CancellationToken, System.Threading.Tasks.Task>
   nameWithType.vb: Func(Of CancellationToken, Task)
-  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  fullName.vb: System.Func(Of CancellationToken, System.Threading.Tasks.Task)
   name.vb: Func(Of CancellationToken, Task)
   spec.csharp:
   - uid: System.Func`2
@@ -1149,10 +1146,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1174,10 +1171,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1307,15 +1304,15 @@ references:
   name: TIn
   nameWithType: TIn
   fullName: TIn
-- uid: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task}
-  commentId: T:System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task}
+- uid: System.Func{{TIn},CancellationToken,System.Threading.Tasks.Task}
+  commentId: T:System.Func{``0,CancellationToken,System.Threading.Tasks.Task}
   parent: System
   definition: System.Func`3
   name: Func<TIn, CancellationToken, Task>
   nameWithType: Func<TIn, CancellationToken, Task>
-  fullName: System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task>
+  fullName: System.Func<TIn, CancellationToken, System.Threading.Tasks.Task>
   nameWithType.vb: Func(Of TIn, CancellationToken, Task)
-  fullName.vb: System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task)
+  fullName.vb: System.Func(Of TIn, CancellationToken, System.Threading.Tasks.Task)
   name.vb: Func(Of TIn, CancellationToken, Task)
   spec.csharp:
   - uid: System.Func`3
@@ -1332,10 +1329,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1363,10 +1360,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1583,15 +1580,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
-  commentId: T:System.Func{System.Threading.CancellationToken,System.Threading.Tasks.Task{``0}}
+- uid: System.Func{CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{CancellationToken,System.Threading.Tasks.Task{``0}}
   parent: System
   definition: System.Func`2
   name: Func<CancellationToken, Task<TOut>>
   nameWithType: Func<CancellationToken, Task<TOut>>
-  fullName: System.Func<System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>
+  fullName: System.Func<CancellationToken, System.Threading.Tasks.Task<TOut>>
   nameWithType.vb: Func(Of CancellationToken, Task(Of TOut))
-  fullName.vb: System.Func(Of System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut))
+  fullName.vb: System.Func(Of CancellationToken, System.Threading.Tasks.Task(Of TOut))
   name.vb: Func(Of CancellationToken, Task(Of TOut))
   spec.csharp:
   - uid: System.Func`2
@@ -1602,10 +1599,10 @@ references:
   - name: <
     nameWithType: <
     fullName: <
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1636,10 +1633,10 @@ references:
   - name: '(Of '
     nameWithType: '(Of '
     fullName: '(Of '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1735,15 +1732,15 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: System.Func{{TIn},System.Threading.CancellationToken,System.Threading.Tasks.Task{{TOut}}}
-  commentId: T:System.Func{``0,System.Threading.CancellationToken,System.Threading.Tasks.Task{``1}}
+- uid: System.Func{{TIn},CancellationToken,System.Threading.Tasks.Task{{TOut}}}
+  commentId: T:System.Func{``0,CancellationToken,System.Threading.Tasks.Task{``1}}
   parent: System
   definition: System.Func`3
   name: Func<TIn, CancellationToken, Task<TOut>>
   nameWithType: Func<TIn, CancellationToken, Task<TOut>>
-  fullName: System.Func<TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task<TOut>>
+  fullName: System.Func<TIn, CancellationToken, System.Threading.Tasks.Task<TOut>>
   nameWithType.vb: Func(Of TIn, CancellationToken, Task(Of TOut))
-  fullName.vb: System.Func(Of TIn, System.Threading.CancellationToken, System.Threading.Tasks.Task(Of TOut))
+  fullName.vb: System.Func(Of TIn, CancellationToken, System.Threading.Tasks.Task(Of TOut))
   name.vb: Func(Of TIn, CancellationToken, Task(Of TOut))
   spec.csharp:
   - uid: System.Func`3
@@ -1760,10 +1757,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1800,10 +1797,10 @@ references:
   - name: ', '
     nameWithType: ', '
     fullName: ', '
-  - uid: System.Threading.CancellationToken
+  - uid: CancellationToken
     name: CancellationToken
     nameWithType: CancellationToken
-    fullName: System.Threading.CancellationToken
+    fullName: CancellationToken
     isExternal: true
   - name: ', '
     nameWithType: ', '
@@ -1825,19 +1822,13 @@ references:
   - name: )
     nameWithType: )
     fullName: )
-- uid: ComponentTask.ITaskRunner
-  commentId: T:ComponentTask.ITaskRunner
-  parent: ComponentTask
-  name: ITaskRunner
-  nameWithType: ITaskRunner
-  fullName: ComponentTask.ITaskRunner
 - uid: UnityEngine.ComponentExtensions.GetTaskRunner*
   commentId: Overload:UnityEngine.ComponentExtensions.GetTaskRunner
   name: GetTaskRunner
   nameWithType: ComponentExtensions.GetTaskRunner
   fullName: UnityEngine.ComponentExtensions.GetTaskRunner
-- uid: ComponentTask
-  commentId: N:ComponentTask
-  name: ComponentTask
-  nameWithType: ComponentTask
-  fullName: ComponentTask
+- uid: ITaskRunner
+  isExternal: true
+  name: ITaskRunner
+  nameWithType: ITaskRunner
+  fullName: ITaskRunner

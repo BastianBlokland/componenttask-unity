@@ -21,21 +21,16 @@ items:
   assemblies:
   - cs.temp.dll
 references:
-- uid: ComponentTask.Exceptions.ComponentTaskCanceledException
-  commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
-  name: ComponentTaskCanceledException
-  nameWithType: ComponentTaskCanceledException
-  fullName: ComponentTask.Exceptions.ComponentTaskCanceledException
-- uid: ComponentTask.Exceptions.ContextChangedException
-  commentId: T:ComponentTask.Exceptions.ContextChangedException
-  name: ContextChangedException
-  nameWithType: ContextChangedException
-  fullName: ComponentTask.Exceptions.ContextChangedException
 - uid: ComponentTask.Exceptions.InactiveComponentException
   commentId: T:ComponentTask.Exceptions.InactiveComponentException
   name: InactiveComponentException
   nameWithType: InactiveComponentException
   fullName: ComponentTask.Exceptions.InactiveComponentException
+- uid: ComponentTask.Exceptions.NotPlayingException
+  commentId: T:ComponentTask.Exceptions.NotPlayingException
+  name: NotPlayingException
+  nameWithType: NotPlayingException
+  fullName: ComponentTask.Exceptions.NotPlayingException
 - uid: ComponentTask.Exceptions.InactiveGameObjectException
   commentId: T:ComponentTask.Exceptions.InactiveGameObjectException
   name: InactiveGameObjectException
@@ -46,13 +41,18 @@ references:
   name: NonUnityThreadException
   nameWithType: NonUnityThreadException
   fullName: ComponentTask.Exceptions.NonUnityThreadException
-- uid: ComponentTask.Exceptions.NotPlayingException
-  commentId: T:ComponentTask.Exceptions.NotPlayingException
-  name: NotPlayingException
-  nameWithType: NotPlayingException
-  fullName: ComponentTask.Exceptions.NotPlayingException
 - uid: ComponentTask.Exceptions.TaskCreatorReturnedNullException
   commentId: T:ComponentTask.Exceptions.TaskCreatorReturnedNullException
   name: TaskCreatorReturnedNullException
   nameWithType: TaskCreatorReturnedNullException
   fullName: ComponentTask.Exceptions.TaskCreatorReturnedNullException
+- uid: ComponentTask.Exceptions.ContextChangedException
+  commentId: T:ComponentTask.Exceptions.ContextChangedException
+  name: ContextChangedException
+  nameWithType: ContextChangedException
+  fullName: ComponentTask.Exceptions.ContextChangedException
+- uid: ComponentTask.Exceptions.ComponentTaskCanceledException
+  commentId: T:ComponentTask.Exceptions.ComponentTaskCanceledException
+  name: ComponentTaskCanceledException
+  nameWithType: ComponentTaskCanceledException
+  fullName: ComponentTask.Exceptions.ComponentTaskCanceledException
