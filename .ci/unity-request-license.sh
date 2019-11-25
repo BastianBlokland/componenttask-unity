@@ -52,8 +52,8 @@ if [ ! -d "$UNITY_PROJ_DIR" ]
 then
     fail "No directory found at: '$UNITY_PROJ_DIR'."
 fi
-OUTPUT_PATH="$(pwd)/output/licenseActivateFile.alf"
-LOG_PATH="$(pwd)/output/request-license.log"
+OUTPUT_PATH="$(pwd)/.output/licenseActivateFile.alf"
+LOG_PATH="$(pwd)/.output/request-license.log"
 
 # Generate license activation file (.alf).
 withRetry logDuration generateManualActivationFile "$UNITY_PROJ_DIR" "$OUTPUT_PATH" "$LOG_PATH"

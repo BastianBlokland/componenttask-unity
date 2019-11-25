@@ -6,6 +6,17 @@ source ./.ci/utils.sh
 # Install required dependencies.
 # --------------------------------------------------------------------------------------------------
 
+installNativeDependencies()
+{
+    if hasCommand apt-get
+    then
+        withRetry logDuration sudo apt-get update
+        withRetry logDuration sudo apt-get install libglu1
+        return 0
+    fi
+    fail "Failed to install native dependencies as no supported package manager is installed."
+}
+
 installRuby()
 {
     info "Atempting to install 'ruby'."
@@ -51,6 +62,9 @@ installUnity()
     # TODO: Remove this as soon as the issue has been resolved on the u3d side.
     (sudo u3d install $version -p Unity --trace) || true
 }
+
+# Install required native dependencies.
+installNativeDependencies
 
 if doesntHaveCommand awk
 then

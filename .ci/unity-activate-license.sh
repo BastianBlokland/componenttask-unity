@@ -24,13 +24,13 @@ activateUnity()
     info "Attempting to activate using '$licenseFilePath' in project '$projDir' (logging to: '$logPath')."
     (cd "$projDir" &&
     {
-        unity \
+        (unity \
             -batchmode \
             -logfile "$logPath" \
             -quit \
             -nographics \
             -force-free \
-            -manualLicenseFile "$licenseFilePath" || true
+            -manualLicenseFile "$licenseFilePath") || true
         info "Unity exited."
     })
 
