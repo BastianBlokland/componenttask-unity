@@ -43,7 +43,7 @@ installUnity()
 {
     local version="$1"
     info "Installing Unity '$version' with 'u3d'."
-    sudo u3d install $version
+    sudo u3d install $version -p Unity --trace
 }
 
 if doesntHaveCommand awk
@@ -70,11 +70,18 @@ else
     info "Updated 'u3d' through 'gem'."
 fi
 
+# List 'u3d' version.
+info "'u3d' version:"
+u3d --version
+
 UNITY_PROJ_DIR=".example"
 if [ ! -d "$UNITY_PROJ_DIR" ]
 then
     fail "No directory found at: '$UNITY_PROJ_DIR'."
 fi
+
+# List all available linux unity versions (helps in debugging unavailable unity versions).
+withRetry u3d available -o linux --no-central --force
 
 unityVersion="$(getUnityVersion "$UNITY_PROJ_DIR")"
 withRetry logDuration installUnity "$unityVersion"
