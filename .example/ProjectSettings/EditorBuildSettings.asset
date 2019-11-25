@@ -5,7 +5,7 @@ EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
   m_Scenes:
-  - enabled: 0
-    path: 
-    guid: 00000000000000000000000000000000
+  - enabled: 1
+    path: Packages/com.bastianblokland.componenttask/.example/Assets/OnGUITasks/Scene.unity
+    guid: 4f2eba3c9db65401b888dfce025422f3
   m_configObjects: {}
