@@ -6,14 +6,28 @@ source ./.ci/utils.sh
 # Install required dependencies.
 # --------------------------------------------------------------------------------------------------
 
+installNativeDependencies()
+{
+    if hasCommand apt-get
+    then
+        withRetry logDuration sudo apt-get update
+        withRetry logDuration sudo apt-get install libglu1
+        # Needed as in 'Unity 2019.2' the testrunner does't work with the 'nographics' flag.
+        withRetry logDuration sudo apt-get install xvfb
+        return 0
+    fi
+    fail "Failed to install native dependencies as no supported package manager is installed."
+}
+
 installRuby()
 {
     info "Atempting to install 'ruby'."
     if hasCommand apt-get
     then
         info "'apt-get' package manager found at: '$(which apt-get)'."
+        withRetry logDuration sudo apt-add-repository ppa:brightbox/ruby-ng
         withRetry logDuration sudo apt-get update
-        withRetry logDuration sudo apt-get install ruby-full
+        withRetry logDuration sudo apt-get install ruby2.5
         if hasCommand gem
         then
             info "Succesfully installed 'ruby'."
@@ -42,8 +56,17 @@ installUnity()
 {
     local version="$1"
     info "Installing Unity '$version' with 'u3d'."
-    sudo u3d install $version
+
+    # HACK: Ignoring exit code of the install. Reason is that u3d at this moment is incompatible
+    # with unity's new module definitions (u3d issue: https://github.com/DragonBox/u3d/issues/391).
+    # However even though it fails it has actually installed Unity correctly so as a work-around we
+    # ignore the error here and in all Unity invocations we supply the full path.
+    # TODO: Remove this as soon as the issue has been resolved on the u3d side.
+    (sudo u3d install $version -p Unity --trace) || true
 }
+
+# Install required native dependencies.
+installNativeDependencies
 
 if doesntHaveCommand awk
 then
@@ -69,11 +92,18 @@ else
     info "Updated 'u3d' through 'gem'."
 fi
 
+# List 'u3d' version.
+info "'u3d' version:"
+u3d --version
+
 UNITY_PROJ_DIR=".example"
 if [ ! -d "$UNITY_PROJ_DIR" ]
 then
     fail "No directory found at: '$UNITY_PROJ_DIR'."
 fi
+
+# List all available linux unity versions (helps in debugging unavailable unity versions).
+withRetry u3d available -o linux --no-central --force
 
 unityVersion="$(getUnityVersion "$UNITY_PROJ_DIR")"
 withRetry logDuration installUnity "$unityVersion"

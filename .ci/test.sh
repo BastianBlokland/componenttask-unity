@@ -19,7 +19,7 @@ test()
     info "Starting '$platform' tests (logfile: '$3')."
 
     # Execute tests with unity.
-    (cd "$EXAMPLE_DIR" && u3d -- \
+    (cd "$EXAMPLE_DIR" && unity \
         -batchmode \
         -logfile "$logPath" \
         -nographics \
@@ -39,11 +39,6 @@ test()
     return 0
 }
 
-# Verify dependencies.
-if doesntHaveCommand u3d
-then
-    fail "'u3d' required (more info: https://github.com/DragonBox/u3d)."
-fi
 
 # Use the example dir for running tests as we need to have a unity-project.
 EXAMPLE_DIR=".example"

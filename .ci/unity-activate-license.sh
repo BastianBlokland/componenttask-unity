@@ -24,13 +24,13 @@ activateUnity()
     info "Attempting to activate using '$licenseFilePath' in project '$projDir' (logging to: '$logPath')."
     (cd "$projDir" &&
     {
-        u3d -- \
+        (unity \
             -batchmode \
             -logfile "$logPath" \
             -quit \
             -nographics \
             -force-free \
-            -manualLicenseFile "$licenseFilePath" || true
+            -manualLicenseFile "$licenseFilePath") || true
         info "Unity exited."
     })
 
@@ -42,9 +42,6 @@ activateUnity()
         return 1
     fi
 }
-
-# Verify dependencies.
-verifyCommand u3d
 
 # Early out if already activated.
 if hasLicense

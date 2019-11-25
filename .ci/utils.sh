@@ -109,3 +109,37 @@ logDuration()
     info "Command '$*' succeeded in '$((SECONDS - startTime))' seconds."
     return 0
 }
+
+unity()
+{
+    info "Invoking unity with arguments: '$*'."
+
+    # If an exlicit unity version is provided then run that.
+    if [ ! -z "$OVERRIDE_UNITY_PATH" ]
+    then
+        if [ ! -z "$VIRTUAL_X_CLIENT" ]
+        then
+            runWithVirtualXClient $OVERRIDE_UNITY_PATH "$@"
+        else
+            $OVERRIDE_UNITY_PATH "$@"
+        fi
+        return 0
+    fi
+
+    # Otherwise use u3d to run the correct Unity version.
+    if doesntHaveCommand u3d
+    then
+        fail "'u3d' required (more info: https://github.com/DragonBox/u3d)."
+    fi
+    if [ ! -z "$VIRTUAL_X_CLIENT" ]
+    then
+        runWithVirtualXClient u3d --trace -- "$@"
+    else
+        u3d --trace -- "$@"
+    fi
+}
+
+runWithVirtualXClient()
+{
+    xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' "$@"
+}
