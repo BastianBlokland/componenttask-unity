@@ -12,6 +12,8 @@ installNativeDependencies()
     then
         withRetry logDuration sudo apt-get update
         withRetry logDuration sudo apt-get install libglu1
+        # Needed as in 'Unity 2019.2' the testrunner does't work with the 'nographics' flag.
+        withRetry logDuration sudo apt-get install xvfb
         return 0
     fi
     fail "Failed to install native dependencies as no supported package manager is installed."

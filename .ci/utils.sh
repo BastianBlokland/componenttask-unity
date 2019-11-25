@@ -117,7 +117,12 @@ unity()
     # If an exlicit unity version is provided then run that.
     if [ ! -z "$OVERRIDE_UNITY_PATH" ]
     then
-        $OVERRIDE_UNITY_PATH "$@"
+        if [ ! -z "$VIRTUAL_X_CLIENT" ]
+        then
+            runWithVirtualXClient $OVERRIDE_UNITY_PATH "$@"
+        else
+            $OVERRIDE_UNITY_PATH "$@"
+        fi
         return 0
     fi
 
@@ -126,5 +131,15 @@ unity()
     then
         fail "'u3d' required (more info: https://github.com/DragonBox/u3d)."
     fi
-    u3d --trace -- "$@"
+    if [ ! -z "$VIRTUAL_X_CLIENT" ]
+    then
+        runWithVirtualXClient u3d --trace -- "$@"
+    else
+        u3d --trace -- "$@"
+    fi
+}
+
+runWithVirtualXClient()
+{
+    xvfb-run --auto-servernum --server-args='-screen 0 640x480x24' "$@"
 }

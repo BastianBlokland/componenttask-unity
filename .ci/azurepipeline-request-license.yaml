@@ -22,6 +22,8 @@ variables:
     value: en_US.UTF-8
   - name: NO_COLORS
     value: true
+  - name: VIRTUAL_X_CLIENT
+    value: true
   - name: OVERRIDE_UNITY_PATH
     value: "/opt/unity-editor-2019.2.13f1/Editor/Unity"
   - group: ci-keys
