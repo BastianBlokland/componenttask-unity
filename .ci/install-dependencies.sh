@@ -12,8 +12,9 @@ installRuby()
     if hasCommand apt-get
     then
         info "'apt-get' package manager found at: '$(which apt-get)'."
+        withRetry logDuration sudo apt-add-repository ppa:brightbox/ruby-ng
         withRetry logDuration sudo apt-get update
-        withRetry logDuration sudo apt-get install ruby-full
+        withRetry logDuration sudo apt-get install ruby2.5
         if hasCommand gem
         then
             info "Succesfully installed 'ruby'."
