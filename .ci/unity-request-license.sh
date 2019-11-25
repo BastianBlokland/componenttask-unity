@@ -21,7 +21,7 @@ generateManualActivationFile()
     info "Running 'createManualActivationFile' in project '$projPath' (logging to: '$logPath')."
     (cd "$UNITY_PROJ_DIR" &&
     {
-        u3d -- \
+        unity \
             -batchmode \
             -quit \
             -createManualActivationFile \
@@ -44,7 +44,6 @@ generateManualActivationFile()
 }
 
 # Verify dependencies are present.
-verifyCommand u3d
 verifyCommand find
 
 # Setup variables.

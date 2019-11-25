@@ -43,7 +43,13 @@ installUnity()
 {
     local version="$1"
     info "Installing Unity '$version' with 'u3d'."
-    sudo u3d install $version -p Unity --trace
+
+    # HACK: Ignoring exit code of the install. Reason is that u3d at this moment is incompatible
+    # with unity's new module definitions (u3d issue: https://github.com/DragonBox/u3d/issues/391).
+    # However even though it fails it has actually installed Unity correctly so as a work-around we
+    # ignore the error here and in all Unity invocations we supply the full path.
+    # TODO: Remove this as soon as the issue has been resolved on the u3d side.
+    (sudo u3d install $version -p Unity --trace) || true
 }
 
 if doesntHaveCommand awk
