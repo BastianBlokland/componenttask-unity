@@ -1,3 +1,13 @@
+/*  Workaround for: https://github.com/BastianBlokland/componenttask-unity/issues/20
+Disable the trace-logger on the '.Net 4.x' api in combination with the 'mono' scripting backend.
+Reason is that the code-stripper (on all settings except 'Disabled') removes part of
+'System.Configuration' on which 'System.Diagnostics.TraceListener' depends.
+Because upm packages do not support 'link.xml' files at this time there is no easy way to instruct
+the stripper not to remove those. Disabling is acceptable in this case as its only used as a log-sink
+for 'Debug.Assert' and 'Debug.Fail' and either of those triggering would mean there is a serious bug
+in this repository. */
+#if !(ENABLE_MONO && NET_4_6)
+
 using System.Diagnostics;
 
 namespace ComponentTask.Internal
@@ -43,3 +53,5 @@ namespace ComponentTask.Internal
         }
     }
 }
+
+#endif // !(ENABLE_MONO && NET_4_6)
