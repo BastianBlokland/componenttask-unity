@@ -15,7 +15,7 @@ items:
   source:
     id: NotPlayingException
     path: ''
-    startLine: 2084
+    startLine: 2096
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask.Exceptions

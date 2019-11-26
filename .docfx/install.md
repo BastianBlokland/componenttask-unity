@@ -23,4 +23,4 @@ commit.
 
 ### Upgrading
 To update to a newer version simply open your package manifest (`Packages/manifest.json`) and set
-the tag at the end of the git url (for example `v1.8.1`) to a later version.
+the tag at the end of the git url (for example `v1.8.2`) to a later version.

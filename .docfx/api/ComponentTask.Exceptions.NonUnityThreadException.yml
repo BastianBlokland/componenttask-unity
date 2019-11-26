@@ -15,7 +15,7 @@ items:
   source:
     id: NonUnityThreadException
     path: ''
-    startLine: 2117
+    startLine: 2129
   assemblies:
   - cs.temp.dll
   namespace: ComponentTask.Exceptions
