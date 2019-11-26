@@ -88,6 +88,20 @@ commit.</p>
 <h3 id="upgrading">Upgrading</h3>
 <p>To update to a newer version simply open your package manifest (<code>Packages/manifest.json</code>) and set
 the tag at the end of the git url (for example <code>v1.8.1</code>) to a later version.</p>
+<h3 id="mono">Link.xml file for Mono builds</h3>
+<p>If you use the Mono scripting backend, you may get error messages in builds stating that constructors for <code>System.Diagnostics.SystemDiagnosticsSection</code> or <code>System.Diagnostics.FilterElement</code> does not exist. You can fix this by including a file named <code>link.xml</code> in the <code>Assets</code> folder (or subfolder) with the following ocntents:</p>
+<pre><code>
+  &lt;linker&gt;
+    &lt;assembly fullname="System, Version=0.0.0.0, Culture=neutral, PublicKeyToken=null"&gt;
+        &lt;type fullname="System.Diagnostics.SystemDiagnosticsSection" preserve="fields"&gt;
+          &lt;method signature="System.Void .ctor()"/&gt;
+        &lt;/type&gt;
+        &lt;type fullname="System.Diagnostics.FilterElement" preserve="fields"&gt;
+          &lt;method signature="System.Void .ctor()"/&gt;
+        &lt;/type&gt;
+      &lt;/assembly&gt;
+  &lt;/linker&gt;
+  </code></pre>
 </article>
           </div>
           
